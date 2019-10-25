@@ -1,0 +1,18 @@
+name: CI
+
+on: [push]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: Borales/actions-yarn@master
+    - name: Run tests
+      run: yarn test
+    - name: Run lints
+      run: yarn test:lint
+    - name: Run type-check
+      run: yarn test:tsc
