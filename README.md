@@ -4,6 +4,14 @@ This project is based on this repository: **[Thesoreon/blog-using-gatsby](https:
 
 ## Technologies used
 
+### Application
+
 - React.js
 - Gatsby.js
 - Typescript
+
+### Code climate
+
+- prettier
+
+Repository is using Github Actions for CI/CD stuff.
