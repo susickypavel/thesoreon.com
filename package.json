@@ -3,5 +3,14 @@
   "description": "Pavel Susicky's personal website/blog",
   "repository": "git@github.com:Thesoreon/thesoreon.com.git",
   "author": "Pavel Susicky <pavels.sus@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gatsby": "^2.17.4",
+    "gatsby-plugin-typescript": "^2.1.15",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.1-rc"
+  }
 }
