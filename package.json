@@ -16,7 +16,8 @@
     "test:watch": "echo TODO",
     "test:lint": "echo TODO",
     "test:tsc": "tsc",
-    "typegen": "echo TODO"
+    "typegen": "echo TODO",
+    "check:prettier": "prettier --check 'src/**/*.tsx' 'src/**/*.ts'"
   },
   "dependencies": {
     "gatsby": "^2.17.4",
@@ -25,6 +26,7 @@
     "react-dom": "^16.11.0"
   },
   "devDependencies": {
+    "prettier": "^1.18.2",
     "typescript": "^3.7.1-rc"
   }
 }
