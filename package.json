@@ -1,0 +1,7 @@
+{
+  "name": "thesoreon.com",
+  "description": "Pavel Susicky's personal website/blog",
+  "repository": "git@github.com:Thesoreon/thesoreon.com.git",
+  "author": "Pavel Susicky <pavels.sus@gmail.com>",
+  "license": "MIT"
+}
