@@ -9,7 +9,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: actions/yarn@master
-      uses: Borales/actions-yarn@master
+    - uses: Borales/actions-yarn@master
     - name: Install dependencies
       run: yarn
