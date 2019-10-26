@@ -24,5 +24,6 @@ This project is based on this repository: **[Thesoreon/blog-using-gatsby](https:
 
 - Prettier
 - Eslint
+- Jest and React Testing Library
 
 Repository is using Github Actions for CI/CD stuff and Netlify for hosting.
