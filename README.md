@@ -23,5 +23,6 @@ This project is based on this repository: **[Thesoreon/blog-using-gatsby](https:
 ### Code climate
 
 - Prettier
+- Eslint
 
 Repository is using Github Actions for CI/CD stuff and Netlify for hosting.
