@@ -16,7 +16,7 @@
     "test:watch": "jest --watch --rootDir --config test/jest.config.js",
     "test:lint": "eslint --ignore-path .gitignore .",
     "test:tsc": "tsc",
-    "typegen": "echo TODO",
+    "typegen": "graphql-codegen --config codegen.yml && eslint --fix src/graphqlTypes.ts",
     "check:prettier": "prettier --check 'src/**/*.tsx' 'src/**/*.ts'",
     "lint:fix": "eslint --fix ."
   },
@@ -27,6 +27,9 @@
     "react-dom": "^16.11.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.8.2",
+    "@graphql-codegen/typescript": "1.8.2",
+    "@graphql-codegen/typescript-operations": "1.8.2",
     "@testing-library/react": "^9.3.0",
     "@types/jest": "^24.0.20",
     "@typescript-eslint/eslint-plugin": "^2.5.0",
