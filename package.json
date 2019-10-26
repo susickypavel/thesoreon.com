@@ -21,7 +21,11 @@
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.22",
+    "emotion-theming": "^10.0.19",
     "gatsby": "^2.17.4",
+    "gatsby-plugin-emotion": "^4.1.12",
     "gatsby-plugin-typescript": "^2.1.15",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
