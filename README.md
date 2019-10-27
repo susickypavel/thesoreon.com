@@ -1,4 +1,4 @@
-![thumbnail](https://repository-images.githubusercontent.com/217618305/cc564480-f901-11e9-89a5-1d60979444d0)
+![thumbnail](https://repository-images.githubusercontent.com/217618305/556e7b00-f904-11e9-9758-c6775d26f742)
 
 <div>
   <h1 align="center">thesoreon.com</h1>
