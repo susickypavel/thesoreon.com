@@ -18,6 +18,6 @@ describe("Index page", () => {
   test("should render", () => {
     const { container } = render(<Index />)
 
-    expect(container.textContent).toBe("Hello World")
+    expect(container.textContent).toContain("Hello World")
   })
 })
