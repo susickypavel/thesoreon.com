@@ -1,30 +1,20 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import { Global } from "@emotion/core"
 
-import { SiteMetaDataQuery } from "~/graphqlTypes"
 import globalStyles from "~/css/global-styles"
 import resetStyles from "~/css/reset-styles"
 import ThemeProvider from "./theme-provider/theme-provider"
+import Seo, { CustomMetaData } from "./Seo"
 
-const Layout: React.FC = ({ children }) => {
-  const {
-    site: {
-      siteMetadata: { description, twitter },
-    },
-  } = useStaticQuery<SiteMetaDataQuery>(graphql`
-    query siteMetaData {
-      site {
-        siteMetadata {
-          description
-          twitter
-        }
-      }
-    }
-  `)
-  console.log({ twitter, description })
+interface Props {
+  title?: string
+  metaData: CustomMetaData
+}
+
+const Layout: React.FC<Props> = ({ children, title = "Blog", metaData }) => {
   return (
     <ThemeProvider>
+      <Seo title={title} customMetadata={metaData} />
       <Global styles={[resetStyles, globalStyles]} />
       {children}
     </ThemeProvider>
