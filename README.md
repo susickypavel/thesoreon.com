@@ -1,3 +1,5 @@
+![thumbnail](https://repository-images.githubusercontent.com/217618305/bd22c700-f900-11e9-9925-2ae2bda6c391)
+
 <div>
   <h1 align="center">thesoreon.com</h1>
 </div>
