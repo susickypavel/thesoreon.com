@@ -14,6 +14,7 @@ const SwitchHolder = styled.div`
   position: fixed;
   right: 5px;
   top: 5px;
+  z-index: 2;
 `
 
 const CheckBox = styled.input`

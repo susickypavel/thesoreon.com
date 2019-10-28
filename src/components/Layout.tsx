@@ -5,6 +5,8 @@ import globalStyles from "~/css/global-styles"
 import resetStyles from "~/css/reset-styles"
 import ThemeProvider from "./theme-provider/theme-provider"
 import Seo, { CustomMetaData } from "./Seo"
+import ContentHolder from "./content-holder"
+import Navigation from "./navigation"
 
 interface Props {
   title?: string
@@ -16,7 +18,8 @@ const Layout: React.FC<Props> = ({ children, title = "Blog", metaData }) => {
     <ThemeProvider>
       <Seo title={title} customMetadata={metaData} />
       <Global styles={[resetStyles, globalStyles]} />
-      {children}
+      <Navigation />
+      <ContentHolder>{children}</ContentHolder>
     </ThemeProvider>
   )
 }
