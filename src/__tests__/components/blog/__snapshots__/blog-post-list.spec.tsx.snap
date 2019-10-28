@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogPostList component should render 1`] = `
+<div>
+  <div>
+    <a
+      href="/hello-world"
+    >
+      <h2>
+        Hello World!
+      </h2>
+    </a>
+  </div>
+</div>
+`;
