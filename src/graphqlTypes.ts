@@ -578,6 +578,7 @@ export enum FileFieldsEnum {
   childMdx___rawBody = "childMdx___rawBody",
   childMdx___fileAbsolutePath = "childMdx___fileAbsolutePath",
   childMdx___frontmatter___title = "childMdx___frontmatter___title",
+  childMdx___frontmatter___description = "childMdx___frontmatter___description",
   childMdx___frontmatter___date = "childMdx___frontmatter___date",
   childMdx___frontmatter___tags = "childMdx___frontmatter___tags",
   childMdx___body = "childMdx___body",
@@ -592,6 +593,7 @@ export enum FileFieldsEnum {
   childMdx___wordCount___paragraphs = "childMdx___wordCount___paragraphs",
   childMdx___wordCount___sentences = "childMdx___wordCount___sentences",
   childMdx___wordCount___words = "childMdx___wordCount___words",
+  childMdx___fields___slug = "childMdx___fields___slug",
   childMdx___id = "childMdx___id",
   childMdx___parent___id = "childMdx___parent___id",
   childMdx___parent___parent___id = "childMdx___parent___parent___id",
@@ -765,6 +767,7 @@ export type Mdx = Node & {
   tableOfContents?: Maybe<Scalars["JSON"]>
   timeToRead?: Maybe<Scalars["Int"]>
   wordCount?: Maybe<MdxWordCount>
+  fields?: Maybe<MdxFields>
   id: Scalars["ID"]
   parent?: Maybe<Node>
   children: Array<Node>
@@ -810,10 +813,16 @@ export type MdxEdge = {
   previous?: Maybe<Mdx>
 }
 
+export type MdxFields = {
+  __typename?: "MdxFields"
+  slug?: Maybe<Scalars["String"]>
+}
+
 export enum MdxFieldsEnum {
   rawBody = "rawBody",
   fileAbsolutePath = "fileAbsolutePath",
   frontmatter___title = "frontmatter___title",
+  frontmatter___description = "frontmatter___description",
   frontmatter___date = "frontmatter___date",
   frontmatter___tags = "frontmatter___tags",
   body = "body",
@@ -828,6 +837,7 @@ export enum MdxFieldsEnum {
   wordCount___paragraphs = "wordCount___paragraphs",
   wordCount___sentences = "wordCount___sentences",
   wordCount___words = "wordCount___words",
+  fields___slug = "fields___slug",
   id = "id",
   parent___id = "parent___id",
   parent___parent___id = "parent___parent___id",
@@ -916,6 +926,10 @@ export enum MdxFieldsEnum {
   internal___type = "internal___type",
 }
 
+export type MdxFieldsFilterInput = {
+  slug?: Maybe<StringQueryOperatorInput>
+}
+
 export type MdxFilterInput = {
   rawBody?: Maybe<StringQueryOperatorInput>
   fileAbsolutePath?: Maybe<StringQueryOperatorInput>
@@ -928,6 +942,7 @@ export type MdxFilterInput = {
   tableOfContents?: Maybe<JsonQueryOperatorInput>
   timeToRead?: Maybe<IntQueryOperatorInput>
   wordCount?: Maybe<MdxWordCountFilterInput>
+  fields?: Maybe<MdxFieldsFilterInput>
   id?: Maybe<StringQueryOperatorInput>
   parent?: Maybe<NodeFilterInput>
   children?: Maybe<NodeFilterListInput>
@@ -937,12 +952,14 @@ export type MdxFilterInput = {
 export type MdxFrontmatter = {
   __typename?: "MdxFrontmatter"
   title: Scalars["String"]
+  description?: Maybe<Scalars["String"]>
   date?: Maybe<Scalars["String"]>
   tags?: Maybe<Array<Maybe<Scalars["String"]>>>
 }
 
 export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>
+  description?: Maybe<StringQueryOperatorInput>
   date?: Maybe<StringQueryOperatorInput>
   tags?: Maybe<StringQueryOperatorInput>
 }
@@ -1096,6 +1113,7 @@ export type QueryMdxArgs = {
   tableOfContents?: Maybe<JsonQueryOperatorInput>
   timeToRead?: Maybe<IntQueryOperatorInput>
   wordCount?: Maybe<MdxWordCountFilterInput>
+  fields?: Maybe<MdxFieldsFilterInput>
   id?: Maybe<StringQueryOperatorInput>
   parent?: Maybe<NodeFilterInput>
   children?: Maybe<NodeFilterListInput>
@@ -1119,6 +1137,7 @@ export type QuerySitePageArgs = {
   component?: Maybe<StringQueryOperatorInput>
   componentChunkName?: Maybe<StringQueryOperatorInput>
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>
+  context?: Maybe<SitePageContextFilterInput>
   pluginCreator?: Maybe<SitePluginFilterInput>
   pluginCreatorId?: Maybe<StringQueryOperatorInput>
   componentPath?: Maybe<StringQueryOperatorInput>
@@ -1399,6 +1418,7 @@ export type SitePage = Node & {
   component?: Maybe<Scalars["String"]>
   componentChunkName?: Maybe<Scalars["String"]>
   isCreatedByStatefulCreatePages?: Maybe<Scalars["Boolean"]>
+  context?: Maybe<SitePageContext>
   pluginCreator?: Maybe<SitePlugin>
   pluginCreatorId?: Maybe<Scalars["String"]>
   componentPath?: Maybe<Scalars["String"]>
@@ -1422,6 +1442,15 @@ export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars["Int"]>
   limit?: Maybe<Scalars["Int"]>
   field: SitePageFieldsEnum
+}
+
+export type SitePageContext = {
+  __typename?: "SitePageContext"
+  id?: Maybe<Scalars["String"]>
+}
+
+export type SitePageContextFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePageEdge = {
@@ -1523,6 +1552,7 @@ export enum SitePageFieldsEnum {
   component = "component",
   componentChunkName = "componentChunkName",
   isCreatedByStatefulCreatePages = "isCreatedByStatefulCreatePages",
+  context___id = "context___id",
   pluginCreator___id = "pluginCreator___id",
   pluginCreator___parent___id = "pluginCreator___parent___id",
   pluginCreator___parent___parent___id = "pluginCreator___parent___parent___id",
@@ -1602,6 +1632,7 @@ export type SitePageFilterInput = {
   component?: Maybe<StringQueryOperatorInput>
   componentChunkName?: Maybe<StringQueryOperatorInput>
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>
+  context?: Maybe<SitePageContextFilterInput>
   pluginCreator?: Maybe<SitePluginFilterInput>
   pluginCreatorId?: Maybe<StringQueryOperatorInput>
   componentPath?: Maybe<StringQueryOperatorInput>
@@ -1939,5 +1970,20 @@ export type SiteMetaDataQuery = { __typename?: "Query" } & {
         { __typename?: "SiteSiteMetadata" } & Pick<SiteSiteMetadata, "description" | "twitter">
       >
     }
+  >
+}
+
+export type BlogPostPageQueryVariables = {
+  id?: Maybe<Scalars["String"]>
+}
+
+export type BlogPostPageQuery = { __typename?: "Query" } & {
+  mdx: Maybe<
+    { __typename?: "Mdx" } & Pick<Mdx, "body"> & {
+        frontmatter: Maybe<
+          { __typename?: "MdxFrontmatter" } & Pick<MdxFrontmatter, "title" | "description">
+        >
+        fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
+      }
   >
 }
