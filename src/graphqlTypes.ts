@@ -1973,6 +1973,21 @@ export type SiteMetaDataQuery = { __typename?: "Query" } & {
   >
 }
 
+export type BlogPostsListQueryVariables = {}
+
+export type BlogPostsListQuery = { __typename?: "Query" } & {
+  allMdx: { __typename?: "MdxConnection" } & Pick<MdxConnection, "totalCount"> & {
+      edges: Array<
+        { __typename?: "MdxEdge" } & {
+          node: { __typename?: "Mdx" } & {
+            frontmatter: Maybe<{ __typename?: "MdxFrontmatter" } & Pick<MdxFrontmatter, "title">>
+            fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
+          }
+        }
+      >
+    }
+}
+
 export type BlogPostPageQueryVariables = {
   id?: Maybe<Scalars["String"]>
 }
