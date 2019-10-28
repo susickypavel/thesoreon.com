@@ -10,6 +10,7 @@ export type Theme = {
     secondary: string
     links: string
   }
+  transitionTheme: string
 }
 
 export default styled as CreateStyled<Theme>

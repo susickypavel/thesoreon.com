@@ -8,13 +8,14 @@ const ThemeProvider: React.FC = ({ children }) => {
   const theme: Theme = {
     bg: {
       primary: "var(--primary-bg-color)",
-      secondary: "var(--primary-bg-color)",
+      secondary: "var(--secondary-bg-color)",
     },
     fg: {
       primary: "var(--primary-fg-color)",
-      secondary: "var(--primary-fg-color)",
-      links: "",
+      secondary: "var(--secondary-fg-color)",
+      links: "var(--links-color)",
     },
+    transitionTheme: "color, background-color 0.5s ease",
   }
 
   return (
