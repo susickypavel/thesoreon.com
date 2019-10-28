@@ -16,6 +16,12 @@ module.exports = {
         extensions: [".mdx", ".md"],
       },
     },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
   ],
   siteMetadata: {
     description: "Personal blog by Pavel Susicky. Writing things about web development.",
