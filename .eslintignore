@@ -67,3 +67,5 @@ public
 graphqlTypes.ts
 gatsby.ts
 gatsby-node.js
+gatsby-browser.js
+gatsby-ssr.js
