@@ -4,7 +4,7 @@ import { LAYOUT_MEDIA_QUERY_TABLET, CONTENTHOLDER_PADDING } from "~/css/constant
 
 export const ContentWrapper = styled.div`
   width: ${getGoldenRatio(100, "A")}%;
-  height: 100%;
+  min-height: 100vh;
 
   background: ${props => props.theme.bg.secondary};
   color: ${props => props.theme.fg.secondary};

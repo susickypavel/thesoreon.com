@@ -1,15 +1,37 @@
 import { css } from "@emotion/core"
 
+const minFontSize = 16
+const maxFontSize = 20
+
+const deltaFontSize = maxFontSize - minFontSize
+
 export default css`
   * {
     box-sizing: border-box;
+  }
+
+  html {
+    overflow-y: unset;
+    font-size: ${minFontSize}px !important;
+  }
+
+  @media screen and (min-width: 320px) {
+    html {
+      font-size: calc(${minFontSize}px + ${deltaFontSize} * ((100vw - 320px) / 680)) !important;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    html {
+      font-size: ${maxFontSize}px !important;
+    }
   }
 
   html,
   body,
   #___gatsby,
   #gatsby-focus-wrapper {
-    height: 100%;
+    min-height: 100vh;
   }
 
   #___gatsby {
