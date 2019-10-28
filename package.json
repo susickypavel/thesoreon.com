@@ -16,18 +16,22 @@
     "test:watch": "jest --watch --rootDir --config test/jest.config.js",
     "test:lint": "eslint --ignore-path .gitignore .",
     "test:tsc": "tsc",
-    "typegen": "graphql-codegen --config codegen.yml && eslint --fix src/graphqlTypes.ts",
+    "typegen": "graphql-codegen --config codegen.yml && eslint --fix --no-ignore src/graphqlTypes.ts",
     "check:prettier": "prettier --check 'src/**/*.tsx' 'src/**/*.ts'",
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.22",
+    "@mdx-js/mdx": "^1.5.1",
+    "@mdx-js/react": "^1.5.1",
     "emotion-theming": "^10.0.19",
     "gatsby": "^2.17.4",
     "gatsby-plugin-emotion": "^4.1.12",
+    "gatsby-plugin-mdx": "^1.0.53",
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-typescript": "^2.1.15",
+    "gatsby-source-filesystem": "^2.1.33",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1"
