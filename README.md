@@ -21,6 +21,7 @@ This project is based on this repository: **[Thesoreon/blog-using-gatsby](https:
 - React.js
 - Gatsby.js
 - Typescript
+- MDX (Markdown enhanced by JSX)
 
 ### Code climate
 
