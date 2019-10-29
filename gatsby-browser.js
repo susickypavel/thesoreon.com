@@ -1,3 +1,5 @@
+import "prismjs/plugins/line-numbers/prism-line-numbers.css"
+
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 
