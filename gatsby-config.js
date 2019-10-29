@@ -22,7 +22,7 @@ module.exports = {
               classPrefix: "language-",
               inlineCodeMarker: null,
               aliases: {
-                react: "javascript",
+                react: "jsx",
               },
               prompt: {
                 global: true,
