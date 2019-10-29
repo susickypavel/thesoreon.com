@@ -26,7 +26,7 @@ const Index: React.FC<Props> = ({ location, data }) => {
 
 export const PageQuery = graphql`
   query BlogPostsList {
-    allMdx {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       totalCount
       edges {
         node {
