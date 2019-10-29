@@ -5,6 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { BlogPostPageQuery } from "~/graphqlTypes"
 
 import Layout from "../Layout"
+import { BlogPostBodyHolder } from "./styles"
 
 interface Props {
   data: BlogPostPageQuery
@@ -27,7 +28,9 @@ const PageTemplate: React.FC<Props> = ({ data: { mdx } }) => {
       }}
     >
       <h1>{title}</h1>
-      <MDXRenderer>{body}</MDXRenderer>
+      <BlogPostBodyHolder>
+        <MDXRenderer>{body}</MDXRenderer>
+      </BlogPostBodyHolder>
     </Layout>
   )
 }

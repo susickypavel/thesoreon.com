@@ -46,7 +46,10 @@ export default css`
     --secondary-fg-color: black;
 
     --links-color: #ef1957;
+    --links-visited-color: blue;
+    --links-focus-color: yellow;
   }
+
   body.dark {
     --primary-bg-color: #343434;
     --primary-fg-color: #99b2cc;
@@ -55,5 +58,7 @@ export default css`
     --secondary-fg-color: white;
 
     --links-color: #ef1957;
+    --links-visited-color: purple;
+    --links-focus-color: yellow;
   }
 `

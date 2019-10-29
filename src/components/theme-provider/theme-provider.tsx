@@ -13,7 +13,11 @@ const ThemeProvider: React.FC = ({ children }) => {
     fg: {
       primary: "var(--primary-fg-color)",
       secondary: "var(--secondary-fg-color)",
-      links: "var(--links-color)",
+    },
+    linksColors: {
+      default: "var(--links-color)",
+      focus: "var(--links-focus-color)",
+      visited: "var(--links-visited-color)",
     },
     transitionTheme: "color, background-color 0.5s ease",
   }
