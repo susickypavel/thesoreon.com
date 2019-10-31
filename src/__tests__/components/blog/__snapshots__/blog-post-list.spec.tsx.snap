@@ -79,7 +79,7 @@ exports[`BlogPostList component should render 1`] = `
 }
 
 .emotion-3:active:active::before {
-  content: '';
+  content: "";
 }
 
 .emotion-3:focus {
@@ -92,7 +92,7 @@ exports[`BlogPostList component should render 1`] = `
 }
 
 .emotion-3:focus::before {
-  content: '▶ ';
+  content: "▶ ";
   vertical-align: text-top;
 }
 
