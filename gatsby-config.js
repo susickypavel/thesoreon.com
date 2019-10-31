@@ -7,6 +7,13 @@ module.exports = {
         path: `${__dirname}/content/blog`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/content/images`,
+      },
+    },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
@@ -38,6 +45,8 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
   ],
   siteMetadata: {
     description: "Personal blog by Pavel Susicky. Writing things about web development.",
