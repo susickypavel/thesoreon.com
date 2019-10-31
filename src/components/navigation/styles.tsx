@@ -1,3 +1,5 @@
+import Img from "gatsby-image"
+
 import styled from "~/utils/styled"
 import { getGoldenRatio } from "~/utils/golden-ratio-calculator"
 import { LAYOUT_MEDIA_QUERY_TABLET, NAVIGATION_PADDING } from "~/css/constants"
@@ -20,4 +22,8 @@ export const NavigationWrapper = styled.div`
     width: 100%;
     height: auto;
   }
+`
+
+export const Avatar = styled(Img)`
+  border-radius: 100%;
 `
