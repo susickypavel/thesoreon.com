@@ -43,3 +43,17 @@ export const SidebarHeader = styled.h1`
     margin-left: 10px;
   }
 `
+
+export const SocialMediaHolder = styled.div`
+  text-align: center;
+`
+
+export const SocialMediaLink = styled.a`
+  margin: 0 3px;
+  color: ${props => props.theme.linksColors.default};
+  &:focus {
+    color: ${props => props.theme.linksColors.focus};
+  }
+
+  outline: none;
+`

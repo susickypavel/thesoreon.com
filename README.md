@@ -22,6 +22,8 @@ This project is based on this repository: **[Thesoreon/blog-using-gatsby](https:
 - Gatsby.js
 - Typescript
 - MDX (Markdown enhanced by JSX)
+- React icons
+  - Using icons from **Font Awesome**
 
 ### Code climate
 

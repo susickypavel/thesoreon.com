@@ -1,9 +1,16 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import {
+  FaTwitter as Twitter,
+  FaDev as DevTo,
+  FaLinkedin as LinkedIn,
+  FaGithub as Github,
+} from "react-icons/fa"
 
 import { NavigationWrapper, Avatar, SidebarHeader } from "./styles"
 import { AvatarPhotoQuery } from "~/graphqlTypes"
 import ThemeToggle from "../theme-provider/theme-toggle"
+import SocialMedia from "./social-media"
 
 const Navigation: React.FC = () => {
   const {
@@ -22,12 +29,36 @@ const Navigation: React.FC = () => {
     }
   `)
 
+  const icons = [
+    {
+      component: Github,
+      url: "https://github.com/Thesoreon",
+      title: "My Github account",
+    },
+    {
+      component: Twitter,
+      url: "https://twitter.com/Thesoreon",
+      title: "My Twitter account",
+    },
+    {
+      component: DevTo,
+      url: "https://dev.to/thesoreon",
+      title: "My Dev.to account",
+    },
+    {
+      component: LinkedIn,
+      url: "https://www.linkedin.com/in/pavel-susicky/",
+      title: "My LinkedIn account",
+    },
+  ]
+
   return (
     <NavigationWrapper>
       <Avatar fixed={fixed as any} />
       <SidebarHeader>
         Paul <ThemeToggle />
       </SidebarHeader>
+      <SocialMedia icons={icons} />
     </NavigationWrapper>
   )
 }
