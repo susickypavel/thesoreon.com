@@ -2,7 +2,7 @@ import React from "react"
 import { IconType } from "react-icons/lib/cjs"
 
 import { createReactIcon } from "~/utils/react-icon"
-import { SocialMediaLink, SocialMediaHolder } from "./styles"
+import { SocialMediaLink, SocialMediaHolder } from "../styles"
 
 interface SocialIcon {
   component: IconType
