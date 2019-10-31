@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "~/components/Layout"
 import BlogPostList from "~/components/blog/blog-post-list"
 import { BlogPostsListQuery } from "~/graphqlTypes"
+import Seo from "~/components/Seo"
 
 interface Props {
   location: Location
@@ -12,15 +12,11 @@ interface Props {
 
 const Index: React.FC<Props> = ({ location, data }) => {
   return (
-    <Layout
-      title="Home"
-      metaData={{
-        pathname: location.pathname,
-      }}
-    >
+    <>
+      <Seo title="Home" customMetadata={{ pathname: location.pathname }} />
       <h1>Blog posts</h1>
       <BlogPostList data={data} />
-    </Layout>
+    </>
   )
 }
 

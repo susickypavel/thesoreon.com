@@ -5,7 +5,7 @@ import { Helmet as Head } from "react-helmet"
 import { SiteMetaDataQuery } from "~/graphqlTypes"
 
 interface Props {
-  title: string
+  title?: string
   customMetadata: CustomMetaData
 }
 
@@ -17,7 +17,7 @@ export interface CustomMetaData {
 }
 
 const Seo: React.FC<Props> = ({
-  title,
+  title = "Blog",
   customMetadata: { pathname, customDescription, image = "default.png", customType = "website" },
 }) => {
   const {

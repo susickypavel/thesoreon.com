@@ -4,8 +4,8 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import { BlogPostPageQuery } from "~/graphqlTypes"
 
-import Layout from "../Layout"
 import { BlogPostBodyHolder } from "./styles"
+import Seo from "../Seo"
 
 interface Props {
   data: BlogPostPageQuery
@@ -19,19 +19,20 @@ const PageTemplate: React.FC<Props> = ({ data: { mdx } }) => {
   } = mdx
 
   return (
-    <Layout
-      title={title}
-      metaData={{
-        pathname: slug,
-        customDescription: description,
-        customType: "article",
-      }}
-    >
+    <>
+      <Seo
+        title={title}
+        customMetadata={{
+          pathname: slug,
+          customDescription: description,
+          customType: "article",
+        }}
+      />
       <h1>{title}</h1>
       <BlogPostBodyHolder>
         <MDXRenderer>{body}</MDXRenderer>
       </BlogPostBodyHolder>
-    </Layout>
+    </>
   )
 }
 
