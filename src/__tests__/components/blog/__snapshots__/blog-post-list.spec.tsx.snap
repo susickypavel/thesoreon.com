@@ -1,9 +1,123 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BlogPostList component should render 1`] = `
+.emotion-2 {
+  display: inline-block;
+  position: fixed;
+  right: 5px;
+  top: 5px;
+  z-index: 2;
+}
+
+.emotion-0 {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  -webkit-clip: rect(1px 1px 1px 1px);
+  clip: rect(1px 1px 1px 1px);
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+}
+
+.emotion-0:checked + label {
+  background: #bada55;
+}
+
+.emotion-0:checked + label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.emotion-0:focus + label:after,
+.emotion-0:active + label:after {
+  box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5);
+}
+
+.emotion-1 {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 65px;
+  height: 37.5px;
+  border-radius: 37.5px;
+  background: grey;
+  display: block;
+  position: relative;
+}
+
+.emotion-1:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 27.5px;
+  height: 27.5px;
+  border-radius: 27.5px;
+  background: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.emotion-4 {
+  margin: 8px 0;
+}
+
+.emotion-3 {
+  color: var(--links-color);
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+  margin: 4px 0;
+  outline: none;
+}
+
+.emotion-3 h2 {
+  display: inline;
+}
+
+.emotion-3:active:active::before {
+  content: '';
+}
+
+.emotion-3:focus {
+  color: var(--links-focus-color);
+}
+
+.emotion-3:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-3:focus::before {
+  content: '▶ ';
+  vertical-align: text-top;
+}
+
 <div>
-  <div>
+  <div
+    class="emotion-2"
+  >
+    <input
+      class="emotion-0"
+      id="theme-toggle"
+      type="checkbox"
+    />
+    <label
+      class="emotion-1"
+      for="theme-toggle"
+      width="75"
+    >
+      Switch between dark and light theme
+    </label>
+  </div>
+  <div
+    class="emotion-4"
+  >
     <a
+      class="emotion-3"
       href="/hello-world"
     >
       <h2>

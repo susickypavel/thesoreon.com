@@ -14,4 +14,5 @@ module.exports = {
     __PATH_PREFIX__: ``,
   },
   setupFiles: ["<rootDir>/test/loadershim.ts"],
+  snapshotSerializers: ["jest-emotion"],
 }
