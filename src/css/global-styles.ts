@@ -45,20 +45,20 @@ export default css`
     --secondary-bg-color: white;
     --secondary-fg-color: black;
 
-    --links-color: #ef1957;
-    --links-visited-color: blue;
-    --links-focus-color: yellow;
+    --links-color: #ca054d;
+    --links-visited-color: #5f0a87;
+    --links-focus-color: #ea7317;
   }
 
   body.dark {
-    --primary-bg-color: #343434;
+    --primary-bg-color: #110b11;
     --primary-fg-color: #99b2cc;
 
-    --secondary-bg-color: #1a232a;
+    --secondary-bg-color: #191d32;
     --secondary-fg-color: white;
 
-    --links-color: #ef1957;
-    --links-visited-color: purple;
+    --links-color: #957fef;
+    --links-visited-color: #698996;
     --links-focus-color: yellow;
   }
 `
