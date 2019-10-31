@@ -7,7 +7,7 @@ import syntaxHighlighting from "~/css/syntax-highlighting"
 
 import Seo, { CustomMetaData } from "./Seo"
 import ContentHolder from "./content-holder"
-import Navigation from "./navigation"
+import Navigation from "./sidebar-panel"
 
 interface Props {
   title?: string
