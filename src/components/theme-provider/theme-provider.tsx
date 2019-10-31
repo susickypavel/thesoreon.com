@@ -2,7 +2,6 @@ import React from "react"
 import { ThemeProvider as EmotionThemeProvider } from "emotion-theming"
 
 import { Theme } from "~/utils/styled"
-import ThemeToggle from "./theme-toggle"
 
 const ThemeProvider: React.FC = ({ children }) => {
   const theme: Theme = {
@@ -22,12 +21,7 @@ const ThemeProvider: React.FC = ({ children }) => {
     transitionTheme: "color, background-color 0.5s ease",
   }
 
-  return (
-    <EmotionThemeProvider theme={theme}>
-      <ThemeToggle />
-      {children}
-    </EmotionThemeProvider>
-  )
+  return <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>
 }
 
 export default ThemeProvider

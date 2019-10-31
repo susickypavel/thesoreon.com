@@ -1,8 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { NavigationWrapper, Avatar } from "./styles"
+import { NavigationWrapper, Avatar, SidebarHeader } from "./styles"
 import { AvatarPhotoQuery } from "~/graphqlTypes"
+import ThemeToggle from "../theme-provider/theme-toggle"
 
 const Navigation: React.FC = () => {
   const {
@@ -24,7 +25,9 @@ const Navigation: React.FC = () => {
   return (
     <NavigationWrapper>
       <Avatar fixed={fixed as any} />
-      <h1>Hello World</h1>
+      <SidebarHeader>
+        Paul <ThemeToggle />
+      </SidebarHeader>
     </NavigationWrapper>
   )
 }

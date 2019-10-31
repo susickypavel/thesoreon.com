@@ -11,10 +11,6 @@ interface Props extends HTMLAttributes<HTMLInputElement> {
 
 const SwitchHolder = styled.div`
   display: inline-block;
-  position: fixed;
-  right: 5px;
-  top: 5px;
-  z-index: 2;
 `
 
 const CheckBox = styled.input`
