@@ -1,7 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import { BlogPostsListQuery } from "~/graphqlTypes"
+import { BlogPostListHolder, BlogPostListLink } from "./styles"
 
 interface Props {
   data: BlogPostsListQuery
@@ -13,13 +13,13 @@ const BlogPostList: React.FC<Props> = ({
   },
 }) => {
   return (
-    <div>
+    <BlogPostListHolder>
       {edges.map(({ node: { frontmatter: { title }, fields: { slug } } }) => (
-        <Link to={slug} key={title}>
+        <BlogPostListLink to={slug} key={title}>
           <h2>{title}</h2>
-        </Link>
+        </BlogPostListLink>
       ))}
-    </div>
+    </BlogPostListHolder>
   )
 }
 
