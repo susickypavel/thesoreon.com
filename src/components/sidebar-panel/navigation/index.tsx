@@ -1,13 +1,10 @@
 import React from "react"
-import { NavigationLink, NavigationWrapper } from "./styles"
-import { Link } from "gatsby"
+import { NavigationWrapper, NavigationLink } from "./styles"
 
 const Navigation: React.FC = () => {
   return (
     <NavigationWrapper>
-      <NavigationLink>
-        <Link to="/">HOME</Link>
-      </NavigationLink>
+      <NavigationLink to="/">HOME</NavigationLink>
     </NavigationWrapper>
   )
 }
