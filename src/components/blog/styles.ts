@@ -36,7 +36,7 @@ export const BlogPostListLink = styled(Link)`
 
   &:active {
     &:active::before {
-      content: '';
+      content: "";
     }
   }
 
@@ -49,7 +49,7 @@ export const BlogPostListLink = styled(Link)`
   }
 
   &:focus::before {
-    content: '▶ ';
+    content: "▶ ";
     vertical-align: text-top;
   }
 
