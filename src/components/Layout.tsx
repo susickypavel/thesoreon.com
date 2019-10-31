@@ -7,7 +7,7 @@ import syntaxHighlighting from "~/css/syntax-highlighting"
 
 import Seo, { CustomMetaData } from "./Seo"
 import ContentHolder from "./content-holder"
-import Navigation from "./sidebar-panel"
+import Sidebar from "./sidebar-panel"
 
 interface Props {
   title?: string
@@ -19,7 +19,7 @@ const Layout: React.FC<Props> = ({ children, title = "Blog", metaData }) => {
     <>
       <Seo title={title} customMetadata={metaData} />
       <Global styles={[syntaxHighlighting, resetStyles, globalStyles]} />
-      <Navigation />
+      <Sidebar />
       <ContentHolder>{children}</ContentHolder>
     </>
   )

@@ -4,7 +4,7 @@ import styled from "~/utils/styled"
 import { getGoldenRatio } from "~/utils/golden-ratio-calculator"
 import { LAYOUT_MEDIA_QUERY_TABLET, NAVIGATION_PADDING } from "~/css/constants"
 
-export const NavigationWrapper = styled.div`
+export const SidebarWrapper = styled.div`
   position: fixed;
   right: 0;
 

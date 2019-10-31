@@ -7,12 +7,13 @@ import {
   FaGithub as Github,
 } from "react-icons/fa"
 
-import { NavigationWrapper, Avatar, SidebarHeader } from "./styles"
+import { SidebarWrapper, Avatar, SidebarHeader } from "./styles"
 import { AvatarPhotoQuery } from "~/graphqlTypes"
 import ThemeToggle from "../theme-provider/theme-toggle"
 import SocialMedia from "./social-media"
+import Navigation from "./navigation"
 
-const Navigation: React.FC = () => {
+const Sidebar: React.FC = () => {
   const {
     file: {
       childImageSharp: { fixed },
@@ -53,14 +54,15 @@ const Navigation: React.FC = () => {
   ]
 
   return (
-    <NavigationWrapper>
+    <SidebarWrapper>
       <Avatar fixed={fixed as any} />
       <SidebarHeader>
         Paul <ThemeToggle />
       </SidebarHeader>
       <SocialMedia icons={icons} />
-    </NavigationWrapper>
+      <Navigation />
+    </SidebarWrapper>
   )
 }
 
-export default Navigation
+export default Sidebar
