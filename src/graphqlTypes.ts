@@ -2228,6 +2228,8 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___gatsbyRemarkPlugins = "pluginCreator___pluginOptions___gatsbyRemarkPlugins",
   pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve = "pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve",
   pluginCreator___pluginOptions___pathToConfigModule = "pluginCreator___pluginOptions___pathToConfigModule",
+  pluginCreator___pluginOptions___color = "pluginCreator___pluginOptions___color",
+  pluginCreator___pluginOptions___showSpinner = "pluginCreator___pluginOptions___showSpinner",
   pluginCreator___pluginOptions___pathCheck = "pluginCreator___pluginOptions___pathCheck",
   pluginCreator___nodeAPIs = "pluginCreator___nodeAPIs",
   pluginCreator___browserAPIs = "pluginCreator___browserAPIs",
@@ -2426,6 +2428,8 @@ export enum SitePluginFieldsEnum {
   pluginOptions___gatsbyRemarkPlugins___options___showLineNumbers = "pluginOptions___gatsbyRemarkPlugins___options___showLineNumbers",
   pluginOptions___gatsbyRemarkPlugins___options___classPrefix = "pluginOptions___gatsbyRemarkPlugins___options___classPrefix",
   pluginOptions___pathToConfigModule = "pluginOptions___pathToConfigModule",
+  pluginOptions___color = "pluginOptions___color",
+  pluginOptions___showSpinner = "pluginOptions___showSpinner",
   pluginOptions___pathCheck = "pluginOptions___pathCheck",
   nodeAPIs = "nodeAPIs",
   browserAPIs = "browserAPIs",
@@ -2554,6 +2558,8 @@ export type SitePluginPluginOptions = {
   extensions?: Maybe<Array<Maybe<Scalars["String"]>>>
   gatsbyRemarkPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsGatsbyRemarkPlugins>>>
   pathToConfigModule?: Maybe<Scalars["String"]>
+  color?: Maybe<Scalars["String"]>
+  showSpinner?: Maybe<Scalars["Boolean"]>
   pathCheck?: Maybe<Scalars["Boolean"]>
 }
 
@@ -2563,6 +2569,8 @@ export type SitePluginPluginOptionsFilterInput = {
   extensions?: Maybe<StringQueryOperatorInput>
   gatsbyRemarkPlugins?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput>
   pathToConfigModule?: Maybe<StringQueryOperatorInput>
+  color?: Maybe<StringQueryOperatorInput>
+  showSpinner?: Maybe<BooleanQueryOperatorInput>
   pathCheck?: Maybe<BooleanQueryOperatorInput>
 }
 
@@ -2793,7 +2801,7 @@ export type BlogPostPageQuery = { __typename?: "Query" } & {
   mdx: Maybe<
     { __typename?: "Mdx" } & Pick<Mdx, "body"> & {
         frontmatter: Maybe<
-          { __typename?: "MdxFrontmatter" } & Pick<MdxFrontmatter, "title" | "description">
+          { __typename?: "MdxFrontmatter" } & Pick<MdxFrontmatter, "title" | "tags" | "description">
         >
         fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
       }
