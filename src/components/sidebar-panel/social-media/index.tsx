@@ -10,7 +10,7 @@ interface SocialIcon {
   title: string
 }
 
-interface Props {
+export interface Props {
   icons: SocialIcon[]
 }
 
