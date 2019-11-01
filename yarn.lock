@@ -6467,6 +6467,14 @@ gatsby-plugin-mdx@^1.0.53:
     unist-util-remove "^1.0.3"
     unist-util-visit "^1.4.1"
 
+gatsby-plugin-nprogress@^2.1.12:
+  version "2.1.12"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-nprogress/-/gatsby-plugin-nprogress-2.1.12.tgz#70e3f8be65fc55ee29772927763dc067b712e8b9"
+  integrity sha512-UNYOQ7HnbUTpC964ElXFsFI50/CLEj9+o0zeZOj5HtbcpAtLZD/kT4R23noazW+L4Q3Q0/gPFT1CHfd8ewlBQA==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+    nprogress "^0.2.0"
+
 gatsby-plugin-page-creator@^2.1.27:
   version "2.1.27"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.1.27.tgz#5df6765c8c35b9ec43f4faed55878fe25b35733e"
@@ -10390,6 +10398,11 @@ npmlog@^4.0.1, npmlog@^4.0.2, npmlog@^4.1.2:
     console-control-strings "~1.1.0"
     gauge "~2.7.3"
     set-blocking "~2.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
 
 nth-check@^1.0.2, nth-check@~1.0.1:
   version "1.0.2"

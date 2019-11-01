@@ -47,6 +47,13 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#f01957`,
+        showSpinner: false,
+      },
+    },
   ],
   siteMetadata: {
     description: "Personal blog by Pavel Susicky. Writing things about web development.",
