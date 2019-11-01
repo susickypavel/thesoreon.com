@@ -1,0 +1,114 @@
+---
+title: React reconciliation
+description: What is react reconciliation
+date: 13-11-2019
+tags:
+  - "react"
+  - "javascript"
+---
+
+# Introduction
+
+React is an amazing library, which is used for creating user interfaces. When it comes to performance of react apps first thing that occur in my mind is Virtual DOM or maybe better a <b>reconciliation</b> process. This concept'll tell us how react updates the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction).
+
+## <b>Reconciliation</b>
+
+> _Reconciliation is the process through which React updates the DOM._
+
+As a developer we are creating tree of components, react then takes this tree, process it and we get a Virtual DOM that it's kept in memory. When there is an update in our application (e.g. change in state or props) react will take the updated Virtual DOM and compares it with the old one Virtual DOM, then decides what and how should be changed. This procedure is repeated all over again.
+
+Also synced versions between Virtual DOM and "real" DOM are served by libraries such as <b>ReactDOM</b>.
+
+React needs to be very fast at comparing those trees, so it uses heuristic algorithm with complexity of O(n), so this says for 1000 nodes we need 1000 comparasions.
+
+> _This approach is used instead of [state of the art algorithms](https://grfia.dlsi.ua.es/ml/algorithms/references/editsurvey_bille.pdf), which have complexity of O(n\^3) => for 1000 nodes we need 1 bilion comparasions._
+
+### However there are two important assumptions for this method:
+
+- _Two elements of different types will produce different trees._ <b>(known as pair-wise diff)</b>
+
+So with this rule, diffing from:
+
+```react
+render() {
+    return(
+        <div>
+            <h1>Hello World!</h1>
+            <p>Welcome.</p>
+        </div>
+    );
+}
+```
+
+To:
+
+```react
+render() {
+    return(
+        <span>
+            <h1>Hello World!</h1>
+            <p>Welcome.</p>
+        </span>
+    );
+}
+```
+
+Would destroy <b>div</b> element with all its children inside and made a new <b>span</b> with h1 and paragraph.
+
+- _The developer can hint at which child elements may be stable across different renders with a key prop._ <b>(known as list-wise diff)</b>
+
+We have all come to this part when using react. This can be seen very often while iterating over an array and we return some kind of JSX as a respond.
+
+```react
+renderFlags() {
+    return ["Private", "Property"].map((flag) => {
+        return <p key={flag}>{flag}</p>;
+    });
+}
+```
+
+The key attribute is very important for react to indicate which of the children in a tree were changed and which stayed unchanged. However there is an important point.
+
+- key attribute shouldn't be filled with index argument (or any inconsistent source), because it causes performance issues.
+
+```react
+renderFlags() {
+    // First render.
+    ["Private", "Property"].map((flag, index) => {
+        return <p key={index}>{flag}</p>;
+    });
+
+    // Second Render
+    ["Public", "Private", "Property"].map((flag, index) => {
+        return <p key={index}>{flag}</p>;
+    });
+
+    /*
+        First render returns:
+        <p key={0}>Private</p>
+        <p key={1}>Property</p>
+
+        Second render returns:
+        <p key={0}>Public</p>
+        <p key={1}>Private</p> ! Key changed from 0 to 1
+        <p key={2}>Property</p> ! Key changed from 1 to 2
+    */
+}
+```
+
+So if we add an element in the beginning of an array it shifts the index for rest of the elements. So react will mutate all of these children.
+
+> I can't really explain this easily, but there is a nice explanation in official [docs](https://reactjs.org/docs/reconciliation.html).
+
+## <b>React fiber</b>
+
+With react 16 new reconciliation engine appeared. It improves performance of react apps and has many of wonderful features, but the concept is a little bit more complex, so if you want to learn about it on your own there is a nice [post](https://github.com/acdlite/react-fiber-architecture) by Andrew Clark.
+
+## Sources
+
+Another good sources to read:
+
+- https://reactjs.org/docs/faq-internals.html
+- https://reactjs.org/docs/reconciliation.html
+- https://hackernoon.com/virtual-dom-in-reactjs-43a3fdb1d130
+- https://css-tricks.com/how-react-reconciliation-works/
