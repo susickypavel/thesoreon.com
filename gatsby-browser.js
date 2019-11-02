@@ -37,3 +37,20 @@ export const wrapRootElement = ({ element }) => {
     </MDXProvider>
   )
 }
+
+console.log(
+  `%c
+ █████╗ ████████╗████████╗███████╗███╗   ██╗████████╗██╗ ██████╗ ███╗   ██╗
+██╔══██╗╚══██╔══╝╚══██╔══╝██╔════╝████╗  ██║╚══██╔══╝██║██╔═══██╗████╗  ██║
+███████║   ██║      ██║   █████╗  ██╔██╗ ██║   ██║   ██║██║   ██║██╔██╗ ██║
+██╔══██║   ██║      ██║   ██╔══╝  ██║╚██╗██║   ██║   ██║██║   ██║██║╚██╗██║
+██║  ██║   ██║      ██║   ███████╗██║ ╚████║   ██║   ██║╚██████╔╝██║ ╚████║
+╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+`,
+  "color:Red"
+)
+console.log("Hi! Source code of my website is Open Sourced.")
+console.log(
+  "%cCheck it out here: https://github.com/Thesoreon/thesoreon.com",
+  "color:Orange; font-weight: bold"
+)
