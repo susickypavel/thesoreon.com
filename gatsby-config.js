@@ -60,6 +60,19 @@ module.exports = {
         trackingId: "UA-130594264-1",
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Pavel Susicky's blog`,
+        short_name: `pavelsusicky`,
+        start_url: `/`,
+        background_color: `#f33b5d`,
+        theme_color: `#f33b5d`,
+        display: `minimal-ui`,
+        icon: `./src/assets/favicon.png`,
+        theme_color_in_head: false,
+      },
+    },
   ],
   siteMetadata: {
     description: "Personal blog by Pavel Susicky. Writing things about web development.",

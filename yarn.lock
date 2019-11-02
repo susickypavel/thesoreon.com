@@ -6433,6 +6433,16 @@ gatsby-plugin-google-analytics@^2.1.23:
   dependencies:
     "@babel/runtime" "^7.6.3"
 
+gatsby-plugin-manifest@^2.2.26:
+  version "2.2.26"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.26.tgz#040a7dc2ab54e64cc97481adfb498e5dc8caade4"
+  integrity sha512-G7QfmmbjJ9QwWu2wjAdrnFR/s3ber03CsXbCERMysv9mgv3WShOvNaZqZ7KEIaGMe1fYdwrZpy/TpJYTYoN9Yw==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+    gatsby-core-utils "^1.0.17"
+    semver "^5.7.1"
+    sharp "^0.23.2"
+
 gatsby-plugin-mdx@^1.0.53:
   version "1.0.53"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.0.53.tgz#a81a273b3489c6734992c7b3ae27195e6369793e"

@@ -69,3 +69,4 @@ gatsby.ts
 gatsby-node.js
 gatsby-browser.js
 gatsby-ssr.js
+gatsby-config.js
