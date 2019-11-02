@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import { BlogPostPageQuery } from "~/graphqlTypes"
 
-import { BlogPostBodyHolder, TagsHolder } from "./styles"
+import { BlogPostBodyHolder, TagsHolder, DateHolder } from "./styles"
 import Seo from "../Seo"
 import Tag from "./tag"
 
@@ -15,7 +15,7 @@ interface Props {
 const PageTemplate: React.FC<Props> = ({ data: { mdx } }) => {
   const {
     body,
-    frontmatter: { title, description, tags },
+    frontmatter: { title, description, tags, date },
     fields: { slug },
   } = mdx
 
@@ -30,6 +30,7 @@ const PageTemplate: React.FC<Props> = ({ data: { mdx } }) => {
         }}
       />
       <h1>{title}</h1>
+      <DateHolder>Published on {new Date(date).toLocaleDateString()}</DateHolder>
       <TagsHolder>
         {tags.map(tag => (
           <Tag tag={tag} key={tag} />
@@ -50,6 +51,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         tags
+        date
         description
       }
       fields {
