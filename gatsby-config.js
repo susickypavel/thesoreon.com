@@ -73,6 +73,12 @@ module.exports = {
         theme_color_in_head: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/blog/*`],
+      },
+    },
   ],
   siteMetadata: {
     description: "Personal blog by Pavel Susicky. Writing things about web development.",
