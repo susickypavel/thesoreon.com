@@ -54,6 +54,12 @@ module.exports = {
         showSpinner: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-130594264-1",
+      },
+    },
   ],
   siteMetadata: {
     description: "Personal blog by Pavel Susicky. Writing things about web development.",
