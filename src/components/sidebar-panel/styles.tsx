@@ -1,4 +1,5 @@
 import Img from "gatsby-image"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import styled from "~/utils/styled"
 import { getGoldenRatio } from "~/utils/golden-ratio-calculator"
@@ -48,7 +49,7 @@ export const SocialMediaHolder = styled.div`
   text-align: center;
 `
 
-export const SocialMediaLink = styled.a`
+export const SocialMediaLink = styled(OutboundLink)`
   margin: 0 3px;
   color: ${props => props.theme.linksColors.default};
   &:focus {

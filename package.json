@@ -29,6 +29,7 @@
     "gatsby": "^2.17.4",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-emotion": "^4.1.12",
+    "gatsby-plugin-google-analytics": "^2.1.23",
     "gatsby-plugin-mdx": "^1.0.53",
     "gatsby-plugin-nprogress": "^2.1.12",
     "gatsby-plugin-react-helmet": "^3.1.13",
