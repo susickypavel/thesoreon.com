@@ -51,14 +51,17 @@ export default css`
   }
 
   body.dark {
-    --primary-bg-color: #110b11;
+    --primary-bg-color: #212121;
     --primary-fg-color: #99b2cc;
 
-    --secondary-bg-color: #191d32;
+    --secondary-bg-color: #303030;
     --secondary-fg-color: white;
 
-    --links-color: #957fef;
+    --links-color: #f33b5d;
     --links-visited-color: #698996;
-    --links-focus-color: yellow;
+    --links-focus-color: #00f0ff;
+  }
+
+  .navigation__link--active {
   }
 `
