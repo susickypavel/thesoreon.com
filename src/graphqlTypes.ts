@@ -2230,6 +2230,7 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___pathToConfigModule = "pluginCreator___pluginOptions___pathToConfigModule",
   pluginCreator___pluginOptions___color = "pluginCreator___pluginOptions___color",
   pluginCreator___pluginOptions___showSpinner = "pluginCreator___pluginOptions___showSpinner",
+  pluginCreator___pluginOptions___trackingId = "pluginCreator___pluginOptions___trackingId",
   pluginCreator___pluginOptions___pathCheck = "pluginCreator___pluginOptions___pathCheck",
   pluginCreator___nodeAPIs = "pluginCreator___nodeAPIs",
   pluginCreator___browserAPIs = "pluginCreator___browserAPIs",
@@ -2430,6 +2431,7 @@ export enum SitePluginFieldsEnum {
   pluginOptions___pathToConfigModule = "pluginOptions___pathToConfigModule",
   pluginOptions___color = "pluginOptions___color",
   pluginOptions___showSpinner = "pluginOptions___showSpinner",
+  pluginOptions___trackingId = "pluginOptions___trackingId",
   pluginOptions___pathCheck = "pluginOptions___pathCheck",
   nodeAPIs = "nodeAPIs",
   browserAPIs = "browserAPIs",
@@ -2560,6 +2562,7 @@ export type SitePluginPluginOptions = {
   pathToConfigModule?: Maybe<Scalars["String"]>
   color?: Maybe<Scalars["String"]>
   showSpinner?: Maybe<Scalars["Boolean"]>
+  trackingId?: Maybe<Scalars["String"]>
   pathCheck?: Maybe<Scalars["Boolean"]>
 }
 
@@ -2571,6 +2574,7 @@ export type SitePluginPluginOptionsFilterInput = {
   pathToConfigModule?: Maybe<StringQueryOperatorInput>
   color?: Maybe<StringQueryOperatorInput>
   showSpinner?: Maybe<BooleanQueryOperatorInput>
+  trackingId?: Maybe<StringQueryOperatorInput>
   pathCheck?: Maybe<BooleanQueryOperatorInput>
 }
 
@@ -2801,7 +2805,10 @@ export type BlogPostPageQuery = { __typename?: "Query" } & {
   mdx: Maybe<
     { __typename?: "Mdx" } & Pick<Mdx, "body"> & {
         frontmatter: Maybe<
-          { __typename?: "MdxFrontmatter" } & Pick<MdxFrontmatter, "title" | "tags" | "description">
+          { __typename?: "MdxFrontmatter" } & Pick<
+            MdxFrontmatter,
+            "title" | "tags" | "date" | "description"
+          >
         >
         fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
       }

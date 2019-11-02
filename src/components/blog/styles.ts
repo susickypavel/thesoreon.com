@@ -75,3 +75,5 @@ export const TagWrapper = styled.div<TagColor>`
 export const TagsHolder = styled.div`
   margin: 16px 0;
 `
+
+export const DateHolder = styled.p``
