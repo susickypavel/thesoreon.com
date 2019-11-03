@@ -2231,6 +2231,14 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___color = "pluginCreator___pluginOptions___color",
   pluginCreator___pluginOptions___showSpinner = "pluginCreator___pluginOptions___showSpinner",
   pluginCreator___pluginOptions___trackingId = "pluginCreator___pluginOptions___trackingId",
+  pluginCreator___pluginOptions___short_name = "pluginCreator___pluginOptions___short_name",
+  pluginCreator___pluginOptions___start_url = "pluginCreator___pluginOptions___start_url",
+  pluginCreator___pluginOptions___background_color = "pluginCreator___pluginOptions___background_color",
+  pluginCreator___pluginOptions___theme_color = "pluginCreator___pluginOptions___theme_color",
+  pluginCreator___pluginOptions___display = "pluginCreator___pluginOptions___display",
+  pluginCreator___pluginOptions___icon = "pluginCreator___pluginOptions___icon",
+  pluginCreator___pluginOptions___theme_color_in_head = "pluginCreator___pluginOptions___theme_color_in_head",
+  pluginCreator___pluginOptions___precachePages = "pluginCreator___pluginOptions___precachePages",
   pluginCreator___pluginOptions___pathCheck = "pluginCreator___pluginOptions___pathCheck",
   pluginCreator___nodeAPIs = "pluginCreator___nodeAPIs",
   pluginCreator___browserAPIs = "pluginCreator___browserAPIs",
@@ -2432,6 +2440,14 @@ export enum SitePluginFieldsEnum {
   pluginOptions___color = "pluginOptions___color",
   pluginOptions___showSpinner = "pluginOptions___showSpinner",
   pluginOptions___trackingId = "pluginOptions___trackingId",
+  pluginOptions___short_name = "pluginOptions___short_name",
+  pluginOptions___start_url = "pluginOptions___start_url",
+  pluginOptions___background_color = "pluginOptions___background_color",
+  pluginOptions___theme_color = "pluginOptions___theme_color",
+  pluginOptions___display = "pluginOptions___display",
+  pluginOptions___icon = "pluginOptions___icon",
+  pluginOptions___theme_color_in_head = "pluginOptions___theme_color_in_head",
+  pluginOptions___precachePages = "pluginOptions___precachePages",
   pluginOptions___pathCheck = "pluginOptions___pathCheck",
   nodeAPIs = "nodeAPIs",
   browserAPIs = "browserAPIs",
@@ -2563,6 +2579,14 @@ export type SitePluginPluginOptions = {
   color?: Maybe<Scalars["String"]>
   showSpinner?: Maybe<Scalars["Boolean"]>
   trackingId?: Maybe<Scalars["String"]>
+  short_name?: Maybe<Scalars["String"]>
+  start_url?: Maybe<Scalars["String"]>
+  background_color?: Maybe<Scalars["String"]>
+  theme_color?: Maybe<Scalars["String"]>
+  display?: Maybe<Scalars["String"]>
+  icon?: Maybe<Scalars["String"]>
+  theme_color_in_head?: Maybe<Scalars["Boolean"]>
+  precachePages?: Maybe<Array<Maybe<Scalars["String"]>>>
   pathCheck?: Maybe<Scalars["Boolean"]>
 }
 
@@ -2575,6 +2599,14 @@ export type SitePluginPluginOptionsFilterInput = {
   color?: Maybe<StringQueryOperatorInput>
   showSpinner?: Maybe<BooleanQueryOperatorInput>
   trackingId?: Maybe<StringQueryOperatorInput>
+  short_name?: Maybe<StringQueryOperatorInput>
+  start_url?: Maybe<StringQueryOperatorInput>
+  background_color?: Maybe<StringQueryOperatorInput>
+  theme_color?: Maybe<StringQueryOperatorInput>
+  display?: Maybe<StringQueryOperatorInput>
+  icon?: Maybe<StringQueryOperatorInput>
+  theme_color_in_head?: Maybe<BooleanQueryOperatorInput>
+  precachePages?: Maybe<StringQueryOperatorInput>
   pathCheck?: Maybe<BooleanQueryOperatorInput>
 }
 
@@ -2832,14 +2864,16 @@ export type AvatarPhotoQuery = { __typename?: "Query" } & {
 export type BlogPostsListQueryVariables = {}
 
 export type BlogPostsListQuery = { __typename?: "Query" } & {
-  allMdx: { __typename?: "MdxConnection" } & Pick<MdxConnection, "totalCount"> & {
-      edges: Array<
-        { __typename?: "MdxEdge" } & {
-          node: { __typename?: "Mdx" } & {
-            frontmatter: Maybe<{ __typename?: "MdxFrontmatter" } & Pick<MdxFrontmatter, "title">>
+  allMdx: { __typename?: "MdxConnection" } & {
+    edges: Array<
+      { __typename?: "MdxEdge" } & {
+        node: { __typename?: "Mdx" } & Pick<Mdx, "timeToRead"> & {
+            frontmatter: Maybe<
+              { __typename?: "MdxFrontmatter" } & Pick<MdxFrontmatter, "title" | "tags" | "date">
+            >
             fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
           }
-        }
-      >
-    }
+      }
+    >
+  }
 }

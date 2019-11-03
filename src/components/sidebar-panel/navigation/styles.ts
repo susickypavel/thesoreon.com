@@ -6,6 +6,8 @@ export const NavigationWrapper = styled.nav`
 `
 
 export const NavigationLink = styled(BlogPostListLink)`
+  color: ${props => props.theme.fg.defaultColor};
+  border: none;
   text-align: center;
   font-weight: bold;
 

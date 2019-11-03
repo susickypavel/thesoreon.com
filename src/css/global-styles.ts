@@ -48,6 +48,8 @@ export default css`
     --links-color: #ca054d;
     --links-visited-color: #5f0a87;
     --links-focus-color: #ea7317;
+
+    --default-color: black;
   }
 
   body.dark {
@@ -60,8 +62,13 @@ export default css`
     --links-color: #f33b5d;
     --links-visited-color: #698996;
     --links-focus-color: #00f0ff;
+
+    --default-color: white;
   }
 
   .navigation__link--active {
+    &:before {
+      content: "▶ ";
+    }
   }
 `
