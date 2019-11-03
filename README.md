@@ -14,7 +14,36 @@
 
 This project is based on this repository: **[Thesoreon/blog-using-gatsby](https://github.com/Thesoreon/blog-using-gatsby)**.
 
-## Technologies used
+## How to run this repo
+
+**1. Clone this repository**
+
+```sh
+git clone https://github.com/Thesoreon/thesoreon.com.git
+cd thesoreon.com
+```
+
+**2. Install dependencies**
+
+```sh
+yarn install
+```
+
+**3. Start development server**
+
+```sh
+yarn start
+# or
+yarn start:network
+```
+
+**4. Run tests**
+
+```sh
+yarn test:watch
+```
+
+## Technology stack
 
 ### Application
 
