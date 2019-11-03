@@ -24,10 +24,17 @@ export const BlogPostListHolder = styled.div`
 `
 
 export const BlogPostListLink = styled(Link)`
+  background-color: ${props => props.theme.bg.primary};
+
   color: ${props => props.theme.linksColors.default};
   display: inline-block;
   text-decoration: none;
   width: 100%;
+
+  border: 3px solid ${props => props.theme.bg.secondary};
+  border-radius: 8px;
+
+  padding: 16px;
 
   margin: ${BLOGPOSTLISTLINK_MARGIN};
 
@@ -35,25 +42,13 @@ export const BlogPostListLink = styled(Link)`
     display: inline;
   }
 
-  &:active {
-    &:active::before {
-      content: "";
-    }
-  }
-
-  &:focus {
-    color: ${props => props.theme.linksColors.focus};
-  }
-
+  &:focus,
   &:hover {
-    text-decoration: underline;
+    border-color: ${props => props.theme.linksColors.focus};
+    transition: border-color 0.2s linear;
   }
 
-  &:focus::before {
-    content: "▶ ";
-    vertical-align: text-top;
-  }
-
+  transition: ${props => props.theme.transitionTheme};
   outline: none;
 `
 
@@ -77,3 +72,9 @@ export const TagsHolder = styled.div`
 `
 
 export const DateHolder = styled.p``
+
+export const PublishDate = styled.p`
+  margin: 16px 0;
+  color: ${props => props.theme.fg.defaultColor};
+  transition: ${props => props.theme.transitionTheme};
+`

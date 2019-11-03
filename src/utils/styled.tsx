@@ -8,6 +8,7 @@ export type Theme = {
   fg: {
     primary: string
     secondary: string
+    defaultColor: string
   }
   linksColors: {
     focus: string

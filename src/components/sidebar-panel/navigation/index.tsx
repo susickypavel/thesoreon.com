@@ -4,7 +4,9 @@ import { NavigationWrapper, NavigationLink } from "./styles"
 const Navigation: React.FC = () => {
   return (
     <NavigationWrapper>
-      <NavigationLink to="/">HOME</NavigationLink>
+      <NavigationLink to="/" activeClassName="navigation__link--active">
+        HOME
+      </NavigationLink>
     </NavigationWrapper>
   )
 }

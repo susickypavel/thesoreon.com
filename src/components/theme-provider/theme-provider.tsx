@@ -12,6 +12,7 @@ const ThemeProvider: React.FC = ({ children }) => {
     fg: {
       primary: "var(--primary-fg-color)",
       secondary: "var(--secondary-fg-color)",
+      defaultColor: "var(--default-color)",
     },
     linksColors: {
       default: "var(--links-color)",
