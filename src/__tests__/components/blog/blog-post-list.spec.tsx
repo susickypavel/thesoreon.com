@@ -11,7 +11,6 @@ describe("BlogPostList component", () => {
         <BlogPostList
           data={{
             allMdx: {
-              totalCount: 1,
               edges: [
                 {
                   node: {
@@ -20,6 +19,8 @@ describe("BlogPostList component", () => {
                     },
                     frontmatter: {
                       title: "Hello World!",
+                      tags: ["test", "test2"],
+                      date: "11-13-2000",
                     },
                   },
                 },
