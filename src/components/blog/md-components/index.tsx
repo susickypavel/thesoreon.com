@@ -3,6 +3,32 @@ import styled from "~/utils/styled"
 
 // TODO: Extract properties values to constants
 
+interface Props {
+  listType: "ul" | "ol"
+}
+
+export const List: React.FC<Props> = ({ listType, children }) => {
+  const ListElement = styled(listType)`
+    list-style-type: ${listType === "ul" ? "disc" : "decimal"};
+    padding-left: 24px;
+    margin: 8px 0;
+
+    & li {
+      margin: 4px 0;
+
+      & a {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: inline-block;
+      }
+    }
+  `
+
+  return <ListElement>{children}</ListElement>
+}
+
 export const Paragraph = styled.p`
   line-height: 1.5;
 `
@@ -17,26 +43,6 @@ export const Heading: React.FC<{
 
   return <HeadingComponent>{children}</HeadingComponent>
 }
-
-export const UnorderedList = styled.ul`
-  list-style-type: disc;
-  padding-left: 24px;
-  margin: 8px 0;
-
-  & li {
-    margin: 4px 0;
-  }
-`
-
-export const OrderedList = styled.ol`
-  list-style-type: decimal;
-  padding-left: 24px;
-  margin: 8px 0;
-
-  & li {
-    margin: 4px 0;
-  }
-`
 
 export const Blockquote = styled.blockquote`
   background-color: ${props => props.theme.bg.primary};

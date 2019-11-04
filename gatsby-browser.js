@@ -4,13 +4,7 @@ import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 
 import ThemeProvider from "./src/components/theme-provider/theme-provider"
-import {
-  Heading,
-  Paragraph,
-  Blockquote,
-  OrderedList,
-  UnorderedList,
-} from "./src/components/blog/md-components/index"
+import { Heading, Paragraph, Blockquote, List } from "./src/components/blog/md-components/index"
 import Layout from "./src/components/Layout"
 
 export const wrapPageElement = ({ element, props }) => {
@@ -29,8 +23,8 @@ export const wrapRootElement = ({ element }) => {
         h6: props => <Heading {...props} heading="h6" />,
         p: props => <Paragraph {...props} />,
         blockquote: props => <Blockquote {...props} />,
-        ol: props => <OrderedList {...props} />,
-        ul: props => <UnorderedList {...props} />,
+        ol: props => <List listType="ol" {...props} />,
+        ul: props => <List listType="ul" {...props} />,
       }}
     >
       <ThemeProvider>{element}</ThemeProvider>
