@@ -4,7 +4,7 @@ import { BlogPostsListQuery } from "~/graphqlTypes"
 import { BlogPostListHolder, BlogPostListLink, PublishDate } from "./styles"
 import Tag from "./tag"
 
-interface Props {
+export interface Props {
   data: BlogPostsListQuery
 }
 
