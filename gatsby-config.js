@@ -75,9 +75,6 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-offline`,
-      options: {
-        precachePages: [`/blog/*`],
-      },
     },
   ],
   siteMetadata: {
