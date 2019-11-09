@@ -31,7 +31,7 @@ export const BlogPostListLink = styled(Link)`
   text-decoration: none;
   width: 100%;
 
-  border: 3px solid ${props => props.theme.bg.secondary};
+  border: 3px solid black;
   border-radius: 8px;
 
   padding: 16px;
@@ -77,4 +77,11 @@ export const PublishDate = styled.p`
   margin: 16px 0;
   color: ${props => props.theme.fg.defaultColor};
   transition: ${props => props.theme.transitionTheme};
+
+  line-height: 1.25;
+
+  & span {
+    display: inline-block;
+    white-space: nowrap;
+  }
 `

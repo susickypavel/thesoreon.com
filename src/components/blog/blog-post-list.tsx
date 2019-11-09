@@ -1,8 +1,8 @@
 import React from "react"
 
 import { BlogPostsListQuery } from "~/graphqlTypes"
-import { BlogPostListHolder, BlogPostListLink, PublishDate } from "./styles"
-import Tag from "./tag"
+import { BlogPostListHolder } from "./styles"
+import BlogPostListItem from "./blog-post-list-item"
 
 export interface Props {
   data: BlogPostsListQuery
@@ -15,27 +15,9 @@ const BlogPostList: React.FC<Props> = ({
 }) => {
   return (
     <BlogPostListHolder>
-      {edges.map(
-        ({
-          node: {
-            frontmatter: { title, date, tags },
-            fields: { slug },
-            timeToRead,
-          },
-        }) => (
-          <BlogPostListLink to={slug} key={title}>
-            <h2>{title}</h2>
-            <PublishDate>
-              Published on {new Date(date).toLocaleDateString()} - {timeToRead} min read
-            </PublishDate>
-            <div>
-              {tags.map(tag => (
-                <Tag tag={tag} key={tag} />
-              ))}
-            </div>
-          </BlogPostListLink>
-        )
-      )}
+      {edges.map(edge => (
+        <BlogPostListItem edge={edge} key={edge.node.frontmatter.title} />
+      ))}
     </BlogPostListHolder>
   )
 }

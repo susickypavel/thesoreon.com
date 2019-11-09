@@ -39,12 +39,6 @@ describe("BlogPostList component", () => {
     )
   }
 
-  it("should render", () => {
-    const { container } = renderComponent()
-
-    expect(container).toMatchSnapshot()
-  })
-
   it("should render tags", () => {
     const { getByText } = renderComponent({
       data: {
