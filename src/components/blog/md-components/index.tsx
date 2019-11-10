@@ -58,3 +58,7 @@ export const Blockquote = styled.blockquote`
   border-left: 4px solid blue;
   font-style: italic;
 `
+
+export const Image = styled.img`
+  box-shadow: 0px 0px 4px black !important;
+`
