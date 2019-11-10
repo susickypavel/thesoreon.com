@@ -4,7 +4,13 @@ import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 
 import ThemeProvider from "./src/components/theme-provider/theme-provider"
-import { Heading, Paragraph, Blockquote, List } from "./src/components/blog/md-components/index"
+import {
+  Heading,
+  Paragraph,
+  Blockquote,
+  List,
+  Image,
+} from "./src/components/blog/md-components/index"
 import Layout from "./src/components/Layout"
 
 export const wrapPageElement = ({ element, props }) => {
@@ -25,6 +31,7 @@ export const wrapRootElement = ({ element }) => {
         blockquote: props => <Blockquote {...props} />,
         ol: props => <List listType="ol" {...props} />,
         ul: props => <List listType="ul" {...props} />,
+        img: props => <Image {...props} />,
       }}
     >
       <ThemeProvider>{element}</ThemeProvider>
