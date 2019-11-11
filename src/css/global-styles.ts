@@ -67,8 +67,5 @@ export default css`
   }
 
   .navigation__link--active {
-    &:before {
-      content: "▶ ";
-    }
   }
 `
