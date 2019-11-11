@@ -12,6 +12,7 @@ import { AvatarPhotoQuery } from "~/graphqlTypes"
 import ThemeToggle from "../theme-provider/theme-toggle"
 import SocialMedia from "./social-media"
 import Navigation from "./navigation"
+import ScrollIcon from "./scroll-icon"
 
 const Sidebar: React.FC = () => {
   const {
@@ -61,6 +62,7 @@ const Sidebar: React.FC = () => {
       </SidebarHeader>
       <SocialMedia icons={icons} />
       <Navigation />
+      <ScrollIcon />
     </SidebarWrapper>
   )
 }

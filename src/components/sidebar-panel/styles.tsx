@@ -21,7 +21,7 @@ export const SidebarWrapper = styled.div`
   @media (max-width: ${LAYOUT_MEDIA_QUERY_TABLET}) {
     position: static;
     width: 100%;
-    height: auto;
+    height: 100vh;
   }
 `
 
