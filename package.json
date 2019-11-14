@@ -51,6 +51,8 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "@graphql-codegen/cli": "^1.8.2",
     "@graphql-codegen/typescript": "1.8.2",
     "@graphql-codegen/typescript-operations": "1.8.2",
