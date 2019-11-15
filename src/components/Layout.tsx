@@ -7,6 +7,7 @@ import syntaxHighlighting from "~/css/syntax-highlighting"
 
 import ContentHolder from "./content-holder"
 import Sidebar from "./sidebar-panel"
+import ScrollButton from "./scroll-button"
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -14,6 +15,7 @@ const Layout: React.FC = ({ children }) => {
       <Global styles={[syntaxHighlighting, resetStyles, globalStyles]} />
       <Sidebar />
       <ContentHolder>{children}</ContentHolder>
+      <ScrollButton />
     </>
   )
 }

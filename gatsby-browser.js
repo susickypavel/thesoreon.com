@@ -55,3 +55,11 @@ console.log(
   "%cCheck it out here: https://github.com/Thesoreon/thesoreon.com",
   "color:Orange; font-weight: bold"
 )
+
+export const shouldUpdateScroll = ({ routerProps: { location } }) => {
+  if (location.pathname === "/") {
+    window.scrollTo(0, window.innerHeight)
+  }
+
+  return false
+}
