@@ -50,6 +50,8 @@ export default css`
       margin: 0.5em 0;
       padding: 1em;
       overflow: auto;
+
+      box-shadow: 0px 0px 4px darkgray;
     }
 
     .gatsby-highlight-code-line {
@@ -179,6 +181,8 @@ export default css`
       margin: 0.5em 0;
       padding: 1em;
       overflow: auto;
+
+      box-shadow: 0px 0px 4px black;
     }
 
     .gatsby-highlight-code-line {
