@@ -58,7 +58,7 @@ const Sidebar: React.FC = () => {
     <SidebarWrapper>
       <Avatar fixed={fixed as any} />
       <SidebarHeader>
-        Paul <ThemeToggle />
+        Paul Sušický <ThemeToggle />
       </SidebarHeader>
       <SocialMedia icons={icons} />
       <Navigation />

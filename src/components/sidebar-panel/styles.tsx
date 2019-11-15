@@ -32,7 +32,7 @@ export const Avatar = styled(Img)`
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
 `
 
-export const SidebarHeader = styled.h1`
+export const SidebarHeader = styled.h3`
   text-align: center;
   margin: 16px 0;
 
