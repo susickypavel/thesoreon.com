@@ -1,6 +1,6 @@
 import { keyframes } from "@emotion/core"
 
-import styled from "@emotion/styled"
+import styled from "~/utils/styled"
 import { LAYOUT_MEDIA_QUERY_TABLET } from "~/css/constants"
 
 export const ScrollHolder = styled.div`
@@ -19,7 +19,7 @@ export const ScrollHolder = styled.div`
 export const ScrollMouse = styled.div`
   width: 100%;
   height: 100%;
-  border: 2px solid #fff;
+  border: 2px solid ${props => props.theme.fg.defaultColor};
   border-radius: 25px;
   opacity: 0.75;
 `
@@ -42,7 +42,7 @@ export const ScrollScroller = styled.div`
   width: 3px;
   height: 10px;
   border-radius: 25%;
-  background-color: #fff;
+  background-color: ${props => props.theme.fg.defaultColor};
   margin: 0 auto;
   margin-top: 10px;
 
