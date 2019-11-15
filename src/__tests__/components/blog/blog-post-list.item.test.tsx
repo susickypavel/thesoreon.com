@@ -74,7 +74,7 @@ describe("Blog Post List Item", () => {
     })
 
     return findAllByText(/tag[0-9]/i).then(values => {
-      expect(values.length).toBe(2)
+      expect(values).toHaveLength(2)
     })
   })
 })

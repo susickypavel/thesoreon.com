@@ -14,11 +14,11 @@
     "gatsby:clean": "gatsby clean",
     "test": "jest --rootDir --config test/jest.config.js",
     "test:watch": "jest --watch --rootDir --config test/jest.config.js",
-    "test:lint": "eslint --ignore-path .eslintignore .",
+    "test:lint": "eslint --ignore-path .eslintignore --ext ts,tsx,js,jsx .",
     "test:tsc": "tsc",
     "typegen": "graphql-codegen --config codegen.yml && eslint --fix --no-ignore src/graphqlTypes.ts",
     "check:prettier": "prettier --check 'src/**/*.tsx' 'src/**/*.ts'",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix --ignore-path .eslintignore --ext ts,tsx,js,jsx ."
   },
   "dependencies": {
     "@emotion/core": "^10.0.22",
@@ -67,6 +67,7 @@
     "babel-preset-gatsby": "^0.2.20",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-jest": "^23.0.4",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "jest": "^24.9.0",

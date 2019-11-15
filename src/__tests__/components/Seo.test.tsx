@@ -36,14 +36,14 @@ describe("Seo", () => {
     throw Error(`CUSTOM Error message: Couldn't find meta tag '${meta}'`)
   }
 
-  test("should have html attribute lang equal to 'en'", () => {
+  it("should have html attribute lang equal to 'en'", () => {
     render(<Seo title="Test" customMetadata={{ pathname: "/" }} />)
 
     const { htmlAttributes }: any = Helmet.peek()
     expect(htmlAttributes.lang).toEqual("en")
   })
 
-  test("should have contained 'Test' in a title and title metaTags", () => {
+  it("should have contained 'Test' in a title and title metaTags", () => {
     render(<Seo title="Test" customMetadata={{ pathname: "/" }} />)
 
     const { title } = Helmet.peek()
@@ -53,7 +53,7 @@ describe("Seo", () => {
     expect(getMetaTag("og:title").content).toContain("Test")
   })
 
-  test("should contain meta tag 'description' with value from mocked query", () => {
+  it("should contain meta tag 'description' with value from mocked query", () => {
     render(<Seo title="Test" customMetadata={{ pathname: "/" }} />)
 
     expect(getMetaTag("description").content).toBe("Testing description")
@@ -61,38 +61,38 @@ describe("Seo", () => {
     expect(getMetaTag("twitter:description").content).toBe("Testing description")
   })
 
-  test("should contain meta tag 'og:url'", () => {
+  it("should contain meta tag 'og:url'", () => {
     render(<Seo title="Test" customMetadata={{ pathname: "/about" }} />)
 
     expect(getMetaTag("og:url").content).toBe("https://thesoreon.com/about")
   })
 
-  test("should contain meta tag 'og:type' with default value of 'website'", () => {
+  it("should contain meta tag 'og:type' with default value of 'website'", () => {
     render(<Seo title="Test" customMetadata={{ pathname: "/about" }} />)
 
     expect(getMetaTag("og:type").content).toBe("website")
   })
 
-  test("should contain meta tag 'og:type' with set value of 'article'", () => {
+  it("should contain meta tag 'og:type' with set value of 'article'", () => {
     render(<Seo title="Test" customMetadata={{ pathname: "/", customType: "article" }} />)
 
     expect(getMetaTag("og:type").content).toBe("article")
   })
 
-  test("should contain meta tag 'twitter:author' with value from query", () => {
+  it("should contain meta tag 'twitter:author' with value from query", () => {
     render(<Seo title="Test" customMetadata={{ pathname: "/" }} />)
 
     expect(getMetaTag("twitter:creator").content).toBe("@random")
   })
 
-  test("should contain meta tag 'og:image' with default value", () => {
+  it("should contain meta tag 'og:image' with default value", () => {
     render(<Seo title="Test" customMetadata={{ pathname: "/" }} />)
 
     expect(getMetaTag("og:image").content).toBe("https://thesoreon.com/default.png")
     expect(getMetaTag("twitter:image").content).toBe("https://thesoreon.com/default.png")
   })
 
-  test("should contain meta tag 'og:image' with custom value", () => {
+  it("should contain meta tag 'og:image' with custom value", () => {
     render(<Seo title="Test" customMetadata={{ pathname: "/", image: "custom.png" }} />)
 
     expect(getMetaTag("og:image").content).toBe("https://thesoreon.com/custom.png")
