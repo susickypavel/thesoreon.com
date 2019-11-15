@@ -4,7 +4,7 @@ import { render } from "@testing-library/react"
 import Switch from "~/components/Switch"
 
 describe("Switch", () => {
-  test("should render", () => {
+  it("should render", () => {
     const { getByLabelText } = render(
       <Switch id="test" label="Insert username" handleCheck={true} />
     )
@@ -14,7 +14,7 @@ describe("Switch", () => {
     expect(checkbox).toBeDefined()
   })
 
-  test("should be checked by default", () => {
+  it("should be checked by default", () => {
     const { getByLabelText } = render(
       <Switch id="test" label="Insert username" handleCheck={true} />
     )
