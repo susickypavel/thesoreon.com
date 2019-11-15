@@ -49,7 +49,7 @@ describe("Blog Post List Item", () => {
       date: "09-11-2019",
     })
 
-    expect(container.textContent).toContain("9/11/2019")
+    expect(container.textContent).toContain("2019")
   })
 
   it("should render estimated time to read the post", () => {
