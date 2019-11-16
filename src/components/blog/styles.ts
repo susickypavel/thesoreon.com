@@ -85,3 +85,7 @@ export const PublishDate = styled.p`
     white-space: nowrap;
   }
 `
+
+export const PostPageTemplateHeader = styled.h1`
+  margin-bottom: 16px;
+`
