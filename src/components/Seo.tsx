@@ -36,7 +36,7 @@ const Seo: React.FC<Props> = ({
     }
   `)
 
-  const composedTitle = `${title} | Pavel Susicky`
+  const composedTitle = `${title} | Pavel Sušický`
 
   useEffect(() => {
     setActiveTheme(window.__theme)
