@@ -6,18 +6,31 @@ import { ScrollButtonWrapper } from "./styles"
 import { LAYOUT_MEDIA_QUERY_TABLET_NUMBER } from "~/css/constants"
 
 const OFFSET = 1
+const TRANSPARENCY_ACTIVATION_OFFSET = 150
 
 const ScrollButton: React.FC = () => {
   const [visible, setVisible] = useState(false)
+  const [transparent, setTransparency] = useState(false)
 
   const handleScroll = () => {
+    const scrollPosition = window.scrollY || window.pageYOffset
+
     const isLargeScreen = window.innerWidth > LAYOUT_MEDIA_QUERY_TABLET_NUMBER
-    const isNotScrolled = (window.scrollY || window.pageYOffset) < window.innerHeight - OFFSET
+    const isNotScrolled = scrollPosition < window.innerHeight - OFFSET
 
     if (isLargeScreen || isNotScrolled) {
       setVisible(false)
     } else {
       setVisible(true)
+
+      if (
+        scrollPosition >=
+        document.body.scrollHeight - window.innerHeight - TRANSPARENCY_ACTIVATION_OFFSET
+      ) {
+        setTransparency(true)
+      } else {
+        setTransparency(false)
+      }
     }
   }
 
@@ -46,6 +59,7 @@ const ScrollButton: React.FC = () => {
       aria-hidden={!visible}
       onClick={handleClick}
       visible={visible}
+      transparent={transparent}
     >
       <FaArrowUp size={15} />
     </ScrollButtonWrapper>

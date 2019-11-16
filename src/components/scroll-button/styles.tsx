@@ -2,7 +2,7 @@ import styled from "~/utils/styled"
 
 import { LAYOUT_MEDIA_QUERY_TABLET } from "~/css/constants"
 
-export const ScrollButtonWrapper = styled.button<{ visible: boolean }>`
+export const ScrollButtonWrapper = styled.button<{ visible: boolean; transparent: boolean }>`
   display: none;
 
   position: fixed;
@@ -14,7 +14,6 @@ export const ScrollButtonWrapper = styled.button<{ visible: boolean }>`
   padding: 0;
 
   border-radius: 100%;
-  border: 1.5px solid black;
 
   outline: none;
 
@@ -28,7 +27,7 @@ export const ScrollButtonWrapper = styled.button<{ visible: boolean }>`
 
   @media (max-width: ${LAYOUT_MEDIA_QUERY_TABLET}) {
     display: block;
-
+    opacity: ${props => (props.transparent ? 0.5 : 1)};
     transform: ${props => (props.visible ? "translateX(0px)" : "translateX(80px)")};
   }
 
