@@ -47,7 +47,7 @@ const Seo: React.FC<Props> = ({
 
   return (
     <>
-      <Head defer={false} titleTemplate="%s | Pavel Susicky" htmlAttributes={{ lang: "en" }}>
+      <Head defer={false} titleTemplate="%s | Pavel Sušický" htmlAttributes={{ lang: "en" }}>
         <title>{title}</title>
         <meta name="description" content={customDescription || description} />
 
