@@ -57,9 +57,9 @@ console.log(
 )
 
 export const shouldUpdateScroll = ({ routerProps: { location } }) => {
-  if (location.pathname === "/") {
-    window.scrollTo(0, window.innerHeight)
-  }
+  document.getElementById("content-holder").scrollIntoView({
+    behavior: "smooth",
+  })
 
   return false
 }
