@@ -14,7 +14,7 @@ export const List: React.FC<Props> = ({ listType, children }) => {
     margin: 8px 0;
 
     & li {
-      margin: 4px 0;
+      line-height: 1.5;
 
       & a {
         width: 100%;
@@ -38,7 +38,7 @@ export const Heading: React.FC<{
   fontSize: number
 }> = ({ heading, children }) => {
   const HeadingComponent = styled(heading)`
-    margin: 16px 0;
+    margin: 32px 0;
   `
 
   return <HeadingComponent>{children}</HeadingComponent>

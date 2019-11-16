@@ -68,9 +68,8 @@ export default css`
     pre[class*="language-"] {
       color: #657b83;
       font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-      font-size: 1em;
       text-align: left;
-      white-space: pre;
+      /* white-space: pre; */
       word-spacing: normal;
       word-break: normal;
       word-wrap: normal;
@@ -195,9 +194,8 @@ export default css`
       color: #ccc;
       background: none;
       font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-      font-size: 1em;
       text-align: left;
-      white-space: pre;
+      /* white-space: pre; */
       word-spacing: normal;
       word-break: normal;
       word-wrap: normal;
