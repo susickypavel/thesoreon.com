@@ -679,6 +679,42 @@ export enum FileFieldsEnum {
   childMdx___frontmatter___description = "childMdx___frontmatter___description",
   childMdx___frontmatter___date = "childMdx___frontmatter___date",
   childMdx___frontmatter___tags = "childMdx___frontmatter___tags",
+  childMdx___frontmatter___thumbnail___birthtime = "childMdx___frontmatter___thumbnail___birthtime",
+  childMdx___frontmatter___thumbnail___birthtimeMs = "childMdx___frontmatter___thumbnail___birthtimeMs",
+  childMdx___frontmatter___thumbnail___sourceInstanceName = "childMdx___frontmatter___thumbnail___sourceInstanceName",
+  childMdx___frontmatter___thumbnail___absolutePath = "childMdx___frontmatter___thumbnail___absolutePath",
+  childMdx___frontmatter___thumbnail___relativePath = "childMdx___frontmatter___thumbnail___relativePath",
+  childMdx___frontmatter___thumbnail___extension = "childMdx___frontmatter___thumbnail___extension",
+  childMdx___frontmatter___thumbnail___size = "childMdx___frontmatter___thumbnail___size",
+  childMdx___frontmatter___thumbnail___prettySize = "childMdx___frontmatter___thumbnail___prettySize",
+  childMdx___frontmatter___thumbnail___modifiedTime = "childMdx___frontmatter___thumbnail___modifiedTime",
+  childMdx___frontmatter___thumbnail___accessTime = "childMdx___frontmatter___thumbnail___accessTime",
+  childMdx___frontmatter___thumbnail___changeTime = "childMdx___frontmatter___thumbnail___changeTime",
+  childMdx___frontmatter___thumbnail___birthTime = "childMdx___frontmatter___thumbnail___birthTime",
+  childMdx___frontmatter___thumbnail___root = "childMdx___frontmatter___thumbnail___root",
+  childMdx___frontmatter___thumbnail___dir = "childMdx___frontmatter___thumbnail___dir",
+  childMdx___frontmatter___thumbnail___base = "childMdx___frontmatter___thumbnail___base",
+  childMdx___frontmatter___thumbnail___ext = "childMdx___frontmatter___thumbnail___ext",
+  childMdx___frontmatter___thumbnail___name = "childMdx___frontmatter___thumbnail___name",
+  childMdx___frontmatter___thumbnail___relativeDirectory = "childMdx___frontmatter___thumbnail___relativeDirectory",
+  childMdx___frontmatter___thumbnail___dev = "childMdx___frontmatter___thumbnail___dev",
+  childMdx___frontmatter___thumbnail___mode = "childMdx___frontmatter___thumbnail___mode",
+  childMdx___frontmatter___thumbnail___nlink = "childMdx___frontmatter___thumbnail___nlink",
+  childMdx___frontmatter___thumbnail___uid = "childMdx___frontmatter___thumbnail___uid",
+  childMdx___frontmatter___thumbnail___gid = "childMdx___frontmatter___thumbnail___gid",
+  childMdx___frontmatter___thumbnail___rdev = "childMdx___frontmatter___thumbnail___rdev",
+  childMdx___frontmatter___thumbnail___blksize = "childMdx___frontmatter___thumbnail___blksize",
+  childMdx___frontmatter___thumbnail___ino = "childMdx___frontmatter___thumbnail___ino",
+  childMdx___frontmatter___thumbnail___blocks = "childMdx___frontmatter___thumbnail___blocks",
+  childMdx___frontmatter___thumbnail___atimeMs = "childMdx___frontmatter___thumbnail___atimeMs",
+  childMdx___frontmatter___thumbnail___mtimeMs = "childMdx___frontmatter___thumbnail___mtimeMs",
+  childMdx___frontmatter___thumbnail___ctimeMs = "childMdx___frontmatter___thumbnail___ctimeMs",
+  childMdx___frontmatter___thumbnail___atime = "childMdx___frontmatter___thumbnail___atime",
+  childMdx___frontmatter___thumbnail___mtime = "childMdx___frontmatter___thumbnail___mtime",
+  childMdx___frontmatter___thumbnail___ctime = "childMdx___frontmatter___thumbnail___ctime",
+  childMdx___frontmatter___thumbnail___publicURL = "childMdx___frontmatter___thumbnail___publicURL",
+  childMdx___frontmatter___thumbnail___id = "childMdx___frontmatter___thumbnail___id",
+  childMdx___frontmatter___thumbnail___children = "childMdx___frontmatter___thumbnail___children",
   childMdx___body = "childMdx___body",
   childMdx___excerpt = "childMdx___excerpt",
   childMdx___headings = "childMdx___headings",
@@ -1409,6 +1445,67 @@ export enum MdxFieldsEnum {
   frontmatter___description = "frontmatter___description",
   frontmatter___date = "frontmatter___date",
   frontmatter___tags = "frontmatter___tags",
+  frontmatter___thumbnail___birthtime = "frontmatter___thumbnail___birthtime",
+  frontmatter___thumbnail___birthtimeMs = "frontmatter___thumbnail___birthtimeMs",
+  frontmatter___thumbnail___sourceInstanceName = "frontmatter___thumbnail___sourceInstanceName",
+  frontmatter___thumbnail___absolutePath = "frontmatter___thumbnail___absolutePath",
+  frontmatter___thumbnail___relativePath = "frontmatter___thumbnail___relativePath",
+  frontmatter___thumbnail___extension = "frontmatter___thumbnail___extension",
+  frontmatter___thumbnail___size = "frontmatter___thumbnail___size",
+  frontmatter___thumbnail___prettySize = "frontmatter___thumbnail___prettySize",
+  frontmatter___thumbnail___modifiedTime = "frontmatter___thumbnail___modifiedTime",
+  frontmatter___thumbnail___accessTime = "frontmatter___thumbnail___accessTime",
+  frontmatter___thumbnail___changeTime = "frontmatter___thumbnail___changeTime",
+  frontmatter___thumbnail___birthTime = "frontmatter___thumbnail___birthTime",
+  frontmatter___thumbnail___root = "frontmatter___thumbnail___root",
+  frontmatter___thumbnail___dir = "frontmatter___thumbnail___dir",
+  frontmatter___thumbnail___base = "frontmatter___thumbnail___base",
+  frontmatter___thumbnail___ext = "frontmatter___thumbnail___ext",
+  frontmatter___thumbnail___name = "frontmatter___thumbnail___name",
+  frontmatter___thumbnail___relativeDirectory = "frontmatter___thumbnail___relativeDirectory",
+  frontmatter___thumbnail___dev = "frontmatter___thumbnail___dev",
+  frontmatter___thumbnail___mode = "frontmatter___thumbnail___mode",
+  frontmatter___thumbnail___nlink = "frontmatter___thumbnail___nlink",
+  frontmatter___thumbnail___uid = "frontmatter___thumbnail___uid",
+  frontmatter___thumbnail___gid = "frontmatter___thumbnail___gid",
+  frontmatter___thumbnail___rdev = "frontmatter___thumbnail___rdev",
+  frontmatter___thumbnail___blksize = "frontmatter___thumbnail___blksize",
+  frontmatter___thumbnail___ino = "frontmatter___thumbnail___ino",
+  frontmatter___thumbnail___blocks = "frontmatter___thumbnail___blocks",
+  frontmatter___thumbnail___atimeMs = "frontmatter___thumbnail___atimeMs",
+  frontmatter___thumbnail___mtimeMs = "frontmatter___thumbnail___mtimeMs",
+  frontmatter___thumbnail___ctimeMs = "frontmatter___thumbnail___ctimeMs",
+  frontmatter___thumbnail___atime = "frontmatter___thumbnail___atime",
+  frontmatter___thumbnail___mtime = "frontmatter___thumbnail___mtime",
+  frontmatter___thumbnail___ctime = "frontmatter___thumbnail___ctime",
+  frontmatter___thumbnail___publicURL = "frontmatter___thumbnail___publicURL",
+  frontmatter___thumbnail___childImageSharp___id = "frontmatter___thumbnail___childImageSharp___id",
+  frontmatter___thumbnail___childImageSharp___children = "frontmatter___thumbnail___childImageSharp___children",
+  frontmatter___thumbnail___id = "frontmatter___thumbnail___id",
+  frontmatter___thumbnail___parent___id = "frontmatter___thumbnail___parent___id",
+  frontmatter___thumbnail___parent___children = "frontmatter___thumbnail___parent___children",
+  frontmatter___thumbnail___children = "frontmatter___thumbnail___children",
+  frontmatter___thumbnail___children___id = "frontmatter___thumbnail___children___id",
+  frontmatter___thumbnail___children___children = "frontmatter___thumbnail___children___children",
+  frontmatter___thumbnail___internal___content = "frontmatter___thumbnail___internal___content",
+  frontmatter___thumbnail___internal___contentDigest = "frontmatter___thumbnail___internal___contentDigest",
+  frontmatter___thumbnail___internal___description = "frontmatter___thumbnail___internal___description",
+  frontmatter___thumbnail___internal___fieldOwners = "frontmatter___thumbnail___internal___fieldOwners",
+  frontmatter___thumbnail___internal___ignoreType = "frontmatter___thumbnail___internal___ignoreType",
+  frontmatter___thumbnail___internal___mediaType = "frontmatter___thumbnail___internal___mediaType",
+  frontmatter___thumbnail___internal___owner = "frontmatter___thumbnail___internal___owner",
+  frontmatter___thumbnail___internal___type = "frontmatter___thumbnail___internal___type",
+  frontmatter___thumbnail___childMdx___rawBody = "frontmatter___thumbnail___childMdx___rawBody",
+  frontmatter___thumbnail___childMdx___fileAbsolutePath = "frontmatter___thumbnail___childMdx___fileAbsolutePath",
+  frontmatter___thumbnail___childMdx___body = "frontmatter___thumbnail___childMdx___body",
+  frontmatter___thumbnail___childMdx___excerpt = "frontmatter___thumbnail___childMdx___excerpt",
+  frontmatter___thumbnail___childMdx___headings = "frontmatter___thumbnail___childMdx___headings",
+  frontmatter___thumbnail___childMdx___html = "frontmatter___thumbnail___childMdx___html",
+  frontmatter___thumbnail___childMdx___mdxAST = "frontmatter___thumbnail___childMdx___mdxAST",
+  frontmatter___thumbnail___childMdx___tableOfContents = "frontmatter___thumbnail___childMdx___tableOfContents",
+  frontmatter___thumbnail___childMdx___timeToRead = "frontmatter___thumbnail___childMdx___timeToRead",
+  frontmatter___thumbnail___childMdx___id = "frontmatter___thumbnail___childMdx___id",
+  frontmatter___thumbnail___childMdx___children = "frontmatter___thumbnail___childMdx___children",
   body = "body",
   excerpt = "excerpt",
   headings = "headings",
@@ -1537,15 +1634,24 @@ export type MdxFrontmatter = {
   __typename?: "MdxFrontmatter"
   title: Scalars["String"]
   description?: Maybe<Scalars["String"]>
-  date?: Maybe<Scalars["String"]>
+  date?: Maybe<Scalars["Date"]>
   tags?: Maybe<Array<Maybe<Scalars["String"]>>>
+  thumbnail?: Maybe<File>
+}
+
+export type MdxFrontmatterDateArgs = {
+  formatString?: Maybe<Scalars["String"]>
+  fromNow?: Maybe<Scalars["Boolean"]>
+  difference?: Maybe<Scalars["String"]>
+  locale?: Maybe<Scalars["String"]>
 }
 
 export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>
   description?: Maybe<StringQueryOperatorInput>
-  date?: Maybe<StringQueryOperatorInput>
+  date?: Maybe<DateQueryOperatorInput>
   tags?: Maybe<StringQueryOperatorInput>
+  thumbnail?: Maybe<FileFilterInput>
 }
 
 export type MdxGroupConnection = {
@@ -2222,6 +2328,14 @@ export enum SitePageFieldsEnum {
   pluginCreator___resolve = "pluginCreator___resolve",
   pluginCreator___name = "pluginCreator___name",
   pluginCreator___version = "pluginCreator___version",
+  pluginCreator___pluginOptions___plugins = "pluginCreator___pluginOptions___plugins",
+  pluginCreator___pluginOptions___plugins___resolve = "pluginCreator___pluginOptions___plugins___resolve",
+  pluginCreator___pluginOptions___plugins___id = "pluginCreator___pluginOptions___plugins___id",
+  pluginCreator___pluginOptions___plugins___name = "pluginCreator___pluginOptions___plugins___name",
+  pluginCreator___pluginOptions___plugins___version = "pluginCreator___pluginOptions___plugins___version",
+  pluginCreator___pluginOptions___plugins___browserAPIs = "pluginCreator___pluginOptions___plugins___browserAPIs",
+  pluginCreator___pluginOptions___plugins___ssrAPIs = "pluginCreator___pluginOptions___plugins___ssrAPIs",
+  pluginCreator___pluginOptions___plugins___pluginFilepath = "pluginCreator___pluginOptions___plugins___pluginFilepath",
   pluginCreator___pluginOptions___name = "pluginCreator___pluginOptions___name",
   pluginCreator___pluginOptions___path = "pluginCreator___pluginOptions___path",
   pluginCreator___pluginOptions___extensions = "pluginCreator___pluginOptions___extensions",
@@ -2238,7 +2352,6 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___display = "pluginCreator___pluginOptions___display",
   pluginCreator___pluginOptions___icon = "pluginCreator___pluginOptions___icon",
   pluginCreator___pluginOptions___theme_color_in_head = "pluginCreator___pluginOptions___theme_color_in_head",
-  pluginCreator___pluginOptions___precachePages = "pluginCreator___pluginOptions___precachePages",
   pluginCreator___pluginOptions___pathCheck = "pluginCreator___pluginOptions___pathCheck",
   pluginCreator___nodeAPIs = "pluginCreator___nodeAPIs",
   pluginCreator___browserAPIs = "pluginCreator___browserAPIs",
@@ -2429,11 +2542,31 @@ export enum SitePluginFieldsEnum {
   resolve = "resolve",
   name = "name",
   version = "version",
+  pluginOptions___plugins = "pluginOptions___plugins",
+  pluginOptions___plugins___resolve = "pluginOptions___plugins___resolve",
+  pluginOptions___plugins___id = "pluginOptions___plugins___id",
+  pluginOptions___plugins___name = "pluginOptions___plugins___name",
+  pluginOptions___plugins___version = "pluginOptions___plugins___version",
+  pluginOptions___plugins___browserAPIs = "pluginOptions___plugins___browserAPIs",
+  pluginOptions___plugins___ssrAPIs = "pluginOptions___plugins___ssrAPIs",
+  pluginOptions___plugins___pluginFilepath = "pluginOptions___plugins___pluginFilepath",
   pluginOptions___name = "pluginOptions___name",
   pluginOptions___path = "pluginOptions___path",
   pluginOptions___extensions = "pluginOptions___extensions",
   pluginOptions___gatsbyRemarkPlugins = "pluginOptions___gatsbyRemarkPlugins",
   pluginOptions___gatsbyRemarkPlugins___resolve = "pluginOptions___gatsbyRemarkPlugins___resolve",
+  pluginOptions___gatsbyRemarkPlugins___options___maxWidth = "pluginOptions___gatsbyRemarkPlugins___options___maxWidth",
+  pluginOptions___gatsbyRemarkPlugins___options___pathPrefix = "pluginOptions___gatsbyRemarkPlugins___options___pathPrefix",
+  pluginOptions___gatsbyRemarkPlugins___options___wrapperStyle = "pluginOptions___gatsbyRemarkPlugins___options___wrapperStyle",
+  pluginOptions___gatsbyRemarkPlugins___options___backgroundColor = "pluginOptions___gatsbyRemarkPlugins___options___backgroundColor",
+  pluginOptions___gatsbyRemarkPlugins___options___linkImagesToOriginal = "pluginOptions___gatsbyRemarkPlugins___options___linkImagesToOriginal",
+  pluginOptions___gatsbyRemarkPlugins___options___showCaptions = "pluginOptions___gatsbyRemarkPlugins___options___showCaptions",
+  pluginOptions___gatsbyRemarkPlugins___options___markdownCaptions = "pluginOptions___gatsbyRemarkPlugins___options___markdownCaptions",
+  pluginOptions___gatsbyRemarkPlugins___options___withWebp = "pluginOptions___gatsbyRemarkPlugins___options___withWebp",
+  pluginOptions___gatsbyRemarkPlugins___options___tracedSVG = "pluginOptions___gatsbyRemarkPlugins___options___tracedSVG",
+  pluginOptions___gatsbyRemarkPlugins___options___loading = "pluginOptions___gatsbyRemarkPlugins___options___loading",
+  pluginOptions___gatsbyRemarkPlugins___options___disableBgImageOnAlpha = "pluginOptions___gatsbyRemarkPlugins___options___disableBgImageOnAlpha",
+  pluginOptions___gatsbyRemarkPlugins___options___disableBgImage = "pluginOptions___gatsbyRemarkPlugins___options___disableBgImage",
   pluginOptions___gatsbyRemarkPlugins___options___showLineNumbers = "pluginOptions___gatsbyRemarkPlugins___options___showLineNumbers",
   pluginOptions___gatsbyRemarkPlugins___options___classPrefix = "pluginOptions___gatsbyRemarkPlugins___options___classPrefix",
   pluginOptions___pathToConfigModule = "pluginOptions___pathToConfigModule",
@@ -2447,7 +2580,6 @@ export enum SitePluginFieldsEnum {
   pluginOptions___display = "pluginOptions___display",
   pluginOptions___icon = "pluginOptions___icon",
   pluginOptions___theme_color_in_head = "pluginOptions___theme_color_in_head",
-  pluginOptions___precachePages = "pluginOptions___precachePages",
   pluginOptions___pathCheck = "pluginOptions___pathCheck",
   nodeAPIs = "nodeAPIs",
   browserAPIs = "browserAPIs",
@@ -2571,6 +2703,7 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 
 export type SitePluginPluginOptions = {
   __typename?: "SitePluginPluginOptions"
+  plugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPlugins>>>
   name?: Maybe<Scalars["String"]>
   path?: Maybe<Scalars["String"]>
   extensions?: Maybe<Array<Maybe<Scalars["String"]>>>
@@ -2586,11 +2719,11 @@ export type SitePluginPluginOptions = {
   display?: Maybe<Scalars["String"]>
   icon?: Maybe<Scalars["String"]>
   theme_color_in_head?: Maybe<Scalars["Boolean"]>
-  precachePages?: Maybe<Array<Maybe<Scalars["String"]>>>
   pathCheck?: Maybe<Scalars["Boolean"]>
 }
 
 export type SitePluginPluginOptionsFilterInput = {
+  plugins?: Maybe<SitePluginPluginOptionsPluginsFilterListInput>
   name?: Maybe<StringQueryOperatorInput>
   path?: Maybe<StringQueryOperatorInput>
   extensions?: Maybe<StringQueryOperatorInput>
@@ -2606,7 +2739,6 @@ export type SitePluginPluginOptionsFilterInput = {
   display?: Maybe<StringQueryOperatorInput>
   icon?: Maybe<StringQueryOperatorInput>
   theme_color_in_head?: Maybe<BooleanQueryOperatorInput>
-  precachePages?: Maybe<StringQueryOperatorInput>
   pathCheck?: Maybe<BooleanQueryOperatorInput>
 }
 
@@ -2627,6 +2759,18 @@ export type SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput = {
 
 export type SitePluginPluginOptionsGatsbyRemarkPluginsOptions = {
   __typename?: "SitePluginPluginOptionsGatsbyRemarkPluginsOptions"
+  maxWidth?: Maybe<Scalars["Int"]>
+  pathPrefix?: Maybe<Scalars["String"]>
+  wrapperStyle?: Maybe<Scalars["String"]>
+  backgroundColor?: Maybe<Scalars["String"]>
+  linkImagesToOriginal?: Maybe<Scalars["Boolean"]>
+  showCaptions?: Maybe<Scalars["Boolean"]>
+  markdownCaptions?: Maybe<Scalars["Boolean"]>
+  withWebp?: Maybe<Scalars["Boolean"]>
+  tracedSVG?: Maybe<Scalars["Boolean"]>
+  loading?: Maybe<Scalars["String"]>
+  disableBgImageOnAlpha?: Maybe<Scalars["Boolean"]>
+  disableBgImage?: Maybe<Scalars["Boolean"]>
   showLineNumbers?: Maybe<Scalars["Boolean"]>
   classPrefix?: Maybe<Scalars["String"]>
   aliases?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliases>
@@ -2643,6 +2787,18 @@ export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliasesFilterInput 
 }
 
 export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput = {
+  maxWidth?: Maybe<IntQueryOperatorInput>
+  pathPrefix?: Maybe<StringQueryOperatorInput>
+  wrapperStyle?: Maybe<StringQueryOperatorInput>
+  backgroundColor?: Maybe<StringQueryOperatorInput>
+  linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>
+  showCaptions?: Maybe<BooleanQueryOperatorInput>
+  markdownCaptions?: Maybe<BooleanQueryOperatorInput>
+  withWebp?: Maybe<BooleanQueryOperatorInput>
+  tracedSVG?: Maybe<BooleanQueryOperatorInput>
+  loading?: Maybe<StringQueryOperatorInput>
+  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>
+  disableBgImage?: Maybe<BooleanQueryOperatorInput>
   showLineNumbers?: Maybe<BooleanQueryOperatorInput>
   classPrefix?: Maybe<StringQueryOperatorInput>
   aliases?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliasesFilterInput>
@@ -2656,6 +2812,31 @@ export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPrompt = {
 
 export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPromptFilterInput = {
   global?: Maybe<BooleanQueryOperatorInput>
+}
+
+export type SitePluginPluginOptionsPlugins = {
+  __typename?: "SitePluginPluginOptionsPlugins"
+  resolve?: Maybe<Scalars["String"]>
+  id?: Maybe<Scalars["String"]>
+  name?: Maybe<Scalars["String"]>
+  version?: Maybe<Scalars["String"]>
+  browserAPIs?: Maybe<Array<Maybe<Scalars["String"]>>>
+  ssrAPIs?: Maybe<Array<Maybe<Scalars["String"]>>>
+  pluginFilepath?: Maybe<Scalars["String"]>
+}
+
+export type SitePluginPluginOptionsPluginsFilterInput = {
+  resolve?: Maybe<StringQueryOperatorInput>
+  id?: Maybe<StringQueryOperatorInput>
+  name?: Maybe<StringQueryOperatorInput>
+  version?: Maybe<StringQueryOperatorInput>
+  browserAPIs?: Maybe<StringQueryOperatorInput>
+  ssrAPIs?: Maybe<StringQueryOperatorInput>
+  pluginFilepath?: Maybe<StringQueryOperatorInput>
+}
+
+export type SitePluginPluginOptionsPluginsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsPluginsFilterInput>
 }
 
 export type SitePluginSortInput = {
@@ -2840,7 +3021,19 @@ export type BlogPostPageQuery = { __typename?: "Query" } & {
           { __typename?: "MdxFrontmatter" } & Pick<
             MdxFrontmatter,
             "title" | "tags" | "date" | "description"
-          >
+          > & {
+              thumbnail: Maybe<
+                { __typename?: "File" } & {
+                  childImageSharp: Maybe<
+                    { __typename?: "ImageSharp" } & {
+                      fluid: Maybe<
+                        { __typename?: "ImageSharpFluid" } & GatsbyImageSharpFluidFragment
+                      >
+                    }
+                  >
+                }
+              >
+            }
         >
         fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
       }

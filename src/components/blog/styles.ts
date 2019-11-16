@@ -87,5 +87,5 @@ export const PublishDate = styled.p`
 `
 
 export const PostPageTemplateHeader = styled.h1`
-  margin-bottom: 16px;
+  margin: 16px 0;
 `

@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import Img from "gatsby-image"
 
 import { BlogPostPageQuery } from "~/graphqlTypes"
 
@@ -12,12 +13,15 @@ interface Props {
   data: BlogPostPageQuery
 }
 
+// TODO: refactor component's name
 const PageTemplate: React.FC<Props> = ({ data: { mdx } }) => {
   const {
     body,
-    frontmatter: { title, description, tags, date },
+    frontmatter: { title, description, tags, date, thumbnail },
     fields: { slug },
   } = mdx
+
+  const _fluid = thumbnail?.childImageSharp.fluid as any
 
   return (
     <>
@@ -29,6 +33,7 @@ const PageTemplate: React.FC<Props> = ({ data: { mdx } }) => {
           customType: "article",
         }}
       />
+      {_fluid ? <Img fluid={_fluid} /> : null}
       <PostPageTemplateHeader>{title}</PostPageTemplateHeader>
       <DateHolder>Published on {new Date(date).toLocaleDateString()}</DateHolder>
       <TagsHolder>
@@ -53,6 +58,13 @@ export const pageQuery = graphql`
         tags
         date
         description
+        thumbnail {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       fields {
         slug
