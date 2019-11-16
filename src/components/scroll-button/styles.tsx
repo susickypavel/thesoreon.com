@@ -9,8 +9,8 @@ export const ScrollButtonWrapper = styled.button<{ visible: boolean }>`
   bottom: 16px;
   right: 16px;
 
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   padding: 0;
 
   border-radius: 100%;
