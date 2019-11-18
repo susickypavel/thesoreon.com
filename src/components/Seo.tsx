@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { Helmet as Head } from "react-helmet"
 
 import { SiteMetaDataQuery } from "~/graphqlTypes"
+import { removeLeadingFlash } from "~/utils/removeLeadingSlash"
 
 interface Props {
   title?: string
@@ -36,6 +37,7 @@ const Seo: React.FC<Props> = ({
     }
   `)
 
+  const imagePathWithoutLeadingSlash = removeLeadingFlash(image)
   const composedTitle = `${title} | Pavel Sušický`
 
   useEffect(() => {
@@ -55,9 +57,15 @@ const Seo: React.FC<Props> = ({
         <meta property="og:type" content={customType} />
         <meta property="og:title" content={composedTitle} />
         <meta property="og:description" content={customDescription || description} />
-        <meta property="og:image" content={`https://thesoreon.com/${image}`} />
+        <meta
+          property="og:image"
+          content={`https://thesoreon.com/${imagePathWithoutLeadingSlash}`}
+        />
 
-        <meta name="twitter:image" content={`https://thesoreon.com/${image}`} />
+        <meta
+          name="twitter:image"
+          content={`https://thesoreon.com/${imagePathWithoutLeadingSlash}`}
+        />
         <meta name="twitter:creator" content={twitter} />
         <meta name="twitter:title" content={composedTitle} />
         <meta name="twitter:description" content={customDescription || description} />

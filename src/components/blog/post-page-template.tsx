@@ -22,7 +22,6 @@ const PageTemplate: React.FC<Props> = ({ data: { mdx } }) => {
   } = mdx
 
   const _fluid = thumbnail?.childImageSharp.fluid as any
-
   return (
     <>
       <Seo
@@ -31,6 +30,7 @@ const PageTemplate: React.FC<Props> = ({ data: { mdx } }) => {
           pathname: slug,
           customDescription: description,
           customType: "article",
+          image: _fluid?.src,
         }}
       />
       {_fluid ? <Img fluid={_fluid} /> : null}
