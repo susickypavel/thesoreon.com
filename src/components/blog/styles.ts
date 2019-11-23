@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "~/utils/styled"
 import { TagColor } from "~/utils/getTagColor"
 
-import { BLOGPOSTLISTLINK_MARGIN, BLOGPOSTLISTHOLDER_MARGIN } from "~/css/constants"
+import { BLOGPOSTLISTLINK_MARGIN } from "~/css/constants"
 
 export const BlogPostBodyHolder = styled.div`
   & a {
@@ -19,9 +19,7 @@ export const BlogPostBodyHolder = styled.div`
   }
 `
 
-export const BlogPostListHolder = styled.div`
-  margin: ${BLOGPOSTLISTHOLDER_MARGIN};
-`
+export const BlogPostListHolder = styled.div``
 
 export const BlogPostListLink = styled(Link)`
   background-color: ${props => props.theme.bg.primary};
@@ -46,6 +44,14 @@ export const BlogPostListLink = styled(Link)`
   &:hover {
     border-color: ${props => props.theme.linksColors.focus};
     transition: border-color 0.2s linear;
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
   }
 
   transition: ${props => props.theme.transitionTheme};

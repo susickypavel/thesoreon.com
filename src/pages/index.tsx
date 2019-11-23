@@ -14,7 +14,6 @@ const Index: React.FC<Props> = ({ location, data }) => {
   return (
     <>
       <Seo title="Home" customMetadata={{ pathname: location.pathname }} />
-      <h1>Blog posts</h1>
       <BlogPostList data={data} />
     </>
   )

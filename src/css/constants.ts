@@ -9,6 +9,4 @@ export const CONTENTHOLDER_PADDING = "16px"
 export const NAVIGATION_PADDING = "16px"
 
 /** BLOG POST LIST */
-export const BLOGPOSTLISTHOLDER_MARGIN = "8px 0"
-
-export const BLOGPOSTLISTLINK_MARGIN = "4px 0"
+export const BLOGPOSTLISTLINK_MARGIN = "8px 0"
