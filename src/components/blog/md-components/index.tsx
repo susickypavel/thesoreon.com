@@ -21,7 +21,7 @@ export const List: React.FC<Props> = ({ listType, children }) => {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        display: inline-block;
+        display: block;
       }
     }
   `
@@ -31,6 +31,7 @@ export const List: React.FC<Props> = ({ listType, children }) => {
 
 export const Paragraph = styled.p`
   line-height: 1.5;
+  margin: 16px 0;
 `
 
 export const Heading: React.FC<{
@@ -57,6 +58,10 @@ export const Blockquote = styled.blockquote`
   border-radius: 4px;
   border-left: 4px solid blue;
   font-style: italic;
+
+  & p {
+    margin: 0;
+  }
 `
 
 export const Image = styled.img`
