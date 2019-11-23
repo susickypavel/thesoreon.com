@@ -11,6 +11,7 @@ export const Noscript: React.FC = () => {
 }
 
 const NoscriptWrapper = styled.noscript`
+  display: block;
   color: white;
   background: #b33a3a;
   width: 100%;
