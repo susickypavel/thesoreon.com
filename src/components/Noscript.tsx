@@ -10,7 +10,7 @@ export const Noscript: React.FC = () => {
   )
 }
 
-const NoscriptWrapper = styled.div`
+const NoscriptWrapper = styled.noscript`
   color: white;
   background: #b33a3a;
   width: 100%;
