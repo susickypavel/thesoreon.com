@@ -1,10 +1,19 @@
+import React from "react"
 import styled from "~/utils/styled"
 
-export const Noscript = styled.noscript`
+export const Noscript: React.FC = () => {
+  return (
+    <NoscriptWrapper>
+      Oops. It seems you have <b>Javascript</b> disabled. <br /> Please consider enabling it using{" "}
+      <a href="https://www.enable-javascript.com/">this</a> guide.
+    </NoscriptWrapper>
+  )
+}
+
+const NoscriptWrapper = styled.div`
   color: white;
   background: #b33a3a;
   width: 100%;
-  max-width: 700px;
   padding: 32px 32px;
   line-height: 1.3;
   border-radius: 4px;
@@ -12,12 +21,6 @@ export const Noscript = styled.noscript`
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   text-align: center;
-
-  z-index: 10;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 
   & a {
     font-weight: bold;

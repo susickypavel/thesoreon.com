@@ -1,8 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
+
 import { Noscript } from "./components/Noscript"
 
-export default function HTML(props: any) {
+export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
@@ -13,10 +14,7 @@ export default function HTML(props: any) {
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
-        <Noscript key="noscript" id="gatsby-noscript">
-          Oops. It seems you have <b>Javascript</b> disabled. <br /> Please consider enabling it
-          using <a href="https://www.enable-javascript.com/">this</a> guide.
-        </Noscript>
+        <Noscript />
         <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
         {props.postBodyComponents}
       </body>
