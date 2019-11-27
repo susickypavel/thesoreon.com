@@ -73,3 +73,6 @@ gatsby-config.js
 
 # GraphQL typings
 graphqlTypes.ts
+
+# e2e tests
+cypress
