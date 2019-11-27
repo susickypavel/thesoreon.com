@@ -9,7 +9,7 @@ module.exports = {
     "~(.*)$": "<rootDir>/src$1",
   },
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.([tj]sx?)$",
-  testPathIgnorePatterns: ["node_modules", ".cache", "public"],
+  testPathIgnorePatterns: ["node_modules", ".cache", "public", "cypress"],
   globals: {
     __PATH_PREFIX__: ``,
   },
