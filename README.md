@@ -62,5 +62,6 @@ yarn test:watch
 - Prettier
 - Eslint
 - Jest and React Testing Library
+- Cypress
 
 Repository is using Github Actions for CI/CD stuff and Netlify for hosting.
