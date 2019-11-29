@@ -1,4 +1,4 @@
-name: CI
+name: test and lint
 
 on: [push]
 
@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: Borales/actions-yarn@master
+
       - name: Run tests
         run: yarn test
       - name: Run lints
