@@ -46,6 +46,12 @@ yarn start:network
 yarn test:watch
 ```
 
+**5. Run e2e tests**
+
+```sh
+yarn test:e2e
+```
+
 ## Technology stack
 
 ### Application
