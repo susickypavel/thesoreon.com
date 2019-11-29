@@ -10,6 +10,13 @@ const globalStyles = css`
   body {
     min-width: ${BODY_MINWIDTH};
   }
+
+  html,
+  body,
+  #___gatsby,
+  #gatsby-focus-wrapper {
+    height: 100%;
+  }
 `
 
 export default globalStyles
