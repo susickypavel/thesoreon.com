@@ -37,11 +37,15 @@ const globalStyles = css`
   body.dark {
     background: black;
     color: white;
+
+    transition: all 0.2s linear;
   }
 
   body.light {
     background: white;
     color: black;
+
+    transition: all 0.2s linear;
   }
 `
 
