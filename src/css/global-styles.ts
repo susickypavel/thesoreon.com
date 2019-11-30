@@ -33,6 +33,16 @@ const globalStyles = css`
   #gatsby-focus-wrapper {
     height: 100%;
   }
+
+  body.dark {
+    background: black;
+    color: white;
+  }
+
+  body.light {
+    background: white;
+    color: black;
+  }
 `
 
 export default globalStyles
