@@ -1,6 +1,6 @@
 import React from "react"
 import { render, fireEvent } from "@testing-library/react"
-import { ThemeToggle } from "~/components/theme-toggle"
+import { ThemeToggle } from "~/components/actions-link-bar/theme-toggle"
 
 interface ExtendGlobal extends NodeJS.Global {
   __theme: string
