@@ -2998,75 +2998,16 @@ export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = {
   __typename?: "ImageSharpSizes"
 } & Pick<ImageSharpSizes, "aspectRatio" | "src" | "srcSet" | "srcWebp" | "srcSetWebp" | "sizes">
 
-export type SiteMetaDataQueryVariables = {}
+export type PageHeaderAvatarQueryVariables = {}
 
-export type SiteMetaDataQuery = { __typename?: "Query" } & {
-  site: Maybe<
-    { __typename?: "Site" } & {
-      siteMetadata: Maybe<
-        { __typename?: "SiteSiteMetadata" } & Pick<SiteSiteMetadata, "description" | "twitter">
-      >
-    }
-  >
-}
-
-export type BlogPostPageQueryVariables = {
-  id?: Maybe<Scalars["String"]>
-}
-
-export type BlogPostPageQuery = { __typename?: "Query" } & {
-  mdx: Maybe<
-    { __typename?: "Mdx" } & Pick<Mdx, "body"> & {
-        frontmatter: Maybe<
-          { __typename?: "MdxFrontmatter" } & Pick<
-            MdxFrontmatter,
-            "title" | "tags" | "date" | "description"
-          > & {
-              thumbnail: Maybe<
-                { __typename?: "File" } & {
-                  childImageSharp: Maybe<
-                    { __typename?: "ImageSharp" } & {
-                      fluid: Maybe<
-                        { __typename?: "ImageSharpFluid" } & GatsbyImageSharpFluidFragment
-                      >
-                    }
-                  >
-                }
-              >
-            }
-        >
-        fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
-      }
-  >
-}
-
-export type AvatarPhotoQueryVariables = {}
-
-export type AvatarPhotoQuery = { __typename?: "Query" } & {
+export type PageHeaderAvatarQuery = { __typename?: "Query" } & {
   file: Maybe<
     { __typename?: "File" } & {
       childImageSharp: Maybe<
         { __typename?: "ImageSharp" } & {
-          fixed: Maybe<{ __typename?: "ImageSharpFixed" } & GatsbyImageSharpFixedFragment>
+          fluid: Maybe<{ __typename?: "ImageSharpFluid" } & GatsbyImageSharpFluidFragment>
         }
       >
     }
   >
-}
-
-export type BlogPostsListQueryVariables = {}
-
-export type BlogPostsListQuery = { __typename?: "Query" } & {
-  allMdx: { __typename?: "MdxConnection" } & {
-    edges: Array<
-      { __typename?: "MdxEdge" } & {
-        node: { __typename?: "Mdx" } & Pick<Mdx, "timeToRead"> & {
-            frontmatter: Maybe<
-              { __typename?: "MdxFrontmatter" } & Pick<MdxFrontmatter, "title" | "tags" | "date">
-            >
-            fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
-          }
-      }
-    >
-  }
 }
