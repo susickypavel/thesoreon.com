@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { ThemeToggleButton } from "./styles"
 
 export const ThemeToggle: React.FC = () => {
   const [activeTheme, setActiveTheme] = useState("light")
@@ -16,10 +17,8 @@ export const ThemeToggle: React.FC = () => {
   }, [])
 
   return (
-    <div>
-      <button aria-label="Switch theme" onClick={handleClick}>
-        Toggle
-      </button>
-    </div>
+    <ThemeToggleButton aria-label="Switch theme" onClick={handleClick}>
+      Toggle
+    </ThemeToggleButton>
   )
 }
