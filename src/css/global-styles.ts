@@ -1,4 +1,5 @@
 import { css } from "@emotion/core"
+import { darken, lighten } from "polished"
 
 import { BODY_MINWIDTH } from "./constants"
 
@@ -41,7 +42,7 @@ const globalStyles = css`
     transition: all 0.2s linear;
 
     --action-buttons-default: #03a9f4;
-    --action-buttons-focus: orange;
+    --action-buttons-focus: ${lighten(0.25, "#03a9f4")};
     --action-buttons-icon: #212121;
   }
 
@@ -52,7 +53,7 @@ const globalStyles = css`
     transition: all 0.2s linear;
 
     --action-buttons-default: #90caf9;
-    --action-buttons-focus: lime;
+    --action-buttons-focus: ${darken(0.25, "#90caf9")};
     --action-buttons-icon: #212121;
   }
 `

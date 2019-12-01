@@ -48,8 +48,16 @@ export const SocialMediaLink = styled(OutboundLink)`
   height: 6.4rem;
 
   margin-bottom: 1.6rem;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    background-color: ${props => props.theme.actionButtons.focus};
+  }
 
   @media (max-width: 1024px) {
     margin: 0.8rem;
   }
+
+  transition: background-color 0.15s linear;
 `
