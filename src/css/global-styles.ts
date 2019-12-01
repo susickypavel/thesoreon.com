@@ -39,6 +39,10 @@ const globalStyles = css`
     color: white;
 
     transition: all 0.2s linear;
+
+    --action-buttons-default: #03a9f4;
+    --action-buttons-focus: orange;
+    --action-buttons-icon: #212121;
   }
 
   body.light {
@@ -46,6 +50,10 @@ const globalStyles = css`
     color: black;
 
     transition: all 0.2s linear;
+
+    --action-buttons-default: #90caf9;
+    --action-buttons-focus: lime;
+    --action-buttons-icon: #212121;
   }
 `
 

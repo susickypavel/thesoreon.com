@@ -19,7 +19,7 @@ export const ActionsLinkBar: React.FC<Props> = ({ socialLinks, children }) => {
     <ActionButtonsHolder>
       {socialLinks.map(({ icon, url, ...props }) => (
         <SocialMediaLink href={url} key={url}>
-          {createReactIcon(icon, { ...props, size: "4rem" })}
+          {createReactIcon(icon, { ...props, size: "4rem", color: "var(--action-buttons-icon)" })}
         </SocialMediaLink>
       ))}
       <Splitter />

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from "~/utils/styled"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 export const Splitter = styled.span`
@@ -37,7 +37,8 @@ export const ActionButtonsHolder = styled.div`
 `
 
 export const SocialMediaLink = styled(OutboundLink)`
-  background: red;
+  background-color: ${props => props.theme.actionButtons.default};
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 
   display: flex;
   align-items: center;
