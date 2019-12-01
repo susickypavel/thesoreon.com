@@ -9,6 +9,7 @@ import {
 import { Header } from "~/components/page-header"
 import { ActionsLinkBar, Icon } from "~/components/actions-link-bar"
 import { ThemeToggle } from "~/components/actions-link-bar/theme-toggle"
+import Seo from "~/components/Seo"
 
 const links: Icon[] = [
   {
@@ -33,9 +34,14 @@ const links: Icon[] = [
   },
 ]
 
-const Homepage: React.FC = () => {
+interface Props {
+  location: Location
+}
+
+const Homepage: React.FC<Props> = ({ location }) => {
   return (
     <>
+      <Seo title="Home" customMetadata={{ pathname: location.pathname }} />
       <Header />
       <ActionsLinkBar socialLinks={links}>
         <ThemeToggle />

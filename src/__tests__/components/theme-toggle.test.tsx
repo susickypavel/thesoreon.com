@@ -1,6 +1,8 @@
 import React from "react"
 import { render, fireEvent } from "@testing-library/react"
+
 import { ThemeToggle } from "~/components/actions-link-bar/theme-toggle"
+import { ThemeProvider } from "~/components/providers/theme"
 
 interface ExtendGlobal extends NodeJS.Global {
   __theme: string
@@ -11,7 +13,11 @@ const _global: ExtendGlobal = global as any
 
 describe("Theme toggle", () => {
   const renderComponent = () => {
-    return render(<ThemeToggle />)
+    return render(
+      <ThemeProvider>
+        <ThemeToggle />
+      </ThemeProvider>
+    )
   }
 
   beforeEach(() => {

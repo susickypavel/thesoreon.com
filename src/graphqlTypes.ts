@@ -2998,6 +2998,18 @@ export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = {
   __typename?: "ImageSharpSizes"
 } & Pick<ImageSharpSizes, "aspectRatio" | "src" | "srcSet" | "srcWebp" | "srcSetWebp" | "sizes">
 
+export type SiteMetaDataQueryVariables = {}
+
+export type SiteMetaDataQuery = { __typename?: "Query" } & {
+  site: Maybe<
+    { __typename?: "Site" } & {
+      siteMetadata: Maybe<
+        { __typename?: "SiteSiteMetadata" } & Pick<SiteSiteMetadata, "description" | "twitter">
+      >
+    }
+  >
+}
+
 export type PageHeaderAvatarQueryVariables = {}
 
 export type PageHeaderAvatarQuery = { __typename?: "Query" } & {
