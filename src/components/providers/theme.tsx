@@ -2,17 +2,19 @@ import React from "react"
 import { ThemeProvider as EmotionThemeProvider } from "emotion-theming"
 
 export interface Theme {
-  anchorLinks: {
+  actionButtons: {
     default: string
     focus: string
+    icon: string
   }
 }
 
 export const ThemeProvider: React.FC = ({ children }) => {
   const theme: Theme = {
-    anchorLinks: {
-      default: "var(--anchor-links-default)",
-      focus: "var(--anchor-links-focus)",
+    actionButtons: {
+      default: "var(--action-buttons-default)",
+      focus: "var(--action-buttons-focus)",
+      icon: "var(--action-buttons-icon)",
     },
   }
 
