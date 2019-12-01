@@ -18,7 +18,8 @@ const darkThemeValues: State = { theme: "dark", icon: FaMoon, color: "white" }
 export const ThemeToggle: React.FC = () => {
   const [activeTheme, setActiveTheme] = useState<State>(lightThemeValues)
 
-  const handleClick = () => {
+  const handleClick = (e: React.SyntheticEvent<HTMLButtonElement>) => {
+    e.currentTarget.blur()
     setActiveTheme(() => {
       const toggledValues: State = activeTheme.theme === "dark" ? lightThemeValues : darkThemeValues
       window.__setPreferredTheme(toggledValues.theme)
