@@ -10,6 +10,7 @@ import { Header } from "~/components/page-header"
 import { ActionsLinkBar, Icon } from "~/components/actions-link-bar"
 import { ThemeToggle } from "~/components/actions-link-bar/theme-toggle"
 import Seo from "~/components/Seo"
+import { BlogPostPreviewList } from "~/components/blog-post-previews-list"
 
 const links: Icon[] = [
   {
@@ -46,6 +47,7 @@ const Homepage: React.FC<Props> = ({ location }) => {
       <ActionsLinkBar socialLinks={links}>
         <ThemeToggle />
       </ActionsLinkBar>
+      <BlogPostPreviewList />
     </>
   )
 }

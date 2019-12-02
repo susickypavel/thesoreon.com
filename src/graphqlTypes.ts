@@ -3010,6 +3010,38 @@ export type SiteMetaDataQuery = { __typename?: "Query" } & {
   >
 }
 
+export type PostPreviewsListQueryVariables = {}
+
+export type PostPreviewsListQuery = { __typename?: "Query" } & {
+  allMdx: { __typename?: "MdxConnection" } & {
+    edges: Array<
+      { __typename?: "MdxEdge" } & {
+        node: { __typename?: "Mdx" } & Pick<Mdx, "timeToRead"> & {
+            fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
+            frontmatter: Maybe<
+              { __typename?: "MdxFrontmatter" } & Pick<
+                MdxFrontmatter,
+                "title" | "date" | "tags"
+              > & {
+                  thumbnail: Maybe<
+                    { __typename?: "File" } & {
+                      childImageSharp: Maybe<
+                        { __typename?: "ImageSharp" } & {
+                          fluid: Maybe<
+                            { __typename?: "ImageSharpFluid" } & GatsbyImageSharpFluidFragment
+                          >
+                        }
+                      >
+                    }
+                  >
+                }
+            >
+          }
+      }
+    >
+  }
+}
+
 export type PageHeaderAvatarQueryVariables = {}
 
 export type PageHeaderAvatarQuery = { __typename?: "Query" } & {
