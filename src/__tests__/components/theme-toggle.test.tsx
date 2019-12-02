@@ -39,4 +39,22 @@ describe("Theme toggle", () => {
 
     expect(_global.__theme).toBe("light")
   })
+
+  it("should render icon inside the button", () => {
+    const { container } = renderComponent()
+
+    expect(container.querySelector("svg").innerHTML).not.toBeNull()
+  })
+
+  it("should change icon when button is clicked", () => {
+    const { container } = renderComponent()
+
+    const defaultIcon = container.querySelector("button").children.item(0)
+
+    fireEvent.click(container.querySelector("button"))
+
+    const changedIcon = container.querySelector("button").children.item(0)
+
+    expect(defaultIcon).not.toEqual(changedIcon)
+  })
 })
