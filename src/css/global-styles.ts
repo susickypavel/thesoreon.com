@@ -44,6 +44,8 @@ const globalStyles = css`
     --action-buttons-default: #03a9f4;
     --action-buttons-focus: ${lighten(0.25, "#03a9f4")};
     --action-buttons-icon: #212121;
+
+    --blog-preview-boxshadow: 0px 0px 4px rgba(255, 255, 255, 0.8);
   }
 
   body.light {
@@ -55,6 +57,8 @@ const globalStyles = css`
     --action-buttons-default: #90caf9;
     --action-buttons-focus: ${darken(0.25, "#90caf9")};
     --action-buttons-icon: #212121;
+
+    --blog-preview-boxshadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   }
 `
 

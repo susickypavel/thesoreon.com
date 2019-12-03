@@ -8,6 +8,8 @@ export const BlogPostPreviewWrapper = styled(Link)`
   display: block;
   text-decoration: none;
 
+  box-shadow: ${props => props.theme.blogPreview.boxshadow};
+
   &:hover,
   &:focus {
     background-color: ${props => props.theme.actionButtons.focus};
