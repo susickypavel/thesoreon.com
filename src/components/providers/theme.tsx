@@ -7,6 +7,9 @@ export interface Theme {
     focus: string
     icon: string
   }
+  blogPreview: {
+    boxshadow: string
+  }
 }
 
 export const ThemeProvider: React.FC = ({ children }) => {
@@ -15,6 +18,9 @@ export const ThemeProvider: React.FC = ({ children }) => {
       default: "var(--action-buttons-default)",
       focus: "var(--action-buttons-focus)",
       icon: "var(--action-buttons-icon)",
+    },
+    blogPreview: {
+      boxshadow: "var(--blog-preview-boxshadow)",
     },
   }
 
