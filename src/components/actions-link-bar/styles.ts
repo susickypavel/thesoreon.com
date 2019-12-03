@@ -14,6 +14,7 @@ export const ActionButtonsHolder = styled.div`
   flex-flow: column wrap;
 
   position: fixed;
+  z-index: 10;
 
   top: 1.6rem;
   left: 1.6rem;
