@@ -36,7 +36,7 @@ const globalStyles = css`
   }
 
   body.dark {
-    background: black;
+    background: #1b1b1b;
     color: white;
 
     transition: all 0.2s linear;
