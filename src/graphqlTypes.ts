@@ -3055,3 +3055,33 @@ export type PageHeaderAvatarQuery = { __typename?: "Query" } & {
     }
   >
 }
+
+export type BlogPostPageQueryVariables = {
+  id?: Maybe<Scalars["String"]>
+}
+
+export type BlogPostPageQuery = { __typename?: "Query" } & {
+  mdx: Maybe<
+    { __typename?: "Mdx" } & Pick<Mdx, "body"> & {
+        frontmatter: Maybe<
+          { __typename?: "MdxFrontmatter" } & Pick<
+            MdxFrontmatter,
+            "title" | "tags" | "date" | "description"
+          > & {
+              thumbnail: Maybe<
+                { __typename?: "File" } & {
+                  childImageSharp: Maybe<
+                    { __typename?: "ImageSharp" } & {
+                      fluid: Maybe<
+                        { __typename?: "ImageSharpFluid" } & GatsbyImageSharpFluidFragment
+                      >
+                    }
+                  >
+                }
+              >
+            }
+        >
+        fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
+      }
+  >
+}
