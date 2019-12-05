@@ -41,6 +41,8 @@ const globalStyles = css`
 
     transition: all 0.2s linear;
 
+    --secondary-bg-color: ${lighten(0.1, "#1b1b1b")};
+
     --action-buttons-default: #03a9f4;
     --action-buttons-focus: ${lighten(0.25, "#03a9f4")};
     --action-buttons-icon: #212121;
@@ -53,6 +55,8 @@ const globalStyles = css`
     color: black;
 
     transition: all 0.2s linear;
+
+    --secondary-bg-color: ${darken(0.1, "white")};
 
     --action-buttons-default: #90caf9;
     --action-buttons-focus: ${darken(0.25, "#90caf9")};

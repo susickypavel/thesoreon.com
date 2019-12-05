@@ -10,6 +10,9 @@ export interface Theme {
   blogPreview: {
     boxshadow: string
   }
+  bg: {
+    secondary: string
+  }
 }
 
 export const ThemeProvider: React.FC = ({ children }) => {
@@ -21,6 +24,9 @@ export const ThemeProvider: React.FC = ({ children }) => {
     },
     blogPreview: {
       boxshadow: "var(--blog-preview-boxshadow)",
+    },
+    bg: {
+      secondary: "var(--secondary-bg-color)",
     },
   }
 
