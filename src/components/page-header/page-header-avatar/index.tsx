@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import { Avatar } from "./styles"
 import { PageHeaderAvatarQuery } from "~/graphqlTypes"
@@ -21,5 +21,9 @@ export const PageHeaderAvatar: React.FC = () => {
     }
   `)
 
-  return <Avatar fluid={fluid as any} />
+  return (
+    <Link to="/">
+      <Avatar fluid={fluid as any} />
+    </Link>
+  )
 }
