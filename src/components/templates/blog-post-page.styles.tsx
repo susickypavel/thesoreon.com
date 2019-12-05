@@ -15,6 +15,10 @@ export const PostPageTemplateHeader = styled.h2`
 `
 
 export const BlogPostPageWrapper = styled.div`
+  padding: 1.6rem;
+  box-sizing: content-box;
+  background-color: ${props => props.theme.bg.secondary};
+
   max-width: 700px;
   margin: 3.2rem auto;
 `
