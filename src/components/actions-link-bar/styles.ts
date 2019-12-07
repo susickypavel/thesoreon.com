@@ -21,6 +21,10 @@ export const ActionButtonsHolder = styled.div`
 
   height: calc(100% - 3.2rem);
 
+  & *:last-of-type {
+    margin-bottom: 0;
+  }
+
   @media (max-width: 1024px) {
     position: static;
     height: auto;
