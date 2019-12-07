@@ -1,71 +1,77 @@
 import { css } from "@emotion/core"
+import { darken, lighten } from "polished"
 
-const minFontSize = 16
-const maxFontSize = 20
+import { BODY_MINWIDTH } from "./constants"
 
-const deltaFontSize = maxFontSize - minFontSize
-
-export default css`
+const globalStyles = css`
   * {
     box-sizing: border-box;
   }
 
-  html {
-    overflow-y: unset;
-    font-size: ${minFontSize}px !important;
+  :root {
+    font-size: 62.5%;
+    overflow-y: unset; /* This hides scrollbar caused by typography.js */
   }
 
-  @media screen and (min-width: 320px) {
-    html {
-      font-size: calc(${minFontSize}px + ${deltaFontSize} * ((100vw - 320px) / 680)) !important;
+  @media (max-width: 768px) {
+    :root {
+      font-size: 50%;
     }
   }
 
-  @media screen and (min-width: 1000px) {
-    html {
-      font-size: ${maxFontSize}px !important;
-    }
+  h1 {
+    font-size: 6.4rem;
+  }
+
+  body {
+    min-width: ${BODY_MINWIDTH};
+    padding: 25px 16px 16px 16px;
   }
 
   html,
   body,
   #___gatsby,
   #gatsby-focus-wrapper {
-    min-height: 100vh;
-  }
-
-  #___gatsby {
-    background-color: var(--primary-bg-color);
-  }
-
-  body.light {
-    --primary-bg-color: lightblue;
-    --primary-fg-color: black;
-
-    --secondary-bg-color: white;
-    --secondary-fg-color: black;
-
-    --links-color: #ca054d;
-    --links-visited-color: #5f0a87;
-    --links-focus-color: #ea7317;
-
-    --default-color: black;
+    height: 100%;
   }
 
   body.dark {
-    --primary-bg-color: #212121;
-    --primary-fg-color: #99b2cc;
+    background: #1b1b1b;
+    color: white;
 
-    --secondary-bg-color: #303030;
-    --secondary-fg-color: white;
+    transition: all 0.2s linear;
 
-    --links-color: #f33b5d;
-    --links-visited-color: #698996;
-    --links-focus-color: #00f0ff;
+    --secondary-bg-color: ${lighten(0.1, "#1b1b1b")};
 
-    --default-color: white;
+    --action-buttons-default: #03a9f4;
+    --action-buttons-focus: ${lighten(0.25, "#03a9f4")};
+    --action-buttons-icon: #212121;
+
+    --blog-preview-boxshadow: 0px 0px 4px rgba(255, 255, 255, 0.8);
+
+    --links-default: lightblue;
+    --links-focus: ${darken(0.25, "lightblue")};
+    --links-visited: ${lighten(0.1, "blue")};
   }
 
-  .navigation__link--active {
+  body.light {
+    background: white;
+    color: black;
+
+    transition: all 0.2s linear;
+
+    --secondary-bg-color: ${darken(0.1, "white")};
+
+    --action-buttons-default: #90caf9;
+    --action-buttons-focus: ${darken(0.25, "#90caf9")};
+    --action-buttons-icon: #212121;
+
+    --blog-preview-boxshadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+
+    --links-default: #f33b5d;
+    --links-focus: ${lighten(0.25, "#f33b5d")};
+    --links-visited: darkblue;
   }
 `
+
+export default globalStyles

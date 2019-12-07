@@ -1,6 +1,6 @@
 import { css } from "@emotion/core"
 
-export default css`
+const resetStyles = css`
   html,
   body,
   div,
@@ -123,3 +123,5 @@ export default css`
     border-spacing: 0;
   }
 `
+
+export default resetStyles

@@ -3010,6 +3010,52 @@ export type SiteMetaDataQuery = { __typename?: "Query" } & {
   >
 }
 
+export type PostPreviewsListQueryVariables = {}
+
+export type PostPreviewsListQuery = { __typename?: "Query" } & {
+  allMdx: { __typename?: "MdxConnection" } & {
+    edges: Array<
+      { __typename?: "MdxEdge" } & {
+        node: { __typename?: "Mdx" } & Pick<Mdx, "timeToRead"> & {
+            fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
+            frontmatter: Maybe<
+              { __typename?: "MdxFrontmatter" } & Pick<
+                MdxFrontmatter,
+                "title" | "date" | "tags"
+              > & {
+                  thumbnail: Maybe<
+                    { __typename?: "File" } & {
+                      childImageSharp: Maybe<
+                        { __typename?: "ImageSharp" } & {
+                          fluid: Maybe<
+                            { __typename?: "ImageSharpFluid" } & GatsbyImageSharpFluidFragment
+                          >
+                        }
+                      >
+                    }
+                  >
+                }
+            >
+          }
+      }
+    >
+  }
+}
+
+export type PageHeaderAvatarQueryVariables = {}
+
+export type PageHeaderAvatarQuery = { __typename?: "Query" } & {
+  file: Maybe<
+    { __typename?: "File" } & {
+      childImageSharp: Maybe<
+        { __typename?: "ImageSharp" } & {
+          fluid: Maybe<{ __typename?: "ImageSharpFluid" } & GatsbyImageSharpFluidFragment>
+        }
+      >
+    }
+  >
+}
+
 export type BlogPostPageQueryVariables = {
   id?: Maybe<Scalars["String"]>
 }
@@ -3038,35 +3084,4 @@ export type BlogPostPageQuery = { __typename?: "Query" } & {
         fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
       }
   >
-}
-
-export type AvatarPhotoQueryVariables = {}
-
-export type AvatarPhotoQuery = { __typename?: "Query" } & {
-  file: Maybe<
-    { __typename?: "File" } & {
-      childImageSharp: Maybe<
-        { __typename?: "ImageSharp" } & {
-          fixed: Maybe<{ __typename?: "ImageSharpFixed" } & GatsbyImageSharpFixedFragment>
-        }
-      >
-    }
-  >
-}
-
-export type BlogPostsListQueryVariables = {}
-
-export type BlogPostsListQuery = { __typename?: "Query" } & {
-  allMdx: { __typename?: "MdxConnection" } & {
-    edges: Array<
-      { __typename?: "MdxEdge" } & {
-        node: { __typename?: "Mdx" } & Pick<Mdx, "timeToRead"> & {
-            frontmatter: Maybe<
-              { __typename?: "MdxFrontmatter" } & Pick<MdxFrontmatter, "title" | "tags" | "date">
-            >
-            fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
-          }
-      }
-    >
-  }
 }

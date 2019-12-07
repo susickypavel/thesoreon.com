@@ -1,42 +1,19 @@
 import React from "react"
-import { graphql } from "gatsby"
 
-import BlogPostList from "~/components/blog/blog-post-list"
-import { BlogPostsListQuery } from "~/graphqlTypes"
 import Seo from "~/components/Seo"
+import { BlogPostPreviewList } from "~/components/blog-post-previews-list"
 
 interface Props {
   location: Location
-  data: BlogPostsListQuery
 }
 
-const Index: React.FC<Props> = ({ location, data }) => {
+const Homepage: React.FC<Props> = ({ location }) => {
   return (
     <>
       <Seo title="Home" customMetadata={{ pathname: location.pathname }} />
-      <BlogPostList data={data} />
+      <BlogPostPreviewList />
     </>
   )
 }
 
-export const PageQuery = graphql`
-  query BlogPostsList {
-    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
-      edges {
-        node {
-          timeToRead
-          frontmatter {
-            title
-            tags
-            date
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }
-`
-
-export default Index
+export default Homepage
