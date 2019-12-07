@@ -13,6 +13,7 @@ import { ThemeToggle } from "~/components/actions-link-bar/theme-toggle"
 
 import resetStyles from "~/css/reset-styles"
 import globalStyles from "~/css/global-styles"
+import { Navigation } from "./navigation"
 
 const styles: SerializedStyles[] = [resetStyles, globalStyles]
 
@@ -47,6 +48,7 @@ export const PageLayout: React.FC = ({ children }) => {
       <ActionsLinkBar socialLinks={links}>
         <ThemeToggle />
       </ActionsLinkBar>
+      <Navigation />
       {children}
     </>
   )
