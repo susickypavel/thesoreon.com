@@ -13,6 +13,11 @@ export interface Theme {
   bg: {
     secondary: string
   }
+  links: {
+    default: string
+    focus: string
+    visited: string
+  }
 }
 
 export const ThemeProvider: React.FC = ({ children }) => {
@@ -27,6 +32,11 @@ export const ThemeProvider: React.FC = ({ children }) => {
     },
     bg: {
       secondary: "var(--secondary-bg-color)",
+    },
+    links: {
+      default: "var(--links-default)",
+      focus: "var(--links-focus)",
+      visited: "var(--links-visited)",
     },
   }
 

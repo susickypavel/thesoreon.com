@@ -1,6 +1,16 @@
 import styled from "~/utils/styled"
 
-export const BlogPostBodyHolder = styled.div``
+export const BlogPostBodyHolder = styled.div(props => ({
+  "& a": {
+    color: props.theme.links.default,
+    "&:visited": {
+      color: props.theme.links.visited,
+    },
+    "&:hover, &:focus": {
+      color: props.theme.links.focus,
+    },
+  },
+}))
 
 export const TagsHolder = styled.div``
 
@@ -21,4 +31,6 @@ export const BlogPostPageWrapper = styled.div`
 
   max-width: 700px;
   margin: 3.2rem auto;
+
+  transition: background-color 0.2s linear;
 `

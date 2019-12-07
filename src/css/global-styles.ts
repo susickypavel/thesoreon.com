@@ -48,6 +48,10 @@ const globalStyles = css`
     --action-buttons-icon: #212121;
 
     --blog-preview-boxshadow: 0px 0px 4px rgba(255, 255, 255, 0.8);
+
+    --links-default: lightblue;
+    --links-focus: ${darken(0.25, "lightblue")};
+    --links-visited: ${lighten(0.1, "blue")};
   }
 
   body.light {
@@ -63,6 +67,10 @@ const globalStyles = css`
     --action-buttons-icon: #212121;
 
     --blog-preview-boxshadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+
+    --links-default: #f33b5d;
+    --links-focus: ${lighten(0.25, "#f33b5d")};
+    --links-visited: darkblue;
   }
 `
 
