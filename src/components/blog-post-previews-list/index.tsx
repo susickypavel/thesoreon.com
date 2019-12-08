@@ -9,10 +9,10 @@ import { PaginationMoveButton } from "./pagination-buttons"
 
 interface Props {
   data: PostPreviewsListQuery
-  location: Location
   pageContext: {
     currentPage: number
     totalPagesCount: number
+    slug: string
   }
 }
 
@@ -20,14 +20,14 @@ const BlogPostPreviewList: React.FC<Props> = ({
   data: {
     allMdx: { edges },
   },
-  pageContext: { totalPagesCount, currentPage },
+  pageContext: { totalPagesCount, currentPage, slug },
 }) => {
   const shouldRenderNextbutton = currentPage + 1 !== totalPagesCount
   const shouldRenderPreviousbutton = currentPage !== 0
 
   return (
     <BlogPostPreviewListWrapper>
-      <Seo title="Home" customMetadata={{ pathname: location.pathname }} />
+      <Seo title="Home" customMetadata={{ pathname: slug }} />
       {edges.map(({ node }, index) => (
         <BlogPostPreview node={node} index={index} key={node.fields.slug} />
       ))}
