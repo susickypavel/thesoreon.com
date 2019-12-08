@@ -23,7 +23,7 @@ export const PageHeaderAvatar: React.FC = () => {
 
   return (
     <Link to="/">
-      <Avatar fluid={fluid as any} />
+      <Avatar alt="Go to homepage" fluid={fluid as any} />
     </Link>
   )
 }

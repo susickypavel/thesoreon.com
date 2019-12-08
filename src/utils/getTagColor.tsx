@@ -12,5 +12,5 @@ export interface TagColor {
 }
 
 export function getTagColor(tag: string): TagColor {
-  return colors[tag] || { background: "gray", foreground: "white" }
+  return colors[tag] || { background: "#616161", foreground: "white" }
 }
