@@ -17,6 +17,7 @@ export interface Theme {
     default: string
     focus: string
     visited: string
+    text: string
   }
 }
 
@@ -37,6 +38,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
       default: "var(--links-default)",
       focus: "var(--links-focus)",
       visited: "var(--links-visited)",
+      text: "var(--links-text)",
     },
   }
 

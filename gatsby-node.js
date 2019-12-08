@@ -47,4 +47,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: { id: node.id },
     })
   })
+
+  const allPosts = await graphql(`
+    query {
+      allMdx {
+        totalCount
+      }
+    }
+  `)
+
+  const totalPostsCount = allPosts.data.allMdx.totalCount
+  const postsPerPage = 3
+  const totalPagesCount = Math.ceil(totalPostsCount / postsPerPage)
+
+  Array.from({ length: totalPagesCount }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? "/" : `/${i}`,
+      component: path.resolve(`./src/components/blog-post-previews-list/index.tsx`),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        totalPagesCount,
+        currentPage: i,
+      },
+    })
+  })
 }

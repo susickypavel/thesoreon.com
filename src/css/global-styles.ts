@@ -51,7 +51,8 @@ const globalStyles = css`
 
     --links-default: lightblue;
     --links-focus: ${darken(0.25, "lightblue")};
-    --links-visited: ${lighten(0.1, "blue")};
+    --links-visited: ${lighten(0.25, "blue")};
+    --links-text: black;
   }
 
   body.light {
@@ -71,6 +72,7 @@ const globalStyles = css`
     --links-default: #f33b5d;
     --links-focus: ${lighten(0.25, "#f33b5d")};
     --links-visited: darkblue;
+    --links-text: black;
   }
 `
 
