@@ -4,7 +4,7 @@ const typography = new Typography({
   googleFonts: [
     {
       name: "IBM Plex Sans",
-      styles: ["400", "500", "600", "700"],
+      styles: ["400", "500", "600", "700&display=swap"],
     },
   ],
   baseFontSize: "20px",
