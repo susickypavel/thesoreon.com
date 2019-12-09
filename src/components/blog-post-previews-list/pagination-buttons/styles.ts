@@ -11,8 +11,8 @@ export const PaginationButton = styled(Link)(props => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    boxShadow: props.theme.blogPreview.boxshadow,
     textDecoration: "none",
+    fontWeight: "bold",
     "&:hover, &:focus": {
       textDecoration: "underline",
     },
