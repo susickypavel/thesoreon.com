@@ -13,13 +13,6 @@ export const List: React.FC<Props> = ({ listType, children }) => {
     margin: 8px 0;
     & li {
       line-height: 1.5;
-      & a {
-        width: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        display: block;
-      }
     }
   `
 
