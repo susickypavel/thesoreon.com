@@ -14,7 +14,7 @@ export interface CustomMetaData {
   pathname: string
   image?: string
   customDescription?: string
-  customType?: "website" | "article"
+  customType?: "website" | "article" | "summary_large_image"
 }
 
 const Seo: React.FC<Props> = ({
