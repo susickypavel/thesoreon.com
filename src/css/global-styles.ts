@@ -25,7 +25,6 @@ const globalStyles = css`
 
   body {
     min-width: ${BODY_MINWIDTH};
-    padding: 25px 16px 16px 16px;
   }
 
   html,
