@@ -6,8 +6,8 @@ import globalStyles from "~/css/global-styles"
 
 import MyLoadable from "~/hoc/canvas-loadable"
 
-const SiteBackground = MyLoadable({
-  loader: () => import("./site-background/site-background-component"),
+const HomeHero = MyLoadable({
+  loader: () => import("./home-hero/home-hero"),
 })
 
 const styles: SerializedStyles[] = [resetStyles, globalStyles]
@@ -15,8 +15,8 @@ const styles: SerializedStyles[] = [resetStyles, globalStyles]
 export const PageLayout: React.FC = () => {
   return (
     <>
-      <SiteBackground />
       <Global styles={styles} />
+      <HomeHero />
     </>
   )
 }
