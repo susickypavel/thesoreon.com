@@ -16,6 +16,7 @@ export class SiteBackgroundWebGL {
       backgroundColor: 0x00ff00,
       resizeTo: window,
     })
+    this.app.view.style.position = "fixed"
     this.bg = this.createBackgroundImage()
     this.app.stage.addChild(this.bg)
     this.app.ticker.add(() => {
