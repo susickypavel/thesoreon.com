@@ -1,15 +1,32 @@
 import React, { useRef, useEffect } from "react"
 
-import { initialize } from "./webgl-background"
+import { SiteBackgroundWebGL } from "./site-background-webgl"
 import { CanvasHolder } from "./styles"
 
-const canvas = initialize()
+const SBWebGL = new SiteBackgroundWebGL()
+
+const handleClick = (e: MouseEvent) => {
+  SBWebGL.addShockwave(e.clientX, e.clientY)
+}
+
+const handleTouch = (e: TouchEvent) => {
+  SBWebGL.addShockwave(e.touches[0].clientX, e.touches[0].clientY)
+}
 
 const SiteBackground: React.FC = () => {
   const canvasHolder = useRef<HTMLDivElement>()
 
   useEffect(() => {
-    canvasHolder.current.appendChild(canvas)
+    const _canvasHolder = canvasHolder.current
+
+    _canvasHolder.appendChild(SBWebGL._app.view)
+    _canvasHolder.addEventListener("mousedown", handleClick)
+    _canvasHolder.addEventListener("touchstart", handleTouch)
+
+    return () => {
+      _canvasHolder.removeEventListener("mousedown", handleClick)
+      _canvasHolder.removeEventListener("touchstart", handleTouch)
+    }
   }, [])
 
   return <CanvasHolder ref={canvasHolder} />

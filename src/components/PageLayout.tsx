@@ -10,13 +10,18 @@ const HomeHero = MyLoadable({
   loader: () => import("./home-hero/home-hero"),
 })
 
+const SiteBackground = MyLoadable({
+  loader: () => import("./site-background/site-background-component"),
+})
+
 const styles: SerializedStyles[] = [resetStyles, globalStyles]
 
 export const PageLayout: React.FC = () => {
   return (
     <>
+      <SiteBackground />
       <Global styles={styles} />
-      <HomeHero />
+      {/* <HomeHero /> */}
     </>
   )
 }
