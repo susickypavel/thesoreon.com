@@ -64,7 +64,6 @@ typings/
 public
 .cache
 
-graphqlTypes.ts
 gatsby.ts
 gatsby-node.js
 gatsby-browser.js
@@ -72,7 +71,7 @@ gatsby-ssr.js
 gatsby-config.js
 
 # GraphQL typings
-graphqlTypes.ts
+graphql-types.ts
 
 # e2e tests
 cypress
