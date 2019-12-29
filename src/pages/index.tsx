@@ -1,10 +1,21 @@
 import React from "react";
 
+import styled from "@emotion/styled";
+
+const Child = styled.h1``;
+
+const Parent = styled.div`
+  background-color: red;
+  ${Child} {
+    color: lime;
+  }
+`;
+
 const Index: React.FC = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <Parent>
+      <Child>Hello World</Child>
+    </Parent>
   );
 };
 
