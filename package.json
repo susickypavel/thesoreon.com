@@ -13,7 +13,9 @@
     "gatsby:info": "gatsby info --clipboard",
     "gatsby:clean": "gatsby clean",
     "check:prettier": "prettier --check src/**/*.tsx src/**/*.ts",
-    "fix:eslint": "eslint --fix --ignore-path .eslintignore --ext ts,tsx,js,jsx ."
+    "fix:eslint": "eslint --fix --ignore-path .eslintignore --ext ts,tsx,js,jsx .",
+    "test": "jest --rootDir --config test/jest.config.js",
+    "test:watch": "jest --watch --rootDir --config test/jest.config.js"
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
@@ -32,6 +34,9 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@types/jest": "^24.0.25",
     "@types/node": "^13.1.1",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
@@ -39,6 +44,8 @@
     "@types/typography": "^0.16.3",
     "@typescript-eslint/eslint-plugin": "^2.13.0",
     "@typescript-eslint/parser": "^2.13.0",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-emotion": "^10.0.27",
     "babel-plugin-root-import": "^6.4.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -49,6 +56,9 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "jest": "^24.9.0",
+    "jest-emotion": "^10.0.27",
+    "jest-transform-stub": "^2.0.0",
     "prettier": "^1.19.1",
     "typescript": "^3.7.4"
   }
