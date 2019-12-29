@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   plugins: [
     {
@@ -23,5 +25,14 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.ts`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `content`, `images`),
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 }
