@@ -4,7 +4,13 @@
   "repository": "git@github.com:Thesoreon/thesoreon.com.git",
   "author": "Pavel Susicky <pavels.sus@gmail.com>",
   "license": "MIT",
-  "scripts": {},
-  "dependencies": {},
+  "scripts": {
+    "start": "gatsby develop --open"
+  },
+  "dependencies": {
+    "gatsby": "^2.18.17",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
   "devDependencies": {}
 }
