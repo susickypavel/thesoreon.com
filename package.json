@@ -6,7 +6,13 @@
   "license": "MIT",
   "scripts": {
     "start": "gatsby develop --open",
-    "build": "gatsby build"
+    "start:network": "gatsby develop --open --host 0.0.0.0",
+    "build": "gatsby build",
+    "serve": "gatsby serve --open",
+    "serve:network": "gatsby serve --open --host 0.0.0.0",
+    "gatsby:info": "gatsby info --clipboard",
+    "gatsby:clean": "gatsby clean",
+    "check:prettier": "prettier --check src/**/*.tsx src/**/*.ts"
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
