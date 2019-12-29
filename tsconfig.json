@@ -5,6 +5,7 @@
     "jsx": "react",
     "noEmit": true,
     "strict": true,
+    "strictNullChecks": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
