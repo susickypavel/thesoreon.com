@@ -17,6 +17,13 @@ export const BlogPostList: React.FC = () => {
               title
               description
               date
+              thumbnail {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
             fields {
               slug

@@ -13,7 +13,13 @@ import {
   BlogPostCardInformation,
 } from "./blog-post-card.styles"
 import { LinkQRCode } from "./qr-code/qr-code.component"
-import { Maybe, MdxFrontmatter, MdxFields, Mdx } from "~/graphql-types"
+import {
+  Maybe,
+  MdxFrontmatter,
+  MdxFields,
+  Mdx,
+  GatsbyImageSharpFluidFragment,
+} from "~/graphql-types"
 
 const tension = 250
 const friction = 40
@@ -32,7 +38,20 @@ const transform = (x: number, y: number, s: number) =>
 interface Props {
   node: { __typename?: "Mdx" } & Pick<Mdx, "timeToRead"> & {
       frontmatter: Maybe<
-        { __typename?: "MdxFrontmatter" } & Pick<MdxFrontmatter, "title" | "description" | "date">
+        { __typename?: "MdxFrontmatter" } & Pick<
+          MdxFrontmatter,
+          "title" | "description" | "date"
+        > & {
+            thumbnail: Maybe<
+              { __typename?: "File" } & {
+                childImageSharp: Maybe<
+                  { __typename?: "ImageSharp" } & {
+                    fluid: Maybe<{ __typename?: "ImageSharpFluid" } & GatsbyImageSharpFluidFragment>
+                  }
+                >
+              }
+            >
+          }
       >
       fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
     }
@@ -41,7 +60,7 @@ interface Props {
 export const BlogPostCard: React.FC<Props> = ({
   node: {
     fields: { slug },
-    frontmatter: { title, date, description },
+    frontmatter: { title, date, description, thumbnail },
     timeToRead,
   },
 }) => {
@@ -96,7 +115,7 @@ export const BlogPostCard: React.FC<Props> = ({
         </BlogPostCardInformationBar>
         <BlogPostCardDescription>{description}</BlogPostCardDescription>
       </BlogPostCardBody>
-      <LinkQRCode slug={slug} />
+      <LinkQRCode slug={slug} fluid={thumbnail?.childImageSharp.fluid} />
     </BlogPostCardWrapper>
   )
 }
