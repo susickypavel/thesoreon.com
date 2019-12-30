@@ -32,6 +32,28 @@ module.exports = {
         path: path.join(__dirname, `content`, `images`),
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/content/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [".mdx", ".md"],
+        plugins: [`gatsby-remark-images`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1920,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
   ],

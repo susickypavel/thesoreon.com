@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 
 import { animated } from "react-spring"
+import { Link } from "gatsby"
 
 export const BlogPostCardHeader = styled.h2`
   background: black;
@@ -9,7 +10,10 @@ export const BlogPostCardHeader = styled.h2`
   padding: 0.4em;
 `
 
-export const BlogPostCardWrapper = styled(animated.div)`
+const AnimatedLink = animated(Link)
+
+export const BlogPostCardWrapper = styled(AnimatedLink)`
+  text-decoration: none;
   background-color: gray;
   max-width: 50rem;
   width: 100%;
@@ -29,11 +33,14 @@ export const BlogPostCardWrapper = styled(animated.div)`
   }
 `
 
-export const BlogPostCardBody = styled.div``
+export const BlogPostCardBody = styled.div`
+  flex-grow: 1;
+`
 
 export const BlogPostCardDescription = styled.p`
   font-size: 1.6rem;
   padding: 0.8em;
+  color: black;
 `
 
 export const BlogPostCardInformationBar = styled.div`
@@ -41,6 +48,7 @@ export const BlogPostCardInformationBar = styled.div`
   font-weight: bold;
   padding: 0.8em;
   padding-bottom: 0;
+  color: black;
 `
 
 export const BlogPostCardInformation = styled.span`

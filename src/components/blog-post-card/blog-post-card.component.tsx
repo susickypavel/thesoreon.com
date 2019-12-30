@@ -13,6 +13,7 @@ import {
   BlogPostCardInformation,
 } from "./blog-post-card.styles"
 import { LinkQRCode } from "./qr-code/qr-code.component"
+import { Maybe, MdxFrontmatter, MdxFields, Mdx } from "~/graphql-types"
 
 const tension = 250
 const friction = 40
@@ -28,7 +29,22 @@ const calculateTilt = (x: number, y: number, height: number, width: number) => [
 const transform = (x: number, y: number, s: number) =>
   `perspective(3000px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-export const BlogPostCard: React.FC = () => {
+interface Props {
+  node: { __typename?: "Mdx" } & Pick<Mdx, "timeToRead"> & {
+      frontmatter: Maybe<
+        { __typename?: "MdxFrontmatter" } & Pick<MdxFrontmatter, "title" | "description" | "date">
+      >
+      fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>
+    }
+}
+
+export const BlogPostCard: React.FC<Props> = ({
+  node: {
+    fields: { slug },
+    frontmatter: { title, date, description },
+    timeToRead,
+  },
+}) => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     config: { mass, tension, friction },
@@ -60,6 +76,7 @@ export const BlogPostCard: React.FC = () => {
 
   return (
     <BlogPostCardWrapper
+      to={slug}
       onMouseLeave={handleQuit}
       onTouchEnd={handleQuit}
       onMouseMove={handleMouseMove}
@@ -68,20 +85,18 @@ export const BlogPostCard: React.FC = () => {
       style={{ transform: props.xys.interpolate(transform as any) }}
     >
       <BlogPostCardBody>
-        <BlogPostCardHeader>How to make super amazing pages using WebGL</BlogPostCardHeader>
+        <BlogPostCardHeader>{title}</BlogPostCardHeader>
         <BlogPostCardInformationBar>
           <BlogPostCardInformation>
-            <FaClock /> 3 min read
+            <FaClock /> {timeToRead} min read
           </BlogPostCardInformation>
           <BlogPostCardInformation>
-            <FaCalendarAlt /> 29.1.2001
+            <FaCalendarAlt /> {new Date(date).toLocaleDateString()}
           </BlogPostCardInformation>
         </BlogPostCardInformationBar>
-        <BlogPostCardDescription>
-          Learn how to make beautiful pages using WeBGL and technoligies as pixi or three.js
-        </BlogPostCardDescription>
+        <BlogPostCardDescription>{description}</BlogPostCardDescription>
       </BlogPostCardBody>
-      <LinkQRCode />
+      <LinkQRCode slug={slug} />
     </BlogPostCardWrapper>
   )
 }
