@@ -4,7 +4,10 @@ import { BlogPostCard } from "~/components/blog-post-card/blog-post-card.compone
 
 const MainPage: React.FC = () => {
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", padding: "16px", flexDirection: "column" }}>
+      <BlogPostCard />
+      <BlogPostCard />
+      <BlogPostCard />
       <BlogPostCard />
     </div>
   )
