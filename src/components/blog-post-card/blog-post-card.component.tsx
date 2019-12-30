@@ -1,4 +1,7 @@
 import React from "react"
+
+import { FaClock, FaCalendarAlt } from "react-icons/fa"
+
 import { useSpring } from "react-spring"
 
 import {
@@ -6,20 +9,24 @@ import {
   BlogPostCardHeader,
   BlogPostCardDescription,
   BlogPostCardBody,
+  BlogPostCardInformationBar,
+  BlogPostCardInformation,
 } from "./blog-post-card.styles"
-
-const calculateTilt = (x: number, y: number, height: number, width: number) => [
-  -(y - height / 2) / 20,
-  (x - width / 2) / 20,
-  1.02,
-]
-
-const transform = (x: number, y: number, s: number) =>
-  `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+import { LinkQRCode } from "./qr-code/qr-code.component"
 
 const tension = 250
 const friction = 40
 const mass = 5
+const scale = 1.05
+
+const calculateTilt = (x: number, y: number, height: number, width: number) => [
+  -(y - height / 2) / 20,
+  (x - width / 2) / 20,
+  scale,
+]
+
+const transform = (x: number, y: number, s: number) =>
+  `perspective(3000px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 export const BlogPostCard: React.FC = () => {
   const [props, set] = useSpring(() => ({
@@ -62,10 +69,19 @@ export const BlogPostCard: React.FC = () => {
     >
       <BlogPostCardBody>
         <BlogPostCardHeader>How to make super amazing pages using WebGL</BlogPostCardHeader>
+        <BlogPostCardInformationBar>
+          <BlogPostCardInformation>
+            <FaClock /> 3 min read
+          </BlogPostCardInformation>
+          <BlogPostCardInformation>
+            <FaCalendarAlt /> 29.1.2001
+          </BlogPostCardInformation>
+        </BlogPostCardInformationBar>
         <BlogPostCardDescription>
           Learn how to make beautiful pages using WeBGL and technoligies as pixi or three.js
         </BlogPostCardDescription>
       </BlogPostCardBody>
+      <LinkQRCode />
     </BlogPostCardWrapper>
   )
 }
