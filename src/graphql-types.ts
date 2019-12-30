@@ -2391,10 +2391,6 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___isTSX = 'pluginCreator___pluginOptions___isTSX',
   pluginCreator___pluginOptions___jsxPragma = 'pluginCreator___pluginOptions___jsxPragma',
   pluginCreator___pluginOptions___allExtensions = 'pluginCreator___pluginOptions___allExtensions',
-  pluginCreator___pluginOptions___sourceMap = 'pluginCreator___pluginOptions___sourceMap',
-  pluginCreator___pluginOptions___autoLabel = 'pluginCreator___pluginOptions___autoLabel',
-  pluginCreator___pluginOptions___labelFormat = 'pluginCreator___pluginOptions___labelFormat',
-  pluginCreator___pluginOptions___cssPropOptimization = 'pluginCreator___pluginOptions___cssPropOptimization',
   pluginCreator___pluginOptions___pathToConfigModule = 'pluginCreator___pluginOptions___pathToConfigModule',
   pluginCreator___pluginOptions___name = 'pluginCreator___pluginOptions___name',
   pluginCreator___pluginOptions___path = 'pluginCreator___pluginOptions___path',
@@ -2402,6 +2398,10 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___gatsbyRemarkPlugins = 'pluginCreator___pluginOptions___gatsbyRemarkPlugins',
   pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve = 'pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve',
   pluginCreator___pluginOptions___pathCheck = 'pluginCreator___pluginOptions___pathCheck',
+  pluginCreator___pluginOptions___sourceMap = 'pluginCreator___pluginOptions___sourceMap',
+  pluginCreator___pluginOptions___autoLabel = 'pluginCreator___pluginOptions___autoLabel',
+  pluginCreator___pluginOptions___labelFormat = 'pluginCreator___pluginOptions___labelFormat',
+  pluginCreator___pluginOptions___cssPropOptimization = 'pluginCreator___pluginOptions___cssPropOptimization',
   pluginCreator___nodeAPIs = 'pluginCreator___nodeAPIs',
   pluginCreator___browserAPIs = 'pluginCreator___browserAPIs',
   pluginCreator___ssrAPIs = 'pluginCreator___ssrAPIs',
@@ -2602,10 +2602,6 @@ export enum SitePluginFieldsEnum {
   pluginOptions___isTSX = 'pluginOptions___isTSX',
   pluginOptions___jsxPragma = 'pluginOptions___jsxPragma',
   pluginOptions___allExtensions = 'pluginOptions___allExtensions',
-  pluginOptions___sourceMap = 'pluginOptions___sourceMap',
-  pluginOptions___autoLabel = 'pluginOptions___autoLabel',
-  pluginOptions___labelFormat = 'pluginOptions___labelFormat',
-  pluginOptions___cssPropOptimization = 'pluginOptions___cssPropOptimization',
   pluginOptions___pathToConfigModule = 'pluginOptions___pathToConfigModule',
   pluginOptions___name = 'pluginOptions___name',
   pluginOptions___path = 'pluginOptions___path',
@@ -2625,6 +2621,10 @@ export enum SitePluginFieldsEnum {
   pluginOptions___gatsbyRemarkPlugins___options___disableBgImageOnAlpha = 'pluginOptions___gatsbyRemarkPlugins___options___disableBgImageOnAlpha',
   pluginOptions___gatsbyRemarkPlugins___options___disableBgImage = 'pluginOptions___gatsbyRemarkPlugins___options___disableBgImage',
   pluginOptions___pathCheck = 'pluginOptions___pathCheck',
+  pluginOptions___sourceMap = 'pluginOptions___sourceMap',
+  pluginOptions___autoLabel = 'pluginOptions___autoLabel',
+  pluginOptions___labelFormat = 'pluginOptions___labelFormat',
+  pluginOptions___cssPropOptimization = 'pluginOptions___cssPropOptimization',
   nodeAPIs = 'nodeAPIs',
   browserAPIs = 'browserAPIs',
   ssrAPIs = 'ssrAPIs',
@@ -2751,16 +2751,16 @@ export type SitePluginPluginOptions = {
   isTSX?: Maybe<Scalars['Boolean']>,
   jsxPragma?: Maybe<Scalars['String']>,
   allExtensions?: Maybe<Scalars['Boolean']>,
-  sourceMap?: Maybe<Scalars['Boolean']>,
-  autoLabel?: Maybe<Scalars['Boolean']>,
-  labelFormat?: Maybe<Scalars['String']>,
-  cssPropOptimization?: Maybe<Scalars['Boolean']>,
   pathToConfigModule?: Maybe<Scalars['String']>,
   name?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
   extensions?: Maybe<Array<Maybe<Scalars['String']>>>,
   gatsbyRemarkPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsGatsbyRemarkPlugins>>>,
   pathCheck?: Maybe<Scalars['Boolean']>,
+  sourceMap?: Maybe<Scalars['Boolean']>,
+  autoLabel?: Maybe<Scalars['Boolean']>,
+  labelFormat?: Maybe<Scalars['String']>,
+  cssPropOptimization?: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsFilterInput = {
@@ -2768,16 +2768,16 @@ export type SitePluginPluginOptionsFilterInput = {
   isTSX?: Maybe<BooleanQueryOperatorInput>,
   jsxPragma?: Maybe<StringQueryOperatorInput>,
   allExtensions?: Maybe<BooleanQueryOperatorInput>,
-  sourceMap?: Maybe<BooleanQueryOperatorInput>,
-  autoLabel?: Maybe<BooleanQueryOperatorInput>,
-  labelFormat?: Maybe<StringQueryOperatorInput>,
-  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>,
   pathToConfigModule?: Maybe<StringQueryOperatorInput>,
   name?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
   extensions?: Maybe<StringQueryOperatorInput>,
   gatsbyRemarkPlugins?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
+  sourceMap?: Maybe<BooleanQueryOperatorInput>,
+  autoLabel?: Maybe<BooleanQueryOperatorInput>,
+  labelFormat?: Maybe<StringQueryOperatorInput>,
+  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsGatsbyRemarkPlugins = {
@@ -2991,6 +2991,23 @@ export type GatsbyImageSharpSizes_NoBase64Fragment = (
 export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = (
   { __typename?: 'ImageSharpSizes' }
   & Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
+
+export type DefaultThumbnailQueryVariables = {};
+
+
+export type DefaultThumbnailQuery = (
+  { __typename?: 'Query' }
+  & { file: Maybe<(
+    { __typename?: 'File' }
+    & { childImageSharp: Maybe<(
+      { __typename?: 'ImageSharp' }
+      & { fluid: Maybe<(
+        { __typename?: 'ImageSharpFluid' }
+        & GatsbyImageSharpFluidFragment
+      )> }
+    )> }
+  )> }
 );
 
 export type BlogPostsListQueryVariables = {};

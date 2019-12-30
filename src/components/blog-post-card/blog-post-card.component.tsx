@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 import { FaClock, FaCalendarAlt } from "react-icons/fa"
 
@@ -64,6 +64,7 @@ export const BlogPostCard: React.FC<Props> = ({
     timeToRead,
   },
 }) => {
+  const [hovered, setHovered] = useState(false)
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     config: { mass, tension, friction },
@@ -90,17 +91,22 @@ export const BlogPostCard: React.FC<Props> = ({
   }
 
   const handleQuit = () => {
+    setHovered(false)
     set({ xys: [0, 0, 1] })
   }
 
   return (
     <BlogPostCardWrapper
       to={slug}
+      onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleQuit}
       onTouchEnd={handleQuit}
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
-      onTouchStart={handleTouchMove}
+      onTouchStart={e => {
+        setHovered(true)
+        handleTouchMove(e)
+      }}
       style={{ transform: props.xys.interpolate(transform as any) }}
     >
       <BlogPostCardBody>
@@ -115,7 +121,7 @@ export const BlogPostCard: React.FC<Props> = ({
         </BlogPostCardInformationBar>
         <BlogPostCardDescription>{description}</BlogPostCardDescription>
       </BlogPostCardBody>
-      <LinkQRCode slug={slug} fluid={thumbnail?.childImageSharp.fluid} />
+      <LinkQRCode slug={slug} fluid={thumbnail?.childImageSharp.fluid} hovered={hovered} />
     </BlogPostCardWrapper>
   )
 }

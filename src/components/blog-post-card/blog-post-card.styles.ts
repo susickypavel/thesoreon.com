@@ -8,6 +8,7 @@ export const BlogPostCardHeader = styled.h2`
   color: #02d8f3;
   font-size: 2.4rem;
   padding: 0.4em;
+  transform: scale(1.1);
 `
 
 const AnimatedLink = animated(Link)
@@ -15,7 +16,8 @@ const AnimatedLink = animated(Link)
 export const BlogPostCardWrapper = styled(AnimatedLink)`
   text-decoration: none;
   background-color: gray;
-  max-width: 50rem;
+  max-width: 55rem;
+  min-height: 150px;
   width: 100%;
   box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.5);
   margin-bottom: 32px;
@@ -35,6 +37,7 @@ export const BlogPostCardWrapper = styled(AnimatedLink)`
 
 export const BlogPostCardBody = styled.div`
   flex-grow: 1;
+  margin-right: 32px;
 `
 
 export const BlogPostCardDescription = styled.p`
