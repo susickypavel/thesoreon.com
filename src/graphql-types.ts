@@ -3008,6 +3008,16 @@ export type BlogPostsListQuery = (
         & { frontmatter: Maybe<(
           { __typename?: 'MdxFrontmatter' }
           & Pick<MdxFrontmatter, 'title' | 'description' | 'date'>
+          & { thumbnail: Maybe<(
+            { __typename?: 'File' }
+            & { childImageSharp: Maybe<(
+              { __typename?: 'ImageSharp' }
+              & { fluid: Maybe<(
+                { __typename?: 'ImageSharpFluid' }
+                & GatsbyImageSharpFluidFragment
+              )> }
+            )> }
+          )> }
         )>, fields: Maybe<(
           { __typename?: 'MdxFields' }
           & Pick<MdxFields, 'slug'>
