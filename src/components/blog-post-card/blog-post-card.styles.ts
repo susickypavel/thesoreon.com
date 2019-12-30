@@ -9,6 +9,12 @@ export const BlogPostCardHeader = styled.h2`
   font-size: 2.4rem;
   padding: 0.4em;
   transform: scale(1.1);
+  border: 3px solid red;
+`
+
+export const BlogPostCardBody = styled.div`
+  flex-grow: 1;
+  margin-right: 32px;
 `
 
 const AnimatedLink = animated(Link)
@@ -28,16 +34,16 @@ export const BlogPostCardWrapper = styled(AnimatedLink)`
 
   @media (max-width: 650px) {
     height: auto;
+    flex-flow: column-reverse wrap;
 
     ${BlogPostCardHeader} {
       transform: none;
     }
-  }
-`
 
-export const BlogPostCardBody = styled.div`
-  flex-grow: 1;
-  margin-right: 32px;
+    ${BlogPostCardBody} {
+      margin-right: 0;
+    }
+  }
 `
 
 export const BlogPostCardDescription = styled.p`

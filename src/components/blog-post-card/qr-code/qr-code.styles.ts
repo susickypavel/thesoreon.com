@@ -9,8 +9,9 @@ export const QRCodeHolder = styled(BackgroundImage)`
   width: 15rem;
   padding: 1.6em;
 
-  @media (max-width: 500px) {
-    display: none;
+  @media (max-width: 650px) {
+    width: 100%;
+    padding: 6.4em;
   }
 `
 
