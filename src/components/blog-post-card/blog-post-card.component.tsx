@@ -90,6 +90,16 @@ export const BlogPostCard: React.FC<Props> = ({
     })
   }
 
+  const handleFocus = (e: React.FocusEvent) => {
+    const { height, width } = e.currentTarget.getBoundingClientRect()
+
+    setHovered(true)
+
+    set({
+      xys: calculateTilt(width / 2, height / 2, height, width),
+    })
+  }
+
   const handleQuit = () => {
     setHovered(false)
     set({ xys: [0, 0, 1] })
@@ -107,6 +117,8 @@ export const BlogPostCard: React.FC<Props> = ({
         setHovered(true)
         handleTouchMove(e)
       }}
+      onFocus={handleFocus}
+      onBlur={handleQuit}
       style={{ transform: props.xys.interpolate(transform as any) }}
     >
       <BlogPostCardBody>
