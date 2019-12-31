@@ -20,12 +20,12 @@ const SiteBackground: React.FC = () => {
     const _canvasHolder = canvasHolder.current
 
     _canvasHolder.appendChild(SBWebGL._app.view)
-    _canvasHolder.addEventListener("mousedown", handleClick)
-    _canvasHolder.addEventListener("touchstart", handleTouch)
+    document.addEventListener("mousedown", handleClick)
+    document.addEventListener("touchstart", handleTouch)
 
     return () => {
-      _canvasHolder.removeEventListener("mousedown", handleClick)
-      _canvasHolder.removeEventListener("touchstart", handleTouch)
+      document.removeEventListener("mousedown", handleClick)
+      document.removeEventListener("touchstart", handleTouch)
     }
   }, [])
 
