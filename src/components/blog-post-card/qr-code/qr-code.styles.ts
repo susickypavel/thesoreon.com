@@ -31,4 +31,5 @@ export const QRCodeBackround = styled.div<{ hovered: boolean }>`
   background: black;
   transition: all 0.25s cubic-bezier(0.51, 0.92, 0.24, 1.15);
   transform: ${({ hovered }) => (hovered ? "scale(1)" : "scale(0)")};
+  border: 1px solid white;
 `
