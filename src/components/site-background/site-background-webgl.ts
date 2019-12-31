@@ -1,6 +1,8 @@
 import { Application, Texture, Sprite, Point } from "pixi.js"
 import { PixelateFilter, ShockwaveFilter } from "pixi-filters"
 
+import CyberpunkBG from "./cyberpunk.jpg"
+
 // TODO: investigate the ~12% CPU usage in idle
 export class SiteBackgroundWebGL {
   private app: Application
@@ -19,6 +21,7 @@ export class SiteBackgroundWebGL {
       resizeTo: window,
     })
     this.app.view.style.position = "fixed"
+    this.app.view.style.zIndex = "-1"
     this.bg = this.createBackgroundImage()
     this.app.stage.addChild(this.bg)
     this.app.ticker.add(() => {
@@ -40,7 +43,7 @@ export class SiteBackgroundWebGL {
   }
 
   private createBackgroundImage() {
-    const bg = new Sprite(Texture.from("./cyberpunk.jpg"))
+    const bg = new Sprite(Texture.from(CyberpunkBG))
 
     let lastTimeout: NodeJS.Timeout
 
