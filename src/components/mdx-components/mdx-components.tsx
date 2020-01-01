@@ -74,10 +74,6 @@ export const Paragraph = styled.p`
   line-height: 1.35;
   font-size: 2.2rem;
   margin: 0.8em 0;
-
-  &:first-of-type {
-    margin-top: 0;
-  }
 `
 
 interface Props {
@@ -99,4 +95,33 @@ export const ExternalLink: React.FC<Props> = ({ href, children }) => {
       <FaExternalLinkAlt />
     </Link>
   )
+}
+
+interface ListProps {
+  type: "ul" | "ol"
+}
+
+export const List: React.FC<ListProps> = ({ type, children }) => {
+  const StyledListUnordered = styled("ul")`
+    margin: 0.8em 0;
+    line-height: 1.35;
+    & li {
+      &:before {
+        content: "\u00AC";
+        margin-right: 0.4em;
+        font-weight: bold;
+      }
+    }
+  `
+
+  const StyledListOrdered = styled("ol")`
+    list-style-type: decimal-leading-zero;
+    margin: 0.8em 0;
+    line-height: 1.35;
+    margin-left: 2.2em;
+  `
+
+  const StyledList = type === "ul" ? StyledListUnordered : StyledListOrdered
+
+  return <StyledList>{children}</StyledList>
 }
