@@ -2024,6 +2024,7 @@ export type QuerySitePageArgs = {
   component?: Maybe<StringQueryOperatorInput>,
   componentChunkName?: Maybe<StringQueryOperatorInput>,
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>,
+  context?: Maybe<SitePageContextFilterInput>,
   pluginCreator?: Maybe<SitePluginFilterInput>,
   pluginCreatorId?: Maybe<StringQueryOperatorInput>,
   componentPath?: Maybe<StringQueryOperatorInput>
@@ -2214,6 +2215,7 @@ export type SitePage = Node & {
   component?: Maybe<Scalars['String']>,
   componentChunkName?: Maybe<Scalars['String']>,
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>,
+  context?: Maybe<SitePageContext>,
   pluginCreator?: Maybe<SitePlugin>,
   pluginCreatorId?: Maybe<Scalars['String']>,
   componentPath?: Maybe<Scalars['String']>,
@@ -2239,6 +2241,15 @@ export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>,
   limit?: Maybe<Scalars['Int']>,
   field: SitePageFieldsEnum
+};
+
+export type SitePageContext = {
+   __typename?: 'SitePageContext',
+  id?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageEdge = {
@@ -2340,6 +2351,7 @@ export enum SitePageFieldsEnum {
   component = 'component',
   componentChunkName = 'componentChunkName',
   isCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
+  context___id = 'context___id',
   pluginCreator___id = 'pluginCreator___id',
   pluginCreator___parent___id = 'pluginCreator___parent___id',
   pluginCreator___parent___parent___id = 'pluginCreator___parent___parent___id',
@@ -2391,6 +2403,10 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___isTSX = 'pluginCreator___pluginOptions___isTSX',
   pluginCreator___pluginOptions___jsxPragma = 'pluginCreator___pluginOptions___jsxPragma',
   pluginCreator___pluginOptions___allExtensions = 'pluginCreator___pluginOptions___allExtensions',
+  pluginCreator___pluginOptions___sourceMap = 'pluginCreator___pluginOptions___sourceMap',
+  pluginCreator___pluginOptions___autoLabel = 'pluginCreator___pluginOptions___autoLabel',
+  pluginCreator___pluginOptions___labelFormat = 'pluginCreator___pluginOptions___labelFormat',
+  pluginCreator___pluginOptions___cssPropOptimization = 'pluginCreator___pluginOptions___cssPropOptimization',
   pluginCreator___pluginOptions___pathToConfigModule = 'pluginCreator___pluginOptions___pathToConfigModule',
   pluginCreator___pluginOptions___name = 'pluginCreator___pluginOptions___name',
   pluginCreator___pluginOptions___path = 'pluginCreator___pluginOptions___path',
@@ -2398,10 +2414,6 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___gatsbyRemarkPlugins = 'pluginCreator___pluginOptions___gatsbyRemarkPlugins',
   pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve = 'pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve',
   pluginCreator___pluginOptions___pathCheck = 'pluginCreator___pluginOptions___pathCheck',
-  pluginCreator___pluginOptions___sourceMap = 'pluginCreator___pluginOptions___sourceMap',
-  pluginCreator___pluginOptions___autoLabel = 'pluginCreator___pluginOptions___autoLabel',
-  pluginCreator___pluginOptions___labelFormat = 'pluginCreator___pluginOptions___labelFormat',
-  pluginCreator___pluginOptions___cssPropOptimization = 'pluginCreator___pluginOptions___cssPropOptimization',
   pluginCreator___nodeAPIs = 'pluginCreator___nodeAPIs',
   pluginCreator___browserAPIs = 'pluginCreator___browserAPIs',
   pluginCreator___ssrAPIs = 'pluginCreator___ssrAPIs',
@@ -2436,6 +2448,7 @@ export type SitePageFilterInput = {
   component?: Maybe<StringQueryOperatorInput>,
   componentChunkName?: Maybe<StringQueryOperatorInput>,
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>,
+  context?: Maybe<SitePageContextFilterInput>,
   pluginCreator?: Maybe<SitePluginFilterInput>,
   pluginCreatorId?: Maybe<StringQueryOperatorInput>,
   componentPath?: Maybe<StringQueryOperatorInput>,
@@ -2602,6 +2615,10 @@ export enum SitePluginFieldsEnum {
   pluginOptions___isTSX = 'pluginOptions___isTSX',
   pluginOptions___jsxPragma = 'pluginOptions___jsxPragma',
   pluginOptions___allExtensions = 'pluginOptions___allExtensions',
+  pluginOptions___sourceMap = 'pluginOptions___sourceMap',
+  pluginOptions___autoLabel = 'pluginOptions___autoLabel',
+  pluginOptions___labelFormat = 'pluginOptions___labelFormat',
+  pluginOptions___cssPropOptimization = 'pluginOptions___cssPropOptimization',
   pluginOptions___pathToConfigModule = 'pluginOptions___pathToConfigModule',
   pluginOptions___name = 'pluginOptions___name',
   pluginOptions___path = 'pluginOptions___path',
@@ -2621,10 +2638,6 @@ export enum SitePluginFieldsEnum {
   pluginOptions___gatsbyRemarkPlugins___options___disableBgImageOnAlpha = 'pluginOptions___gatsbyRemarkPlugins___options___disableBgImageOnAlpha',
   pluginOptions___gatsbyRemarkPlugins___options___disableBgImage = 'pluginOptions___gatsbyRemarkPlugins___options___disableBgImage',
   pluginOptions___pathCheck = 'pluginOptions___pathCheck',
-  pluginOptions___sourceMap = 'pluginOptions___sourceMap',
-  pluginOptions___autoLabel = 'pluginOptions___autoLabel',
-  pluginOptions___labelFormat = 'pluginOptions___labelFormat',
-  pluginOptions___cssPropOptimization = 'pluginOptions___cssPropOptimization',
   nodeAPIs = 'nodeAPIs',
   browserAPIs = 'browserAPIs',
   ssrAPIs = 'ssrAPIs',
@@ -2751,16 +2764,16 @@ export type SitePluginPluginOptions = {
   isTSX?: Maybe<Scalars['Boolean']>,
   jsxPragma?: Maybe<Scalars['String']>,
   allExtensions?: Maybe<Scalars['Boolean']>,
+  sourceMap?: Maybe<Scalars['Boolean']>,
+  autoLabel?: Maybe<Scalars['Boolean']>,
+  labelFormat?: Maybe<Scalars['String']>,
+  cssPropOptimization?: Maybe<Scalars['Boolean']>,
   pathToConfigModule?: Maybe<Scalars['String']>,
   name?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
   extensions?: Maybe<Array<Maybe<Scalars['String']>>>,
   gatsbyRemarkPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsGatsbyRemarkPlugins>>>,
   pathCheck?: Maybe<Scalars['Boolean']>,
-  sourceMap?: Maybe<Scalars['Boolean']>,
-  autoLabel?: Maybe<Scalars['Boolean']>,
-  labelFormat?: Maybe<Scalars['String']>,
-  cssPropOptimization?: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsFilterInput = {
@@ -2768,16 +2781,16 @@ export type SitePluginPluginOptionsFilterInput = {
   isTSX?: Maybe<BooleanQueryOperatorInput>,
   jsxPragma?: Maybe<StringQueryOperatorInput>,
   allExtensions?: Maybe<BooleanQueryOperatorInput>,
+  sourceMap?: Maybe<BooleanQueryOperatorInput>,
+  autoLabel?: Maybe<BooleanQueryOperatorInput>,
+  labelFormat?: Maybe<StringQueryOperatorInput>,
+  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>,
   pathToConfigModule?: Maybe<StringQueryOperatorInput>,
   name?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
   extensions?: Maybe<StringQueryOperatorInput>,
   gatsbyRemarkPlugins?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
-  sourceMap?: Maybe<BooleanQueryOperatorInput>,
-  autoLabel?: Maybe<BooleanQueryOperatorInput>,
-  labelFormat?: Maybe<StringQueryOperatorInput>,
-  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsGatsbyRemarkPlugins = {
@@ -3042,4 +3055,34 @@ export type BlogPostsListQuery = (
       ) }
     )> }
   ) }
+);
+
+export type BlogPostQueryVariables = {
+  id?: Maybe<Scalars['String']>
+};
+
+
+export type BlogPostQuery = (
+  { __typename?: 'Query' }
+  & { mdx: Maybe<(
+    { __typename?: 'Mdx' }
+    & Pick<Mdx, 'body'>
+    & { frontmatter: Maybe<(
+      { __typename?: 'MdxFrontmatter' }
+      & Pick<MdxFrontmatter, 'title' | 'tags' | 'date' | 'description'>
+      & { thumbnail: Maybe<(
+        { __typename?: 'File' }
+        & { childImageSharp: Maybe<(
+          { __typename?: 'ImageSharp' }
+          & { fluid: Maybe<(
+            { __typename?: 'ImageSharpFluid' }
+            & GatsbyImageSharpFluidFragment
+          )> }
+        )> }
+      )> }
+    )>, fields: Maybe<(
+      { __typename?: 'MdxFields' }
+      & Pick<MdxFields, 'slug'>
+    )> }
+  )> }
 );

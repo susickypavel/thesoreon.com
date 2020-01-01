@@ -26,6 +26,12 @@ const globalStyles = css`
   #gatsby-focus-wrapper {
     height: 100%;
   }
+
+  .gatsby-resp-image-wrapper {
+    transform: scale(1.1);
+    border: 2.5px solid white;
+    margin: 1.6em 0 !important;
+  }
 `
 
 export default globalStyles
