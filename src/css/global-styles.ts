@@ -32,6 +32,18 @@ const globalStyles = css`
     border: 2.5px solid white;
     margin: 1.6em 0 !important;
   }
+
+  .gatsby-highlight {
+    transform: scale(1.1);
+    font-size: 1.6rem;
+    border: 2px solid white;
+    margin: 1.6em 0;
+
+    & pre {
+      margin: 0 !important;
+      padding: 3.2em;
+    }
+  }
 `
 
 export default globalStyles
