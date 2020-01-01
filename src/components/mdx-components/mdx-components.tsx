@@ -74,4 +74,8 @@ export const Paragraph = styled.p`
   line-height: 1.35;
   font-size: 2.2rem;
   margin: 0.8em 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
 `
