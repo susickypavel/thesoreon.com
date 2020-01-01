@@ -36,9 +36,15 @@ export const Header: React.FC<HeaderProps> = ({ type, children, slug }) => {
       position: relative;
 
       & svg {
+        opacity: 0.5;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        transition: opacity 0.1s linear;
+
+        &:hover {
+          opacity: 1;
+        }
       }
     }
 
@@ -58,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({ type, children, slug }) => {
     <HeaderStyled id={children.toString()}>
       {children}
       <Link to={`${slug}#${children.toString()}`}>
-        <FaLink size={`calc(${fontSize} - 0.8rem)`} color="rgba(189, 189, 189, 0.5)" />
+        <FaLink size={`calc(${fontSize} - 0.8rem)`} color="#bdbdbd" />
       </Link>
     </HeaderStyled>
   )
