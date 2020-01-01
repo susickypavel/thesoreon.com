@@ -2,7 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 
-import { FaLink } from "react-icons/fa"
+import { FaLink, FaExternalLinkAlt } from "react-icons/fa"
 
 interface HeaderProps {
   type: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
@@ -79,3 +79,24 @@ export const Paragraph = styled.p`
     margin-top: 0;
   }
 `
+
+interface Props {
+  href: string
+}
+
+export const ExternalLink: React.FC<Props> = ({ href, children }) => {
+  const Link = styled.a`
+    color: red;
+    & svg {
+      vertical-align: middle;
+      margin-left: 0.3em;
+    }
+  `
+
+  return (
+    <Link href={href}>
+      {children}
+      <FaExternalLinkAlt />
+    </Link>
+  )
+}
