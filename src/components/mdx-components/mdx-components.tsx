@@ -29,6 +29,7 @@ export const Header: React.FC<HeaderProps> = ({ type, children, slug }) => {
 
     padding: 0.8em;
     background-image: linear-gradient(45deg, rgba(189, 0, 240, 1) 0%, rgba(0, 184, 255, 1) 100%);
+    box-shadow: 0px 0px 64px black;
     transform: scaleX(1.1);
 
     & a {
