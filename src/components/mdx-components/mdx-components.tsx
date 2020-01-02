@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({ type, children, slug }) => {
 
     padding: 0.8em;
     background-image: linear-gradient(45deg, rgba(189, 0, 240, 1) 0%, rgba(0, 184, 255, 1) 100%);
-    transform: scale(1.1);
+    transform: scaleX(1.1);
 
     & a {
       margin-left: 0.4em;
@@ -125,3 +125,17 @@ export const List: React.FC<ListProps> = ({ type, children }) => {
 
   return <StyledList>{children}</StyledList>
 }
+
+export const BlockQuote = styled.blockquote`
+  font-size: 1.4rem;
+  font-style: italic;
+  margin: 1.6em 0;
+  padding: 1.6em;
+  border-left: 3px solid white;
+
+  background-color: black;
+
+  & p {
+    margin: 0;
+  }
+`
