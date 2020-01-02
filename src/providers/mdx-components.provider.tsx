@@ -1,6 +1,12 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
-import { Header, Paragraph, ExternalLink, List } from "~/components/mdx-components/mdx-components"
+import {
+  Header,
+  Paragraph,
+  ExternalLink,
+  List,
+  BlockQuote,
+} from "~/components/mdx-components/mdx-components"
 
 interface Props {
   slug: string
@@ -20,6 +26,7 @@ export const MdxComponentsProvider: React.FC<Props> = ({ children, slug }) => {
         a: (props: any) => <ExternalLink {...props} />,
         ul: props => <List type="ul" {...props} />,
         ol: props => <List type="ol" {...props} />,
+        blockquote: props => <BlockQuote {...props} />,
       }}
     >
       {children}
