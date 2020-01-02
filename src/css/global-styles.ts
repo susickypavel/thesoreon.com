@@ -28,20 +28,23 @@ const globalStyles = css`
   }
 
   .gatsby-resp-image-wrapper {
-    transform: scale(1.1);
+    width: calc(100% + 3.2em);
+    transform: translateX(-1.6em);
     border: 2.5px solid white;
     margin: 1.6em 0 !important;
   }
 
   .gatsby-highlight {
-    transform: scale(1.1);
     font-size: 1.6rem;
-    border: 2px solid white;
+    border: 2.5px solid white;
     margin: 1.6em 0;
+    width: calc(100% + 4.8em);
+    transform: translateX(-2.4em);
 
     & pre {
       margin: 0 !important;
       padding: 3.2em;
+      border-radius: 0;
     }
   }
 `
