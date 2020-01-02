@@ -28,18 +28,19 @@ const globalStyles = css`
   }
 
   .gatsby-resp-image-wrapper {
-    width: calc(100% + 3.2em);
-    transform: translateX(-1.6em);
-    border: 2.5px solid white;
+    font-size: 1.6rem;
+    width: calc(100% + 4.8em);
+    transform: translateX(-2.4em);
+    box-shadow: 0px 0px 64px black;
     margin: 1.6em 0 !important;
   }
 
   .gatsby-highlight {
     font-size: 1.6rem;
-    border: 2.5px solid white;
-    margin: 1.6em 0;
     width: calc(100% + 4.8em);
     transform: translateX(-2.4em);
+    box-shadow: 0px 0px 64px black;
+    margin: 1.6em 0;
 
     & pre {
       margin: 0 !important;

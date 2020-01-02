@@ -2,7 +2,6 @@ import styled from "@emotion/styled"
 import Img from "gatsby-image"
 
 export const BlogPostPageHolder = styled.div`
-  padding-top: 3.2em;
   max-width: 80em;
   width: 100%;
   background-color: #212121;
