@@ -24,7 +24,7 @@ const globalStyles = css`
   body,
   #___gatsby,
   #gatsby-focus-wrapper {
-    height: 100%;
+    /* height: 100%; */
   }
 
   .gatsby-resp-image-wrapper {

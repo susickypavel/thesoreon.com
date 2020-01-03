@@ -2637,6 +2637,8 @@ export enum SitePluginFieldsEnum {
   pluginOptions___gatsbyRemarkPlugins___options___loading = 'pluginOptions___gatsbyRemarkPlugins___options___loading',
   pluginOptions___gatsbyRemarkPlugins___options___disableBgImageOnAlpha = 'pluginOptions___gatsbyRemarkPlugins___options___disableBgImageOnAlpha',
   pluginOptions___gatsbyRemarkPlugins___options___disableBgImage = 'pluginOptions___gatsbyRemarkPlugins___options___disableBgImage',
+  pluginOptions___gatsbyRemarkPlugins___options___showLineNumbers = 'pluginOptions___gatsbyRemarkPlugins___options___showLineNumbers',
+  pluginOptions___gatsbyRemarkPlugins___options___classPrefix = 'pluginOptions___gatsbyRemarkPlugins___options___classPrefix',
   pluginOptions___pathCheck = 'pluginOptions___pathCheck',
   nodeAPIs = 'nodeAPIs',
   browserAPIs = 'browserAPIs',
@@ -2822,6 +2824,19 @@ export type SitePluginPluginOptionsGatsbyRemarkPluginsOptions = {
   loading?: Maybe<Scalars['String']>,
   disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>,
   disableBgImage?: Maybe<Scalars['Boolean']>,
+  showLineNumbers?: Maybe<Scalars['Boolean']>,
+  classPrefix?: Maybe<Scalars['String']>,
+  aliases?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliases>,
+  prompt?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPrompt>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliases = {
+   __typename?: 'SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliases',
+  react?: Maybe<Scalars['String']>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliasesFilterInput = {
+  react?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput = {
@@ -2837,6 +2852,19 @@ export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput = {
   loading?: Maybe<StringQueryOperatorInput>,
   disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>,
   disableBgImage?: Maybe<BooleanQueryOperatorInput>,
+  showLineNumbers?: Maybe<BooleanQueryOperatorInput>,
+  classPrefix?: Maybe<StringQueryOperatorInput>,
+  aliases?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliasesFilterInput>,
+  prompt?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPromptFilterInput>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPrompt = {
+   __typename?: 'SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPrompt',
+  global?: Maybe<Scalars['Boolean']>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPromptFilterInput = {
+  global?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsPlugins = {
@@ -3067,7 +3095,10 @@ export type BlogPostQuery = (
   & { mdx: Maybe<(
     { __typename?: 'Mdx' }
     & Pick<Mdx, 'body'>
-    & { frontmatter: Maybe<(
+    & { headings: Maybe<Array<Maybe<(
+      { __typename?: 'MdxHeadingMdx' }
+      & Pick<MdxHeadingMdx, 'value'>
+    )>>>, frontmatter: Maybe<(
       { __typename?: 'MdxFrontmatter' }
       & Pick<MdxFrontmatter, 'title' | 'tags' | 'date' | 'description'>
       & { thumbnail: Maybe<(

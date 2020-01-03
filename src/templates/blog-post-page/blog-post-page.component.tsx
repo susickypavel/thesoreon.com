@@ -11,6 +11,7 @@ import {
   MdxBodyHolder,
 } from "./blog-post-page.styles"
 import { MdxComponentsProvider } from "~/providers/mdx-components.provider"
+import { TableOfContents } from "./table-of-contents/table-of-contents.component"
 
 interface Props {
   data: BlogPostQuery
@@ -21,10 +22,12 @@ const BlogPostPage: React.FC<Props> = ({ data }) => {
     frontmatter: { title, thumbnail },
     body,
     fields: { slug },
+    headings,
   } = data.mdx
 
   return (
     <BlogPostPageHolder>
+      <TableOfContents headings={headings} />
       {thumbnail ? <BlogPostPageThumbnail fluid={thumbnail.childImageSharp.fluid as any} /> : null}
       <BlogPostPageHeader>{title}</BlogPostPageHeader>
       <MdxComponentsProvider slug={slug}>
@@ -40,6 +43,9 @@ export const query = graphql`
   query BlogPost($id: String) {
     mdx(id: { eq: $id }) {
       body
+      headings {
+        value
+      }
       frontmatter {
         title
         tags
