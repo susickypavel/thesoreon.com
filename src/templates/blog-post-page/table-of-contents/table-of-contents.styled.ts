@@ -5,8 +5,16 @@ export const TableOfContentsHolder = styled.ul`
   top: 0;
   left: 0;
   background: black;
-  font-size: 1.6rem;
+  font-size: 2.4rem;
+  width: 300px;
+  line-height: 1.2;
 `
 export const TableOfContentsLine = styled.li<{ selected: boolean }>(({ selected }) => ({
   color: selected ? "red" : "white",
+  textOverflow: "ellipsis",
+  overflow: "hidden",
+  whiteSpace: "nowrap",
+  "&:before": {
+    content: `'${selected ? "> " : "- "} '`,
+  },
 }))
