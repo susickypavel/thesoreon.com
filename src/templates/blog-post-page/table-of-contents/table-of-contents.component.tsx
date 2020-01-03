@@ -23,7 +23,7 @@ export const TableOfContents: React.FC<Props> = ({ headings }) => {
         window.innerHeight + window.pageYOffset + TRESHOLD_MOVE >= document.body.offsetHeight
       )
 
-      if (Math.min(...tops.current) > window.pageYOffset) {
+      if (Math.min(...tops.current) - TRESHOLD_MOVE > window.pageYOffset) {
         setSelected(-1)
       } else {
         tops.current.forEach((top, index) => {
