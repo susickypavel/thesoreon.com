@@ -3,6 +3,7 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 
 import { FaLink, FaExternalLinkAlt } from "react-icons/fa"
+import { slugify } from "~/utils/slugify"
 
 interface HeaderProps {
   type: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
@@ -60,11 +61,12 @@ export const Header: React.FC<HeaderProps> = ({ type, children, slug }) => {
       z-index: -1;
     }
   `
+  const id = slugify(children.toString())
 
   return (
-    <HeaderStyled id={children.toString()}>
+    <HeaderStyled id={id}>
       {children}
-      <Link to={`${slug}#${children.toString()}`}>
+      <Link to={`${slug}#${id}`}>
         <FaLink size={`calc(${fontSize} - 0.8rem)`} color="#bdbdbd" />
       </Link>
     </HeaderStyled>
