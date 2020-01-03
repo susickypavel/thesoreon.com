@@ -41,9 +41,8 @@ export const TableOfContents: React.FC<Props> = ({ headings }) => {
     const handleResize = throttle(() => {
       tops.current = []
       headings.forEach(heading => {
-        const el = document.getElementById(slugify(heading.value))
-        const { top } = el.getBoundingClientRect()
-        tops.current.push(top)
+        const { offsetTop } = document.getElementById(slugify(heading.value))
+        tops.current.push(offsetTop)
       })
     }, 1000)
 
@@ -56,12 +55,26 @@ export const TableOfContents: React.FC<Props> = ({ headings }) => {
     }
   }, [headings])
 
+  const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
+    const { offsetTop } = document.getElementById(slugify(e.currentTarget.textContent))
+
+    window.scrollTo({
+      left: 0,
+      top: offsetTop,
+      behavior: "smooth",
+    })
+  }
+
   return (
     <TableOfContentsHolder>
       {headings.map((heading, index) => {
         const compare = isBottomed ? headings.length - 1 : selected
         return (
-          <TableOfContentsLine selected={index === compare} key={heading.value}>
+          <TableOfContentsLine
+            onClick={handleClick}
+            selected={index === compare}
+            key={heading.value}
+          >
             {heading.value}
           </TableOfContentsLine>
         )
