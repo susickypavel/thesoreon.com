@@ -14,7 +14,7 @@ const TRESHOLD_MOVE = 2
 
 export const TableOfContents: React.FC<Props> = ({ headings }) => {
   const tops = useRef<number[]>([])
-  const [selected, setSelected] = useState(0)
+  const [selected, setSelected] = useState(-1)
   const [isBottomed, setBottomed] = useState(false)
 
   useEffect(() => {
@@ -23,11 +23,15 @@ export const TableOfContents: React.FC<Props> = ({ headings }) => {
         window.innerHeight + window.pageYOffset + TRESHOLD_MOVE >= document.body.offsetHeight
       )
 
-      tops.current.forEach((top, index) => {
-        if (top - 5 < window.pageYOffset) {
-          setSelected(index)
-        }
-      })
+      if (Math.min(...tops.current) > window.pageYOffset) {
+        setSelected(-1)
+      } else {
+        tops.current.forEach((top, index) => {
+          if (top - 5 < window.pageYOffset) {
+            setSelected(index)
+          }
+        })
+      }
     }, 250)
 
     document.addEventListener("scroll", handleScroll)
@@ -61,12 +65,22 @@ export const TableOfContents: React.FC<Props> = ({ headings }) => {
     window.scrollTo({
       left: 0,
       top: offsetTop,
-      behavior: "smooth",
     })
   }
 
   return (
     <TableOfContentsHolder>
+      <TableOfContentsLine
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            left: 0,
+          })
+        }}
+        selected={selected === -1}
+      >
+        TOP
+      </TableOfContentsLine>
       {headings.map((heading, index) => {
         const compare = isBottomed ? headings.length - 1 : selected
         return (
