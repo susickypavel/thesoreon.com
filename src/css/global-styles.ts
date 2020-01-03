@@ -48,6 +48,21 @@ const globalStyles = css`
       border-radius: 0;
     }
   }
+
+  body::-webkit-scrollbar {
+    width: 2em;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: linear-gradient(45deg, rgba(189, 0, 240, 1) 0%, rgba(0, 184, 255, 1) 100%);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: 3px solid transparent;
+    box-shadow: 0px 0px 0px 100000vh black;
+    border: 4px solid black;
+  }
 `
 
 export default globalStyles
