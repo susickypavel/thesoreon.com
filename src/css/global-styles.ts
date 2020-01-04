@@ -33,6 +33,11 @@ const globalStyles = css`
     transform: translateX(-2.4em);
     box-shadow: 0px 0px 64px black;
     margin: 1.6em 0 !important;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      transform: none;
+    }
   }
 
   .gatsby-highlight {
@@ -41,6 +46,11 @@ const globalStyles = css`
     transform: translateX(-2.4em);
     box-shadow: 0px 0px 64px black;
     margin: 1.6em 0;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      transform: none;
+    }
 
     & pre {
       margin: 0 !important;

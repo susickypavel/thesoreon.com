@@ -33,6 +33,10 @@ export const Header: React.FC<HeaderProps> = ({ type, children, slug }) => {
     box-shadow: 0px 0px 64px black;
     transform: scaleX(1.1);
 
+    @media (max-width: 1024px) {
+      transform: scale(1);
+    }
+
     & a {
       margin-left: 0.4em;
       position: relative;
