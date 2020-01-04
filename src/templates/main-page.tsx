@@ -1,16 +1,9 @@
 import React from "react"
 
-import { BlogPostCard } from "~/components/blog-post-card/blog-post-card.component"
+import { BlogPostList } from "~/components/blog-post-list/blog-post-list.component"
 
 const MainPage: React.FC = () => {
-  return (
-    <div style={{ display: "flex", padding: "16px", flexDirection: "column" }}>
-      <BlogPostCard />
-      <BlogPostCard />
-      <BlogPostCard />
-      <BlogPostCard />
-    </div>
-  )
+  return <BlogPostList />
 }
 
 export default MainPage
