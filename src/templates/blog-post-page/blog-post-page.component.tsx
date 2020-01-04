@@ -26,8 +26,8 @@ const BlogPostPage: React.FC<Props> = ({ data }) => {
   } = data.mdx
 
   return (
-    <BlogPostPageHolder>
-      <TableOfContents headings={headings} />
+    <BlogPostPageHolder id="top">
+      <TableOfContents slug={slug} headings={headings} />
       {thumbnail ? <BlogPostPageThumbnail fluid={thumbnail.childImageSharp.fluid as any} /> : null}
       <BlogPostPageHeader>{title}</BlogPostPageHeader>
       <MdxComponentsProvider slug={slug}>

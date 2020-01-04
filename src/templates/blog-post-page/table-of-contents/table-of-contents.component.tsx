@@ -8,11 +8,12 @@ import { slugify } from "~/utils/slugify"
 
 interface Props {
   headings: ({ __typename?: "MdxHeadingMdx" } & Pick<MdxHeadingMdx, "value">)[]
+  slug: string
 }
 
 const TRESHOLD_MOVE = 2
 
-export const TableOfContents: React.FC<Props> = ({ headings }) => {
+export const TableOfContents: React.FC<Props> = ({ headings, slug }) => {
   const tops = useRef<number[]>([])
   const [selected, setSelected] = useState(-1)
   const [isBottomed, setBottomed] = useState(false)
@@ -59,35 +60,19 @@ export const TableOfContents: React.FC<Props> = ({ headings }) => {
     }
   }, [headings])
 
-  const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
-    const { offsetTop } = document.getElementById(slugify(e.currentTarget.textContent))
-
-    window.scrollTo({
-      left: 0,
-      top: offsetTop,
-    })
-  }
-
   return (
     <TableOfContentsHolder>
-      <TableOfContentsLine
-        onClick={() => {
-          window.scrollTo({
-            top: 0,
-            left: 0,
-          })
-        }}
-        selected={selected === -1}
-      >
+      <TableOfContentsLine to={`${slug}#top`} selected={selected === -1}>
         TOP
       </TableOfContentsLine>
       {headings.map((heading, index) => {
         const compare = isBottomed ? headings.length - 1 : selected
         return (
           <TableOfContentsLine
-            onClick={handleClick}
+            to={`${slug}#${slugify(heading.value)}`}
             selected={index === compare}
             key={heading.value}
+            onClick={e => e.currentTarget.blur()}
           >
             {heading.value}
           </TableOfContentsLine>
