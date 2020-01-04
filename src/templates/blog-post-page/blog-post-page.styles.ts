@@ -13,6 +13,11 @@ export const BlogPostPageThumbnail = styled(Img)`
   border: 2px solid white;
   width: calc(100% + 6.4em);
   transform: translateX(-3.2em);
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    transform: none;
+  }
 `
 
 export const BlogPostPageHeader = styled.h2`
