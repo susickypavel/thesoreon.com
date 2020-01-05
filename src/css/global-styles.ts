@@ -31,7 +31,7 @@ const globalStyles = css`
     font-size: 1.6rem;
     width: calc(100% + 4.8em);
     transform: translateX(-2.4em);
-    box-shadow: 0px 0px 64px black;
+    box-shadow: 0px 0px 8px black;
     margin: 1.6em 0 !important;
 
     @media (max-width: 1024px) {
@@ -44,7 +44,7 @@ const globalStyles = css`
     font-size: 1.6rem;
     width: calc(100% + 4.8em);
     transform: translateX(-2.4em);
-    box-shadow: 0px 0px 64px black;
+    box-shadow: 0px 0px 8px black;
     margin: 1.6em 0;
 
     @media (max-width: 1024px) {
