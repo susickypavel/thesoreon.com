@@ -7,6 +7,7 @@ export const BlogPostPageHolder = styled.div`
   background-color: #212121;
   margin: 0 auto;
   color: white;
+  position: relative;
 `
 
 export const BlogPostPageThumbnail = styled(Img)`
