@@ -11,7 +11,7 @@ import {
   MdxBodyHolder,
 } from "./blog-post-page.styles"
 import { MdxComponentsProvider } from "~/providers/mdx-components.provider"
-import { TableOfContents } from "./table-of-contents/table-of-contents.component"
+import { ItemsBar } from "./items-bar/items-bar.component"
 
 interface Props {
   data: BlogPostQuery
@@ -27,7 +27,7 @@ const BlogPostPage: React.FC<Props> = ({ data }) => {
 
   return (
     <BlogPostPageHolder id="top">
-      <TableOfContents slug={slug} headings={headings} />
+      <ItemsBar headings={headings} slug={slug} />
       {thumbnail ? <BlogPostPageThumbnail fluid={thumbnail.childImageSharp.fluid as any} /> : null}
       <BlogPostPageHeader>{title}</BlogPostPageHeader>
       <MdxComponentsProvider slug={slug}>
