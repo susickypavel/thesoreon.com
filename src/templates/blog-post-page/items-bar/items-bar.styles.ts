@@ -8,15 +8,15 @@ export const StyledQrCode = styled(QrCodeComponent)`
 `
 
 export const ItemsBarToggle = styled.button`
-  height: 6em;
-  width: 6em;
+  height: 4em;
+  width: 4em;
   display: none;
   margin: 0 auto;
-  padding: 1.2em;
-  border-radius: 100%;
-  border: 3px solid black;
+  padding: 0.8em;
+  border: 1px solid white;
   margin-bottom: 0.8em;
-  background-color: rgba(0, 184, 255, 1);
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s linear;
 
   outline: none;
   cursor: pointer;
@@ -30,9 +30,16 @@ export const ItemsBarToggle = styled.button`
 
   &:hover,
   &:focus {
+    background-color: rgba(0, 0, 0, 1);
   }
 `
-export const ItemsBarContent = styled.div``
+export const ItemsBarContent = styled.div`
+  & svg {
+    height: auto;
+    width: 100%;
+    min-height: 15em;
+  }
+`
 
 export const ItemsBarHolder = styled.div<{ collapsed: boolean }>`
   position: fixed;
@@ -41,7 +48,7 @@ export const ItemsBarHolder = styled.div<{ collapsed: boolean }>`
   transform: translateX(-35rem);
 
   @media (max-width: 98rem) {
-    transform: ${({ collapsed }) => (collapsed ? "translateY(calc(100% - 6em - 0.8em))" : "none")};
+    transform: ${({ collapsed }) => (collapsed ? "translateY(calc(100% - 4em - 0.8em))" : "none")};
     transition: transform 0.5s linear;
     bottom: 0;
     max-width: 80em;
@@ -54,11 +61,13 @@ export const ItemsBarHolder = styled.div<{ collapsed: boolean }>`
     ${ItemsBarContent} {
       display: flex;
       flex-flow: column wrap;
-      background-color: #f8ee03;
+      background-color: #7edcf5;
     }
 
     ${StyledQrCode} {
       height: 100px;
+      border: 1px solid black;
+      border-bottom: none;
     }
 
     ${TableOfContentsHolder} {
