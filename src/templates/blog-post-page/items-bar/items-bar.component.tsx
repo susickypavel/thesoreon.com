@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { FaListOl } from "react-icons/fa"
+import { IoIosList } from "react-icons/io"
 
 import { ItemsBarHolder, ItemsBarToggle, ItemsBarContent, StyledQrCode } from "./items-bar.styles"
 import { TableOfContents } from "../table-of-contents/table-of-contents.component"
@@ -19,16 +19,10 @@ export const ItemsBar: React.FC<Props> = ({ slug, headings }) => {
           setCollapsed(prev => !prev)
         }}
       >
-        <FaListOl color="black" />
+        <IoIosList color="white" />
       </ItemsBarToggle>
       <ItemsBarContent>
-        {/* TODO: size prop should be number */}
-        <StyledQrCode
-          value={`https://thesoreon.com${slug}`}
-          size="auto"
-          renderAs="svg"
-          bgColor="transparent"
-        />
+        <StyledQrCode value={`https://thesoreon.com${slug}`} renderAs="svg" bgColor="transparent" />
         {/* TODO: move table of contents under items-bar folder */}
         <TableOfContents slug={slug} headings={headings} />
       </ItemsBarContent>
