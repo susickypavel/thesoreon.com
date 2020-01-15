@@ -11,6 +11,7 @@ import {
   MdxBodyHolder,
 } from "./blog-post-page.styles"
 import { MdxComponentsProvider } from "~/providers/mdx-components.provider"
+import Seo from "~/components/Seo/Seo.component"
 import { ItemsBar } from "./items-bar/items-bar.component"
 
 interface Props {
@@ -19,7 +20,7 @@ interface Props {
 
 const BlogPostPage: React.FC<Props> = ({ data }) => {
   const {
-    frontmatter: { title, thumbnail },
+    frontmatter: { title, thumbnail, description },
     body,
     fields: { slug },
     headings,
@@ -27,6 +28,15 @@ const BlogPostPage: React.FC<Props> = ({ data }) => {
 
   return (
     <BlogPostPageHolder id="top">
+      <Seo
+        title={title}
+        customMetadata={{
+          pathname: slug,
+          customDescription: description,
+          customType: "website",
+          image: thumbnail.publicURL,
+        }}
+      />
       <ItemsBar headings={headings} slug={slug} />
       {thumbnail ? <BlogPostPageThumbnail fluid={thumbnail.childImageSharp.fluid as any} /> : null}
       <BlogPostPageHeader>{title}</BlogPostPageHeader>
@@ -52,6 +62,7 @@ export const query = graphql`
         date
         description
         thumbnail {
+          publicURL
           childImageSharp {
             fluid(jpegQuality: 90) {
               ...GatsbyImageSharpFluid
