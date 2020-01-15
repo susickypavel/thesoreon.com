@@ -70,5 +70,10 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
   ],
+  siteMetadata: {
+    description: "Personal blog by Pavel Susicky. Writing things about web development.",
+    twitter: "@Thesoreon",
+  },
 }
