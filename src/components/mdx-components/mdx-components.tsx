@@ -146,3 +146,23 @@ export const BlockQuote = styled.blockquote`
     margin: 0;
   }
 `
+
+export const YoutubeEmbedHolder = styled.span`
+  display: block;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  background: black;
+  transform: scaleX(1.1);
+  box-shadow: 0px 0px 8px black;
+
+  @media (max-width: 1024px) {
+    transform: scale(1);
+  }
+`
+
+export const YoutubeEmbed = styled.iframe`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+`
