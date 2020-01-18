@@ -34,7 +34,7 @@ const BlogPostPage: React.FC<Props> = ({ data }) => {
           pathname: slug,
           customDescription: description,
           customType: "website",
-          image: thumbnail.publicURL,
+          image: thumbnail?.publicURL,
         }}
       />
       <ItemsBar headings={headings} slug={slug} />
