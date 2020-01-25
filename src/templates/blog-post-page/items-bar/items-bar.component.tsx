@@ -22,7 +22,12 @@ export const ItemsBar: React.FC<Props> = ({ slug, headings }) => {
         <IoIosList color="white" />
       </ItemsBarToggle>
       <ItemsBarContent>
-        <StyledQrCode value={`https://thesoreon.com${slug}`} renderAs="svg" bgColor="transparent" />
+        <StyledQrCode
+          value={`https://thesoreon.com${slug}`}
+          renderAs="svg"
+          bgColor="transparent"
+          fgColor="white"
+        />
         {/* TODO: move table of contents under items-bar folder */}
         <TableOfContents slug={slug} headings={headings} />
       </ItemsBarContent>
