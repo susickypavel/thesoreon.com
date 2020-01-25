@@ -1,4 +1,5 @@
 import { css } from "@emotion/core"
+import GrainedBG from "./bg-grained-3.jpg"
 
 const globalStyles = css`
   * {
@@ -24,7 +25,8 @@ const globalStyles = css`
   body,
   #___gatsby,
   #gatsby-focus-wrapper {
-    /* height: 100%; */
+    background-color: #212121;
+    background: url(${GrainedBG}) repeat center;
   }
 
   .gatsby-resp-image-wrapper {
