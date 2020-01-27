@@ -1,20 +1,25 @@
-import React, { useRef, useEffect } from "react"
-import { TimelineMax } from "gsap"
+import React, { useRef, useEffect, useState } from "react"
+import { TimelineMax, TweenLite, Linear } from "gsap"
 
-import { MenuToggleHolder, Test } from "./menu-icon-toggle.styles"
+import { MenuToggleIconHolder, MenuToggleHolder, MenuToggleStroke } from "./menu-icon-toggle.styles"
 
 export const MenuIconToggle: React.FC = () => {
-  const tl = useRef<TimelineMax>()
+  const [toggled, setToggled] = useState(false)
+  const [hovered, setHovered] = useState(false)
 
+  const strokeElement = useRef<any>()
+  const strokeTween = useRef<TweenLite>()
+
+  const toggleTimeline = useRef<TimelineMax>()
   const firstLine = useRef<HTMLSpanElement>()
   const secondLine = useRef<HTMLSpanElement>()
   const thirdLine = useRef<HTMLSpanElement>()
   const holder = useRef<HTMLDivElement>()
 
   useEffect(() => {
-    tl.current = new TimelineMax({ paused: true, reversed: true })
+    toggleTimeline.current = new TimelineMax({ paused: true, reversed: true })
 
-    tl.current
+    toggleTimeline.current
       .to(firstLine.current, { duration: 0.25, width: "100%", ease: "power4" })
       .to(thirdLine.current, { duration: 0.25, width: "100%", ease: "power4" }, "<")
       .to(secondLine.current, { duration: 0.1, scaleX: 0 })
@@ -33,22 +38,60 @@ export const MenuIconToggle: React.FC = () => {
       )
   }, [])
 
+  useEffect(() => {
+    const animate = () => {
+      strokeTween.current = TweenLite.to(strokeElement.current, 5, {
+        strokeDashoffset: `${toggled ? "-" : "+"}=250`,
+        ease: Linear.easeNone,
+        onComplete: () => {
+          animate()
+        },
+        paused: !Boolean(strokeTween.current),
+      })
+    }
+
+    animate()
+
+    return () => {
+      strokeTween.current.kill()
+    }
+  }, [toggled])
+
   return (
-    <Test>
-      <MenuToggleHolder
-        onClick={() => {
-          if (tl.current.reversed()) {
-            tl.current.play()
-          } else {
-            tl.current.reverse()
-          }
-        }}
-        ref={holder}
+    <MenuToggleHolder
+      onMouseEnter={() => {
+        strokeTween.current.play()
+        setHovered(true)
+      }}
+      onMouseLeave={() => {
+        strokeTween.current.pause()
+        setHovered(false)
+      }}
+      onClick={() => {
+        if (toggleTimeline.current.reversed()) {
+          toggleTimeline.current.play()
+          setToggled(true)
+        } else {
+          toggleTimeline.current.reverse()
+          setToggled(false)
+        }
+      }}
+    >
+      <MenuToggleStroke
+        ref={strokeElement}
+        hovered={hovered}
+        stroke="gray"
+        strokeWidth="1"
+        strokeLinecap="square"
+        strokeMiterlimit={30}
       >
+        <rect height="100%" width="100%" />
+      </MenuToggleStroke>
+      <MenuToggleIconHolder ref={holder}>
         <span ref={firstLine} />
         <span ref={secondLine} />
         <span ref={thirdLine} />
-      </MenuToggleHolder>
-    </Test>
+      </MenuToggleIconHolder>
+    </MenuToggleHolder>
   )
 }
