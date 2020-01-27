@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 const OFFSET = "3.2em"
 const SIZE = "5em"
 
-export const Test = styled.div`
+export const MenuToggleHolder = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
 
   padding: 1.2em;
@@ -11,9 +11,10 @@ export const Test = styled.div`
   position: fixed;
   right: ${OFFSET};
   top: ${OFFSET};
+  cursor: pointer;
 `
 
-export const MenuToggleHolder = styled.div`
+export const MenuToggleIconHolder = styled.div`
   width: ${SIZE};
   height: ${SIZE};
 
@@ -41,4 +42,15 @@ export const MenuToggleHolder = styled.div`
       margin-bottom: 0;
     }
   }
+`
+
+export const MenuToggleStroke = styled.svg<{ hovered: boolean }>`
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  z-index: -1;
+  height: 7.6em;
+  width: 7.6em;
+  stroke-dasharray: ${({ hovered }) => (hovered ? "10px" : "0px")};
+  stroke-width: ${({ hovered }) => (hovered ? "2px" : "1px")};
 `
