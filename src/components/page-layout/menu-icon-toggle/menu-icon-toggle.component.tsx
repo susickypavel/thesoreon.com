@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from "react"
-import { TimelineMax, TweenLite, Linear } from "gsap"
+// See link below for the weird import
+// https://github.com/gatsbyjs/gatsby/issues/8810
+import { TimelineMax, TweenLite, Linear } from "gsap/dist/gsap"
 
 import { MenuToggleIconHolder, MenuToggleHolder, MenuToggleStroke } from "./menu-icon-toggle.styles"
 
