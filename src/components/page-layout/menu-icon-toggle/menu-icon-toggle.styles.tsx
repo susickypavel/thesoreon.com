@@ -1,22 +1,25 @@
 import styled from "@emotion/styled"
 
-const OFFSET = "3.2em"
-const SIZE = "5em"
+const OFFSET = 3.2
+const SIZE = 5
+const PADDING = 1.2
+
+const totalSize = SIZE + 2 * PADDING + 0.2
 
 export const MenuToggleHolder = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
 
-  padding: 1.2em;
+  padding: ${PADDING}em;
   border: 1px solid gray;
   position: fixed;
-  right: ${OFFSET};
-  top: ${OFFSET};
+  right: ${OFFSET}em;
+  top: ${OFFSET}em;
   cursor: pointer;
 `
 
 export const MenuToggleIconHolder = styled.div`
-  width: ${SIZE};
-  height: ${SIZE};
+  width: ${SIZE}em;
+  height: ${SIZE}em;
 
   display: flex;
   justify-content: center;
@@ -49,8 +52,8 @@ export const MenuToggleStroke = styled.svg<{ hovered: boolean }>`
   top: -1px;
   left: -1px;
   z-index: -1;
-  height: 7.6em;
-  width: 7.6em;
+  height: ${totalSize}em;
+  width: ${totalSize}em;
   stroke-dasharray: ${({ hovered }) => (hovered ? "10px" : "0px")};
   stroke-width: ${({ hovered }) => (hovered ? "2px" : "1px")};
 `

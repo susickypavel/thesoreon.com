@@ -59,6 +59,7 @@ export const MenuIconToggle: React.FC = () => {
 
   return (
     <MenuToggleHolder
+      aria-label="Open the menu"
       onMouseEnter={() => {
         strokeTween.current.play()
         setHovered(true)
