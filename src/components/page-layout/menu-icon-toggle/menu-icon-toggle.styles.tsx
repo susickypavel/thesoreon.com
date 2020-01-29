@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 
-const OFFSET = 3.2
+const OFFSET = 6.4
 const SIZE = 5
 const PADDING = 1.2
 
