@@ -5,8 +5,13 @@ import { TimelineMax, TweenLite, Linear } from "gsap/dist/gsap"
 
 import { MenuToggleIconHolder, MenuToggleHolder, MenuToggleStroke } from "./menu-icon-toggle.styles"
 
-export const MenuIconToggle: React.FC = () => {
-  const [toggled, setToggled] = useState(false)
+interface Props {
+  toggled: boolean
+  setToggled(val: boolean): void
+}
+
+export const MenuIconToggle: React.FC<Props> = ({ toggled, setToggled }) => {
+  const [clicked, setClicked] = useState(false)
   const [hovered, setHovered] = useState(false)
 
   const strokeElement = useRef<any>()
@@ -27,7 +32,14 @@ export const MenuIconToggle: React.FC = () => {
       .to(secondLine.current, { duration: 0.1, scaleX: 0 })
       .to(firstLine.current, { duration: 0.25, y: 8, ease: "power4" }, "slide")
       .to(thirdLine.current, { duration: 0.25, y: -8, ease: "power4" }, "slide")
-      .to(holder.current, { duration: 0.5, rotate: 360, ease: "power4" })
+      .to(holder.current, {
+        duration: 0.5,
+        rotate: 360,
+        ease: "power4",
+        onComplete: () => {
+          setToggled(true)
+        },
+      })
       .to(
         firstLine.current,
         { duration: 0.25, rotate: 45, y: 12, ease: "power4", width: "100%" },
@@ -35,15 +47,21 @@ export const MenuIconToggle: React.FC = () => {
       )
       .to(
         thirdLine.current,
-        { duration: 0.25, rotate: -45, y: -12, ease: "power4", width: "100%" },
+        {
+          duration: 0.25,
+          rotate: -45,
+          y: -12,
+          ease: "power4",
+          width: "100%",
+        },
         "cross"
       )
-  }, [])
+  }, [setToggled])
 
   useEffect(() => {
     const animate = () => {
       strokeTween.current = TweenLite.to(strokeElement.current, 5, {
-        strokeDashoffset: `${toggled ? "-" : "+"}=250`,
+        strokeDashoffset: `${clicked ? "-" : "+"}=250`,
         ease: Linear.easeNone,
         onComplete: () => {
           animate()
@@ -57,26 +75,31 @@ export const MenuIconToggle: React.FC = () => {
     return () => {
       strokeTween.current.kill()
     }
-  }, [toggled])
+  }, [clicked])
 
   return (
     <MenuToggleHolder
       aria-label="Open the menu"
       onMouseEnter={() => {
-        strokeTween.current.play()
+        if (strokeTween.current) {
+          strokeTween.current.play()
+        }
         setHovered(true)
       }}
       onMouseLeave={() => {
-        strokeTween.current.pause()
+        if (strokeTween.current) {
+          strokeTween.current.pause()
+        }
         setHovered(false)
       }}
       onClick={() => {
         if (toggleTimeline.current.reversed()) {
           toggleTimeline.current.play()
-          setToggled(true)
+          setClicked(true)
         } else {
           toggleTimeline.current.reverse()
           setToggled(false)
+          setClicked(false)
         }
       }}
     >
