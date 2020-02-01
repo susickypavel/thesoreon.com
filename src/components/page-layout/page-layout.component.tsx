@@ -13,7 +13,7 @@ export const PageLayout: React.FC = ({ children }) => {
     <>
       <Global styles={[resetStyles, globalStyles]} />
       <Menu toggled={toggled} />
-      <MenuIconToggle toggled={toggled} setToggled={setToggled} />
+      <MenuIconToggle setToggled={setToggled} />
       {children}
     </>
   )

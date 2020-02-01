@@ -5,7 +5,7 @@ import { MenuIconToggle } from "./menu-icon-toggle.component"
 
 describe("Menu Icon toggle", () => {
   const renderComponent = () => {
-    return render(<MenuIconToggle />)
+    return render(<MenuIconToggle setToggled={() => true} />)
   }
 
   it("should render", () => {
