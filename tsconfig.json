@@ -17,5 +17,6 @@
       "~/*": ["src/*"]
     }
   },
+  "files": ["node_modules/gsap/types/index.d.ts"],
   "include": ["src/**/*", "index.d.ts"]
 }
