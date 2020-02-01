@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Helmet as Head } from "react-helmet"
 
-import { SiteMetaDataQuery } from "~/graphqlTypes"
-import { removeLeadingSlash } from "~/utils/removeLeadingSlash"
+import { SiteMetaDataQuery } from "~/graphql-types"
+import { removeLeadingSlash } from "~/utils/remove-leading-slash"
 
 interface Props {
   title?: string
@@ -14,20 +14,19 @@ export interface CustomMetaData {
   pathname: string
   image?: string
   customDescription?: string
-  customType?: "website" | "article" | "summary_large_image"
+  customType?: "website" | "article"
 }
 
 const Seo: React.FC<Props> = ({
   title = "Blog",
   customMetadata: { pathname, customDescription, image = "default.png", customType = "website" },
 }) => {
-  const [activeTheme, setActiveTheme] = useState<"light" | "dark">("light")
   const {
     site: {
       siteMetadata: { description, twitter },
     },
   } = useStaticQuery<SiteMetaDataQuery>(graphql`
-    query siteMetaData {
+    query SiteMetaData {
       site {
         siteMetadata {
           description
@@ -40,40 +39,25 @@ const Seo: React.FC<Props> = ({
   const imagePathWithoutLeadingSlash = removeLeadingSlash(image)
   const composedTitle = `${title} | Pavel Sušický`
 
-  useEffect(() => {
-    setActiveTheme(window.__theme)
-    window.__onThemeChange = () => {
-      setActiveTheme(window.__theme)
-    }
-  }, [])
-
   return (
-    <>
-      <Head defer={false} titleTemplate="%s | Pavel Sušický" htmlAttributes={{ lang: "en" }}>
-        <title>{title}</title>
-        <meta name="description" content={customDescription || description} />
+    <Head defer={false} titleTemplate="%s | Pavel Sušický" htmlAttributes={{ lang: "en" }}>
+      <title>{title}</title>
+      <meta name="description" content={customDescription || description} />
 
-        <meta property="og:url" content={`https://thesoreon.com${pathname}`} />
-        <meta property="og:type" content={customType} />
-        <meta property="og:title" content={composedTitle} />
-        <meta property="og:description" content={customDescription || description} />
-        <meta
-          property="og:image"
-          content={`https://thesoreon.com/${imagePathWithoutLeadingSlash}`}
-        />
+      <meta property="og:url" content={`https://thesoreon.com${pathname}`} />
+      <meta property="og:type" content={customType} />
+      <meta property="og:title" content={composedTitle} />
+      <meta property="og:description" content={customDescription || description} />
+      <meta property="og:image" content={`https://thesoreon.com/${imagePathWithoutLeadingSlash}`} />
 
-        <meta
-          name="twitter:image"
-          content={`https://thesoreon.com/${imagePathWithoutLeadingSlash}`}
-        />
-        <meta name="twitter:creator" content={twitter} />
-        <meta name="twitter:title" content={composedTitle} />
-        <meta name="twitter:description" content={customDescription || description} />
-      </Head>
-      <Head>
-        <meta name="theme-color" content={activeTheme === "light" ? "lightblue" : "#212121"} />
-      </Head>
-    </>
+      <meta
+        name="twitter:image"
+        content={`https://thesoreon.com/${imagePathWithoutLeadingSlash}`}
+      />
+      <meta name="twitter:creator" content={twitter} />
+      <meta name="twitter:title" content={composedTitle} />
+      <meta name="twitter:description" content={customDescription || description} />
+    </Head>
   )
 }
 
