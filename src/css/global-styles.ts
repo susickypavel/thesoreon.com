@@ -1,7 +1,5 @@
 import { css } from "@emotion/core"
-import { darken, lighten } from "polished"
-
-import { BODY_MINWIDTH } from "./constants"
+import GrainedBG from "./bg-grained-3.jpg"
 
 const globalStyles = css`
   * {
@@ -19,60 +17,63 @@ const globalStyles = css`
     }
   }
 
-  h1 {
-    font-size: 6.4rem;
-  }
-
   body {
-    min-width: ${BODY_MINWIDTH};
-    padding: 25px 16px 16px 16px;
+    min-width: 320px;
   }
 
   html,
   body,
   #___gatsby,
   #gatsby-focus-wrapper {
-    height: 100%;
+    background-color: #212121;
+    background: url(${GrainedBG}) repeat center;
   }
 
-  body.dark {
-    background: #1b1b1b;
-    color: white;
+  .gatsby-resp-image-wrapper {
+    font-size: 1.6rem;
+    width: calc(100% + 4.8em);
+    transform: translateX(-2.4em);
+    box-shadow: 0px 0px 8px black;
+    margin: 1.6em 0 !important;
 
-    transition: all 0.2s linear;
-
-    --secondary-bg-color: ${lighten(0.1, "#1b1b1b")};
-
-    --action-buttons-default: #03a9f4;
-    --action-buttons-focus: ${lighten(0.25, "#03a9f4")};
-    --action-buttons-icon: #212121;
-
-    --blog-preview-boxshadow: 0px 0px 4px rgba(255, 255, 255, 0.8);
-
-    --links-default: lightblue;
-    --links-focus: ${darken(0.25, "lightblue")};
-    --links-visited: ${lighten(0.25, "blue")};
-    --links-text: black;
+    @media (max-width: 1024px) {
+      width: 100%;
+      transform: none;
+    }
   }
 
-  body.light {
-    background: white;
-    color: black;
+  .gatsby-highlight {
+    font-size: 1.6rem;
+    width: calc(100% + 4.8em);
+    transform: translateX(-2.4em);
+    box-shadow: 0px 0px 8px black;
+    margin: 1.6em 0;
 
-    transition: all 0.2s linear;
+    @media (max-width: 1024px) {
+      width: 100%;
+      transform: none;
+    }
 
-    --secondary-bg-color: ${darken(0.1, "white")};
+    & pre {
+      margin: 0 !important;
+      padding: 3.2em;
+      border-radius: 0;
+    }
+  }
 
-    --action-buttons-default: #90caf9;
-    --action-buttons-focus: ${darken(0.25, "#90caf9")};
-    --action-buttons-icon: #212121;
+  body::-webkit-scrollbar {
+    width: 2em;
+  }
 
-    --blog-preview-boxshadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  body::-webkit-scrollbar-track {
+    background: linear-gradient(45deg, rgba(189, 0, 240, 1) 0%, rgba(0, 184, 255, 1) 100%);
+  }
 
-    --links-default: #f33b5d;
-    --links-focus: ${lighten(0.25, "#f33b5d")};
-    --links-visited: darkblue;
-    --links-text: black;
+  body::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: 3px solid transparent;
+    box-shadow: 0px 0px 0px 100000vh black;
+    border: 4px solid black;
   }
 `
 

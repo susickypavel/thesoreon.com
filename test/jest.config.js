@@ -1,7 +1,7 @@
 module.exports = {
   verbose: true,
   transform: {
-    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.tsx?$": "babel-jest",
     ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
   },
   moduleFileExtensions: ["js", "jsx", "ts", "tsx"],

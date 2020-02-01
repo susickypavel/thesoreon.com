@@ -1,52 +1,6 @@
-import { createElement } from "react"
-import { PageLayout } from "./src/components/PageLayout"
-import { ThemeProvider } from "./src/components/providers/theme"
-import { MdxComponentsProvider } from "./src/components/providers/mdx-components"
+import React from "react"
+import { PageLayout } from "./src/components/page-layout/page-layout.component"
 
 export const wrapPageElement = ({ element, props }) => {
   return <PageLayout {...props}>{element}</PageLayout>
-}
-
-export const wrapRootElement = ({ element }) => {
-  return (
-    <MdxComponentsProvider>
-      <ThemeProvider>{element}</ThemeProvider>
-    </MdxComponentsProvider>
-  )
-}
-
-const applyDarkModeClass = `
-(function() {
-    window.__onThemeChange = function() {};
-    function setTheme(newTheme) {
-      window.__theme = newTheme;
-      preferredTheme = newTheme;
-      document.body.className = newTheme;
-      window.__onThemeChange(newTheme);
-    }
-    var preferredTheme;
-    try {
-      preferredTheme = localStorage.getItem('theme');
-    } catch (err) { }
-    window.__setPreferredTheme = function(newTheme) {
-      setTheme(newTheme);
-      try {
-        localStorage.setItem('theme', newTheme);
-      } catch (err) {}
-    }
-    var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    darkQuery.addListener(function(e) {
-      window.__setPreferredTheme(e.matches ? 'dark' : 'light')
-    });
-    setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
-})();
-`
-
-export const onRenderBody = ({ setPreBodyComponents }) => {
-  const script = createElement("script", {
-    dangerouslySetInnerHTML: {
-      __html: applyDarkModeClass,
-    },
-  })
-  setPreBodyComponents([script])
 }

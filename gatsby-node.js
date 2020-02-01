@@ -40,39 +40,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allMdx.edges
 
-  posts.forEach(({ node }, index) => {
+  posts.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/components/templates/blog-post-page.tsx`),
+      component: path.resolve(`./src/templates/blog-post-page/blog-post-page.component.tsx`),
       context: { id: node.id },
     })
   })
 
-  const allPosts = await graphql(`
-    query {
-      allMdx {
-        totalCount
-      }
-    }
-  `)
-
-  const totalPostsCount = allPosts.data.allMdx.totalCount
-  const postsPerPage = 3
-  const totalPagesCount = Math.ceil(totalPostsCount / postsPerPage)
-
-  Array.from({ length: totalPagesCount }).forEach((_, i) => {
-    const slug = i === 0 ? "/" : `/${i}`
-
-    createPage({
-      path: slug,
-      component: path.resolve(`./src/components/blog-post-previews-list/index.tsx`),
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        totalPagesCount,
-        currentPage: i,
-        slug,
-      },
-    })
+  createPage({
+    path: "/",
+    component: path.resolve(`./src/templates/main-page.tsx`),
+    context: {},
   })
 }

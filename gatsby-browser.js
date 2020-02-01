@@ -1,15 +1,8 @@
-import { PageLayout } from "./src/components/PageLayout"
-import { ThemeProvider } from "./src/components/providers/theme"
-import { MdxComponentsProvider } from "./src/components/providers/mdx-components"
+import React from "react"
+import { PageLayout } from "./src/components/page-layout/page-layout.component"
+
+import "prismjs/themes/prism-okaidia.css"
 
 export const wrapPageElement = ({ element, props }) => {
   return <PageLayout {...props}>{element}</PageLayout>
-}
-
-export const wrapRootElement = ({ element }) => {
-  return (
-    <MdxComponentsProvider>
-      <ThemeProvider>{element}</ThemeProvider>
-    </MdxComponentsProvider>
-  )
 }

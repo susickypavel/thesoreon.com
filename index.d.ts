@@ -1,11 +1,5 @@
-export {}
-declare global {
-  interface Window {
-    __theme: "dark" | "light"
-    __setPreferredTheme(theme: string): void
-    __onThemeChange(theme: string): void
-  }
-}
+declare module "*.jpg"
+declare module "*.png"
 
 declare module "@mdx-js/react" {
   import * as React from "react"

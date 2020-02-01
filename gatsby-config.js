@@ -1,5 +1,37 @@
+const path = require("path")
+
 module.exports = {
   plugins: [
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: false, // @default value
+        jsxPragma: `React`, // @default value
+        allExtensions: false, // @default value
+      },
+    },
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        sourceMap: true, // @default value
+        autoLabel: process.env.NODE_ENV !== "production", // @default value
+        labelFormat: "[local]", // @default value
+        cssPropOptimization: true, // @default value
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography.ts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `content`, `images`),
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -7,18 +39,6 @@ module.exports = {
         path: `${__dirname}/content/blog`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/content/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-emotion`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -48,41 +68,10 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        color: `#f01957`,
-        showSpinner: false,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-130594264-1",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Pavel Susicky's blog`,
-        short_name: `pavelsusicky`,
-        start_url: `/`,
-        background_color: `#f33b5d`,
-        theme_color: `#f33b5d`,
-        display: `minimal-ui`,
-        icon: `./src/assets/favicon.png`,
-        theme_color_in_head: false,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-offline`,
-    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-remove-serviceworker`,
   ],
   siteMetadata: {
     description: "Personal blog by Pavel Susicky. Writing things about web development.",
