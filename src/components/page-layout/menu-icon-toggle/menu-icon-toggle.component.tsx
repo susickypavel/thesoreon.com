@@ -6,11 +6,10 @@ import { TimelineMax, TweenLite, Linear } from "gsap/dist/gsap"
 import { MenuToggleIconHolder, MenuToggleHolder, MenuToggleStroke } from "./menu-icon-toggle.styles"
 
 interface Props {
-  toggled: boolean
   setToggled(val: boolean): void
 }
 
-export const MenuIconToggle: React.FC<Props> = ({ toggled, setToggled }) => {
+export const MenuIconToggle: React.FC<Props> = ({ setToggled }) => {
   const [clicked, setClicked] = useState(false)
   const [hovered, setHovered] = useState(false)
 
