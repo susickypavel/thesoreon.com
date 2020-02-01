@@ -11,9 +11,9 @@ interface Props {
 const MainPage: React.FC<Props> = ({ location: { pathname } }) => {
   return (
     <div>
-      <Logo />
-      {/* <BlogPostList /> */}
       <Seo customMetadata={{ pathname }} />
+      <Logo />
+      <BlogPostList />
     </div>
   )
 }

@@ -12,6 +12,7 @@ export const MenuToggleHolder = styled.div`
   padding: ${PADDING}em;
   border: 1px solid gray;
   position: fixed;
+  z-index: 100;
   right: ${OFFSET}em;
   top: ${OFFSET}em;
   cursor: pointer;

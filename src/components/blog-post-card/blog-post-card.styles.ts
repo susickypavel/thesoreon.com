@@ -54,6 +54,10 @@ export const BlogPostCardWrapper = styled(AnimatedLink)`
 
   position: relative;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   @media (max-width: 650px) {
     height: auto;
     flex-flow: column-reverse wrap;
