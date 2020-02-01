@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react"
-import { TimelineLite, Elastic } from "gsap"
+import { TimelineLite, Elastic } from "gsap/dist/gsap"
 
-import { LogoHolder, Bar } from "./logo.styles"
+import { LogoHolder, Bar, LogoLink } from "./logo.styles"
 
 const data = [
   -2,
@@ -47,11 +47,11 @@ const data = [
 const height = Math.max(...data) * 1.5
 
 export const Logo: React.FC = () => {
-  const logoRef = useRef<HTMLDivElement>()
+  const logoRef = useRef<any>()
   const tl = useRef<TimelineLite>()
 
   useEffect(() => {
-    tl.current = new TimelineLite({ paused: false }).to(logoRef.current.children, {
+    tl.current = new TimelineLite().to(logoRef.current.children, {
       height: "100%",
       duration: 1.5,
       ease: Elastic.easeIn,
@@ -67,9 +67,10 @@ export const Logo: React.FC = () => {
   }, [])
 
   return (
-    <LogoHolder
+    <LogoLink
+      to="/"
       height={height}
-      ref={logoRef}
+      aria-label="Go to homepage"
       onMouseEnter={() => {
         tl.current?.reverse()
       }}
@@ -77,9 +78,11 @@ export const Logo: React.FC = () => {
         tl.current?.play()
       }}
     >
-      {data.map((value, index) => {
-        return <Bar key={index} width={3} height={Math.abs(value)} />
-      })}
-    </LogoHolder>
+      <LogoHolder ref={logoRef}>
+        {data.map((value, index) => {
+          return <Bar key={index} width={3} height={Math.abs(value)} />
+        })}
+      </LogoHolder>
+    </LogoLink>
   )
 }
