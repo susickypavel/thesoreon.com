@@ -3,6 +3,7 @@ import { IoIosList } from "react-icons/io"
 
 import { ItemsBarHolder, ItemsBarToggle, ItemsBarContent, StyledQrCode } from "./items-bar.styles"
 import { TableOfContents } from "../table-of-contents/table-of-contents.component"
+import { Logo } from "~/components/landing-page/logo/logo.component"
 
 interface Props {
   slug: string
@@ -22,6 +23,7 @@ export const ItemsBar: React.FC<Props> = ({ slug, headings }) => {
         <IoIosList color="white" />
       </ItemsBarToggle>
       <ItemsBarContent>
+        <Logo />
         <StyledQrCode
           value={`https://thesoreon.com${slug}`}
           renderAs="svg"

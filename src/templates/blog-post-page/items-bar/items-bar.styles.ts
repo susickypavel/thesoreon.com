@@ -61,12 +61,11 @@ export const ItemsBarHolder = styled.div<{ collapsed: boolean }>`
     ${ItemsBarContent} {
       display: flex;
       flex-flow: column wrap;
-      background-color: #7edcf5;
+      background-color: #212121;
     }
 
     ${StyledQrCode} {
       height: 100px;
-      border: 1px solid black;
       border-bottom: none;
     }
 
