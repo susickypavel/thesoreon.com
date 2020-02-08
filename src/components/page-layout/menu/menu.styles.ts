@@ -1,13 +1,10 @@
 import styled from "@emotion/styled"
 
 export const MenuHolder = styled.div`
-  background: linear-gradient(
-    180deg,
-    rgba(149, 149, 149, 0.2597) 0%,
-    rgba(104, 104, 104, 0.2756) 100%
-  );
-  border: 1px solid darkgray;
+  border: 2px solid darkgray;
+  background-color: black;
   position: fixed;
+  z-index: 1000;
   right: 32px;
   top: 32px;
   height: calc(100% - 64px);
