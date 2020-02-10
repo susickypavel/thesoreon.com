@@ -12,10 +12,15 @@ export const MenuToggleHolder = styled.div`
   padding: ${PADDING}em;
   border: 1px solid gray;
   position: fixed;
-  z-index: 100;
+  z-index: 1001;
   right: ${OFFSET}em;
   top: ${OFFSET}em;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    right: ${OFFSET / 2}em;
+    top: ${OFFSET / 2}em;
+  }
 `
 
 export const MenuToggleIconHolder = styled.div`
