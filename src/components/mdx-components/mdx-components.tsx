@@ -89,7 +89,7 @@ interface Props {
 
 export const ExternalLink: React.FC<Props> = ({ href, children }) => {
   const Link = styled.a`
-    color: red;
+    color: #ef1957;
     & svg {
       vertical-align: middle;
       margin-left: 0.3em;
