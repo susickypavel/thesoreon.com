@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 const BPCH_BORDER_WIDTH = 0.3
 const BPCH_BORDER_OFFSET = BPCH_BORDER_WIDTH / 2
 
-export const BlogPostCardHeader = styled.h2`
+export const BlogPostCardHeader = styled.h3`
   background-image: linear-gradient(45deg, rgba(189, 0, 240, 1) 0%, rgba(0, 184, 255, 1) 100%);
   color: #02d8f3;
   font-size: 2.4rem;

@@ -1,9 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { FaStar } from "react-icons/fa"
 
 import { BlogPostsListQuery } from "~/graphql-types"
 import { BlogPostCard } from "../blog-post-card/blog-post-card.component"
-import { BlogPostListHolder } from "./blog-post-list.styles"
+import { BlogPostListHolder, BlogPostListHeadline } from "./blog-post-list.styles"
 
 export const BlogPostList: React.FC = () => {
   const {
@@ -37,6 +38,9 @@ export const BlogPostList: React.FC = () => {
 
   return (
     <BlogPostListHolder>
+      <BlogPostListHeadline>
+        <FaStar color="#ffd700" /> Latest blog posts
+      </BlogPostListHeadline>
       {edges.map(({ node }) => (
         <BlogPostCard key={node.fields.slug} node={node} />
       ))}

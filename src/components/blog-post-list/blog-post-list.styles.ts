@@ -6,3 +6,16 @@ export const BlogPostListHolder = styled.div`
   padding: 3.2em;
   align-items: center;
 `
+
+export const BlogPostListHeadline = styled.h2`
+  font-size: 3.8rem;
+  margin-bottom: 1.2em;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+
+  & svg {
+    vertical-align: top;
+  }
+`
