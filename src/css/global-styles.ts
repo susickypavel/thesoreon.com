@@ -25,8 +25,7 @@ const globalStyles = css`
   body,
   #___gatsby,
   #gatsby-focus-wrapper {
-    background-color: #212121;
-    background: url(${GrainedBG}) repeat center;
+    background-color: #424242;
   }
 
   .gatsby-resp-image-wrapper {
