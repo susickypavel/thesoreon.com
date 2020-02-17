@@ -4,7 +4,11 @@ export const BlogPostListHolder = styled.div`
   display: flex;
   flex-flow: column wrap;
   padding: 3.2em;
-  align-items: center;
+  align-items: flex-end;
+
+  @media (max-width: 1024px) {
+    align-items: center;
+  }
 `
 
 export const BlogPostListHeadline = styled.h2`

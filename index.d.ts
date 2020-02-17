@@ -1,5 +1,6 @@
 declare module "*.jpg"
 declare module "*.png"
+declare module "*.svg"
 
 declare module "@mdx-js/react" {
   import * as React from "react"
