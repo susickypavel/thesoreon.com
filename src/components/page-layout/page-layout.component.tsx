@@ -18,7 +18,7 @@ export const PageLayout: React.FC<Props> = ({ children, location }) => {
       <Global styles={[resetStyles, globalStyles]} />
       {location.pathname !== "/" ? (
         <>
-          <Menu toggled={toggled} />
+          <Menu toggled={toggled} setToggled={setToggled} />
           <MenuIconToggle setToggled={setToggled} />
         </>
       ) : null}

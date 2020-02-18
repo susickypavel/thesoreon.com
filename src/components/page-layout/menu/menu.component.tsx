@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, Dispatch, SetStateAction } from "react"
 import { TimelineLite } from "gsap/dist/gsap"
 
 import { MenuHolder } from "./menu.styles"
@@ -6,6 +6,7 @@ import MenuLink, { LinkProps } from "./menu-link/menu-link.component"
 
 interface Props {
   toggled: boolean
+  setToggled: Dispatch<SetStateAction<boolean>>
 }
 
 const links: LinkProps[] = [
@@ -26,7 +27,7 @@ const links: LinkProps[] = [
   },
 ]
 
-export const Menu: React.FC<Props> = ({ toggled }) => {
+export const Menu: React.FC<Props> = ({ toggled, setToggled }) => {
   const menuTimeLine = useRef<TimelineLite>()
 
   const menuHolderRef = useRef<HTMLDivElement>()
@@ -50,7 +51,7 @@ export const Menu: React.FC<Props> = ({ toggled }) => {
   return (
     <MenuHolder ref={menuHolderRef}>
       {links.map(link => (
-        <MenuLink link={link} key={link.name} />
+        <MenuLink link={link} key={link.name} setToggled={setToggled} />
       ))}
     </MenuHolder>
   )
