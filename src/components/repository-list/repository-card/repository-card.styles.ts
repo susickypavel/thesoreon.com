@@ -2,10 +2,10 @@ import styled from "@emotion/styled"
 
 export const RepositoryHolder = styled.div`
   border: 1px solid gray;
-  max-width: 500px;
+  max-width: 50em;
   width: 100%;
   padding: 0.8em;
-  height: 200px;
+  height: 20em;
   background: black;
   color: white;
 
@@ -24,16 +24,16 @@ export const LinkToRepository = styled.a`
   color: white;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
   background: black;
-  width: 250px;
+  width: 25rem;
   text-align: center;
   font-size: 1.6rem;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-  height: ${LINK_HEIGHT}px;
+  height: ${LINK_HEIGHT / 10}rem;
 
   position: absolute;
-  bottom: -${LINK_HEIGHT / 2}px;
+  bottom: -${LINK_HEIGHT / 20}rem;
   border: 1px solid gray;
   overflow: hidden;
 
@@ -79,5 +79,5 @@ export const RepositoryDescription = styled.p`
 `
 
 export const TechnologiesHolder = styled.div`
-  margin: 0.8em;
+  margin: 1.6em;
 `

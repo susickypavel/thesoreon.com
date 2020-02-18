@@ -99,7 +99,6 @@ export const BlogPostCard: React.FC<Props> = ({
       to={slug}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleQuit}
-      onTouchEnd={handleQuit}
       onMouseMove={handleMouseMove}
       onFocus={handleFocus}
       onBlur={handleQuit}
