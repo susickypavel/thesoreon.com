@@ -28,7 +28,7 @@ export const FooterCredits = styled.p`
 export const HeartIcon = styled(GoHeart)`
   vertical-align: middle;
   background: black;
-  border: 1px solid darkgray;
+  border: 1px solid gray;
   padding: 8px;
   margin: 0 10px;
   box-sizing: content-box;

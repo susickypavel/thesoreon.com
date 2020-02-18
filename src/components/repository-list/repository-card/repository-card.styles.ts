@@ -34,6 +34,7 @@ export const LinkToRepository = styled.a`
 
   position: absolute;
   bottom: -${LINK_HEIGHT / 20}rem;
+  left: 12.5rem;
   border: 1px solid gray;
   overflow: hidden;
 
