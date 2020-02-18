@@ -79,17 +79,6 @@ export const BlogPostCard: React.FC<Props> = ({
     })
   }
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    const { clientX, clientY } = e.touches[0]
-    const { top, left, height, width } = e.currentTarget.getBoundingClientRect()
-
-    setHovered(true)
-
-    set({
-      xys: calculateTilt(clientX - left, clientY - top, height, width),
-    })
-  }
-
   const handleFocus = (e: React.FocusEvent) => {
     const { height, width } = e.currentTarget.getBoundingClientRect()
 
@@ -112,8 +101,6 @@ export const BlogPostCard: React.FC<Props> = ({
       onMouseLeave={handleQuit}
       onTouchEnd={handleQuit}
       onMouseMove={handleMouseMove}
-      onTouchMove={handleTouchMove}
-      onTouchStart={handleTouchMove}
       onFocus={handleFocus}
       onBlur={handleQuit}
       style={{ transform: props.xys.interpolate(transform as any) }}
