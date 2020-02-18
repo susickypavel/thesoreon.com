@@ -4,6 +4,7 @@ export const RepositoryHolder = styled.div`
   border: 1px solid gray;
   max-width: 500px;
   width: 100%;
+  padding: 0.8em;
   height: 200px;
   background: black;
   color: white;
@@ -13,6 +14,8 @@ export const RepositoryHolder = styled.div`
   align-items: center;
 
   position: relative;
+
+  margin-bottom: 1.6em;
 `
 
 const LINK_HEIGHT = 50
